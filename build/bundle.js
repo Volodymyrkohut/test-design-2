@@ -36561,26 +36561,7 @@
 	        };
 	    }
 
-	    //
-	    // // Redux
-	    // function mapStateToProps(state) {
-	    //     console.log(state);
-	    //     return {
-	    //        answer: state.answer
-	    //     };
-	    // }
-	    //
-	    // function dispatchStateToProps(dispach) {
-	    //   return  {
-	    //         addAnswer: (answer) => {
-	    //             dispach({type: "ADD_ANSWER", answer: answer});
-	    //         },
-	    //         sendAnwers: (answers) => {
-	    //             console.log("(answers",answers)
-	    //             dispach({type: "SEND_ANSWER", clientAnswer: answers})
-	    //         }
-	    //     }
-	    // }connect(mapStateToProps, dispatchStateToProps)(
+	    // Redux
 
 	    _createClass(Smarttests, [{
 	        key: 'handleFindNextQuestion',
@@ -36588,12 +36569,18 @@
 	            var answer = _answerAnswerJs2['default'].find(function (item) {
 	                return item.key === key;
 	            });
+
+	            var answerToQuestion = {
+	                question: this.state.ask.question,
+	                answer: event.target.textContent
+	            };
+	            this.props.addAnswer(answerToQuestion);
+
 	            this.setState({ ask: answer });
 	        }
 	    }, {
 	        key: 'handleCheck',
 	        value: function handleCheck(e) {
-
 	            e.target.className = e.target.className === "answer activeCheck" ? "answer" : "answer activeCheck";
 
 	            this.setState({ check: !this.state.chack });
@@ -36614,7 +36601,7 @@
 	                _react2['default'].createElement(
 	                    'div',
 	                    { className: 'flex-container' },
-	                    answers[0].next != null ? _react2['default'].createElement(
+	                    _react2['default'].createElement(
 	                        'div',
 	                        { className: 'logic' },
 	                        _react2['default'].createElement(
@@ -36642,7 +36629,7 @@
 	                                item.text
 	                            );
 	                        })
-	                    ) : ""
+	                    )
 	                )
 	            );
 	        }
@@ -36651,7 +36638,26 @@
 	    return Smarttests;
 	})(_react2['default'].Component);
 
-	exports['default'] = Smarttests;
+	function mapStateToProps(state) {
+	    console.log(state);
+	    return {
+	        answer: state.answer
+	    };
+	}
+
+	function dispatchStateToProps(dispach) {
+	    return {
+	        addAnswer: function addAnswer(answer) {
+	            dispach({ type: "ADD_ANSWER", answer: answer });
+	        }
+	    };
+	}
+
+	// sendAnwers: (answers) => {
+	//     console.log("(answers",answers)
+	//     dispach({type: "SEND_ANSWER", clientAnswer: answers})
+	// }
+	exports['default'] = (0, _reactRedux.connect)(mapStateToProps, dispatchStateToProps)(Smarttests);
 	module.exports = exports['default'];
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Smarttests.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
@@ -42653,6 +42659,7 @@
 /***/ (function(module, exports) {
 
 	// array with questions
+
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
@@ -42702,19 +42709,8 @@
 	        text: "Нет"
 	    }]
 	}, {
-	    key: 6,
-	    question: " here ?",
-	    answers: [{
-	        next: 7,
-	        text: "ПЭТ-КТ"
-	    }, {
-	        next: 7,
-	        text: "?"
-	    }]
-
-	}, {
 	    key: 7,
-	    question: "Проходили ли вы диагностику",
+	    question: "Проходили ли вы диагностику ?",
 	    answers: [{
 	        next: 8,
 	        text: "Да"
@@ -42809,26 +42805,194 @@
 	    key: 13,
 	    question: "Рецидив Заболевания",
 	    answers: [{
-	        next: null,
+	        next: 13, // null
 	        text: "Да"
 	    }, {
-	        next: null,
+	        next: 13, //null
 	        text: "Нет"
 	    }]
 	},
 
-	//100 NO
+	// START 100 Проходили ли вы диагностику ? Нет //
 	{
 	    key: 100,
 	    question: "Были затронуты лимфоузлы ?",
 	    answers: [{
-	        next: 10,
+	        next: 201,
 	        text: "Да"
 	    }, {
-	        next: 10,
+	        next: 201,
 	        text: "Нет"
 	    }]
-	}];
+	}, {
+	    key: 201,
+	    question: "Результат гистопатологии ",
+	    answers: [{
+	        next: 202,
+	        text: "Гормонозависимая"
+	    }, {
+	        next: 202,
+	        text: "Не гормонозависимая"
+	    }]
+	}, {
+	    key: 202,
+	    question: "Установлена Стадия ?",
+	    answers: [{
+	        next: 203,
+	        text: "1"
+	    }, {
+	        next: 203,
+	        text: "2"
+	    }, {
+	        next: 203,
+	        text: "3"
+	    }]
+	}, {
+	    key: 203,
+	    question: "Какое лечение Вы получали",
+	    answers: [{
+	        next: 204,
+	        text: "Next"
+	    }],
+	    lotOf: [{
+	        id: 1,
+	        item: "Химотерапия"
+	    }, {
+	        id: 2,
+	        item: "Гормоно терапия"
+	    }, {
+	        id: 3,
+	        item: "Имуннотерапия"
+	    }, {
+	        id: 4,
+	        item: "Таргет"
+	    }, {
+	        id: 5,
+	        item: "Облучение"
+	    }]
+	}, {
+	    key: 204,
+	    question: "Рецидив Заболевания ",
+	    answers: [{
+	        next: 204,
+	        text: "Да"
+	    }, {
+	        next: 204,
+	        text: "Нет"
+	    }]
+	},
+	// END 100 Проходили ли вы диагностику ? Нет //
+
+	// START Била Ли операция (НЕТ)
+	{
+	    key: 6,
+	    question: "Заболевание было Выявлено ",
+	    answers: [{
+	        next: 101,
+	        text: "Врачом гинекологом"
+	    }, {
+	        next: 101,
+	        text: "Мамологом"
+	    }, {
+	        next: 101,
+	        text: "Узи"
+	    }, {
+	        next: 101,
+	        text: "Маммография"
+	    }]
+
+	}, {
+	    key: 101,
+	    question: "Была Взята биопсия ?",
+	    answers: [{
+	        next: 102,
+	        text: "Да"
+	    }, {
+	        next: 101, //
+	        text: "Нет"
+	    }]
+	}, {
+	    key: 102,
+	    question: "Результат  biopsy ?",
+	    answers: [{
+	        next: 110,
+	        text: "1"
+	    }, {
+	        next: 103,
+	        text: "2"
+	    }, {
+	        next: 102, //null
+	        text: "3"
+	    }]
+	}, {
+	    key: 103,
+	    question: "Прошли ",
+	    answers: [{
+	        next: 104,
+	        text: "КТ"
+	    }, {
+	        next: 104,
+	        text: "ПЭТ КТ"
+	    }, {
+	        next: 104,
+	        text: "МРТ"
+	    }]
+	}, {
+	    key: 104,
+	    question: "Выявлены МТС ?",
+	    answers: [{
+	        next: 105,
+	        text: "Да"
+	    }, {
+	        next: 104, //null
+	        text: "Нет"
+	    }]
+	}, {
+	    key: 105,
+	    question: "Где ?",
+	    answers: [{
+	        next: 105, //null
+	        text: "Next"
+	    }],
+	    lotOf: [{
+	        id: 1,
+	        item: "Прилегаю щие лимфоузлы"
+	    }, {
+	        id: 2,
+	        item: "Легкие"
+	    }, {
+	        id: 3,
+	        item: "Яичники"
+	    }, {
+	        id: 4,
+	        item: "Кости"
+	    }, {
+	        id: 5,
+	        item: "Мозг"
+	    }]
+	}, {
+	    key: 110,
+	    question: "Выявлены МТС ?",
+	    answers: [{
+	        next: 111,
+	        text: "Да"
+	    }, {
+	        next: 111,
+	        text: "Нет"
+	    }]
+	}, {
+	    key: 111,
+	    question: "Скорее всего Вам будет предложена оргоносохраняющая операция. Вы хотите получить программу обследования и возможный план операции заграницей  ?",
+	    answers: [{
+	        next: 111,
+	        text: "Да"
+	    }, {
+	        next: 111,
+	        text: "Нет"
+	    }]
+	}
+	// END Била Ли операция (НЕТ)
+	];
 
 	exports["default"] = arrayOfQuestions;
 	module.exports = exports["default"];
