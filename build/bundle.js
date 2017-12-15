@@ -70,15 +70,15 @@
 
 	var _componentsCategorySmarttestsJsx2 = _interopRequireDefault(_componentsCategorySmarttestsJsx);
 
-	var _componentsCategorySocialJsx = __webpack_require__(498);
+	var _componentsCategorySocialJsx = __webpack_require__(497);
 
 	var _componentsCategorySocialJsx2 = _interopRequireDefault(_componentsCategorySocialJsx);
 
-	var _componentsCategoryContactsJsx = __webpack_require__(501);
+	var _componentsCategoryContactsJsx = __webpack_require__(500);
 
 	var _componentsCategoryContactsJsx2 = _interopRequireDefault(_componentsCategoryContactsJsx);
 
-	var _reducers = __webpack_require__(504);
+	var _reducers = __webpack_require__(503);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -88,11 +88,11 @@
 
 	var _redux2 = _interopRequireDefault(_redux);
 
-	var _reduxThunk = __webpack_require__(511);
+	var _reduxThunk = __webpack_require__(510);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-	var _reduxDevtoolsExtension = __webpack_require__(512);
+	var _reduxDevtoolsExtension = __webpack_require__(511);
 
 	// import { syncHistoryWithStore } from "react-router-redux";
 	// window.store = .......
@@ -27127,12 +27127,6 @@
 
 	var _materialUiStylesMuiThemeProvider2 = _interopRequireDefault(_materialUiStylesMuiThemeProvider);
 
-	var styles = {
-	    content: {
-	        padding: '16px'
-	    }
-	};
-
 	var App = (function (_React$Component) {
 	    _inherits(App, _React$Component);
 
@@ -27153,8 +27147,6 @@
 	            isChecked: false
 	        };
 
-	        // this.renderPropCheckbox = this.renderPropCheckbox.bind(this);
-	        // this.renderPropNumber = this.renderPropNumber.bind(this);
 	        this.onSetOpen = this.onSetOpen.bind(this);
 	        this.menuButtonClick = this.menuButtonClick.bind(this);
 	    }
@@ -27282,7 +27274,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n@font-face {\n  font-family: 'MuseoSans-Bold';\n  src: local(\"MuseoSansCyrl-900\"), url(\"https://nomail.com.ua/files/woff/73e5c73d4e80e6c080cd1bc5894cf3e8.woff\") format(\"woff\"); }\n\n@font-face {\n  font-family: 'MuseoSans-Normal';\n  src: local(\"MuseoSansCyrl-500\"), url(\"https://nomail.com.ua/files/woff/02f7d6b8e3cda79742b374cbc5595a8f.woff\") format(\"woff\"); }\n\n@font-face {\n  font-family: 'MuseoSans-Normal';\n  src: local(\"MuseoSansCyrl-400\"), url(\"https://nomail.com.ua/files/woff/02f7d6b8e3cda79742b374cbc5595a8f.woff\") format(\"woff\"); }\n\n@font-face {\n  font-family: 'MuseoSans-Light';\n  src: local(\"MuseoSansCyrl-100\"), url(\"https://nomail.com.ua/files/woff/1913b09835e902f7123ad3ac38b4cd93.woff\") format(\"woff\"); }\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0; }\n\nhtml, body {\n  height: 100%;\n  min-height: 100%;\n  width: 100%; }\n\na, p, span, div {\n  font-family: \"MuseoSans-Light\"; }\n\nh1, h2, h3, h4, h5, h6 {\n  font-family: \"MuseoSans-Normal\"; }\n\n.flex-blocks {\n  height: 100%; }\n  .flex-blocks .content {\n    padding-left: 50px;\n    height: 100%; }\n\n.clickToOpen {\n  position: fixed;\n  height: 100%;\n  cursor: pointer;\n  background-color: white;\n  z-index: 9999 !important; }\n  .clickToOpen .open-side-bar {\n    height: 100%;\n    width: 50px; }\n    .clickToOpen .open-side-bar .logo {\n      position: absolute;\n      top: 30px;\n      left: 7px; }\n    .clickToOpen .open-side-bar .text-bottom {\n      display: block;\n      position: absolute;\n      bottom: 100px;\n      left: -7px;\n      font-size: 25px;\n      -moz-transform: rotate(-90deg);\n      -o-transform: rotate(-90deg);\n      -ms-transform: rotate(-90deg);\n      -webkit-transform: rotate(-90deg);\n      transform: rotate(-90deg); }\n\n/*animation menu X*/\n.spinner-master4 * {\n  transition: all 0.3s;\n  -webkit-transition: all 0.3s;\n  box-sizing: border-box; }\n\n.spinner-master4 {\n  position: absolute;\n  margin: 0 auto;\n  height: 30px;\n  width: 30px;\n  bottom: 50px;\n  left: 8px; }\n\n.spinner-master4 input[type=checkbox] {\n  display: none; }\n\n.spinner-master4 label {\n  cursor: pointer;\n  position: absolute;\n  z-index: 99;\n  height: 100%;\n  width: 100%;\n  top: 10px;\n  left: 0; }\n\n.spinner-master4 .spinner4 {\n  position: absolute;\n  height: 2px;\n  width: 100%;\n  background-color: #333;\n  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1); }\n\n.spinner-master4 .diagonal.part-1 {\n  position: relative;\n  float: left; }\n\n.spinner-master4 .horizontal {\n  position: relative;\n  float: left;\n  margin-top: 6px; }\n\n.spinner-master4 .diagonal.part-2 {\n  position: relative;\n  float: left;\n  margin-top: 6px; }\n\n.spinner-master4 input[type=checkbox]:checked ~ .spinner-spin4 > .horizontal {\n  transform: translate(-100px, 0px);\n  opacity: 0; }\n\n.spinner-master4 input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part-1 {\n  transform: rotate(-135deg);\n  margin-top: 10px; }\n\n.spinner-master4 input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part-2 {\n  transform: rotate(135deg);\n  -webkit-transform: rotate(135deg);\n  margin-top: -16px; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n@font-face {\n  font-family: 'MuseoSans-Bold';\n  src: local(\"MuseoSansCyrl-900\"), url(\"https://nomail.com.ua/files/woff/73e5c73d4e80e6c080cd1bc5894cf3e8.woff\") format(\"woff\"); }\n\n@font-face {\n  font-family: 'MuseoSans-Normal';\n  src: local(\"MuseoSansCyrl-500\"), url(\"https://nomail.com.ua/files/woff/02f7d6b8e3cda79742b374cbc5595a8f.woff\") format(\"woff\"); }\n\n@font-face {\n  font-family: 'MuseoSans-Normal';\n  src: local(\"MuseoSansCyrl-400\"), url(\"https://nomail.com.ua/files/woff/02f7d6b8e3cda79742b374cbc5595a8f.woff\") format(\"woff\"); }\n\n@font-face {\n  font-family: 'MuseoSans-Light';\n  src: local(\"MuseoSansCyrl-100\"), url(\"https://nomail.com.ua/files/woff/1913b09835e902f7123ad3ac38b4cd93.woff\") format(\"woff\"); }\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0; }\n\nhtml, body {\n  height: 100%;\n  min-height: 100%;\n  width: 100%; }\n\na, p, span, div {\n  font-family: \"MuseoSans-Light\"; }\n\nh1, h2, h3, h4, h5, h6 {\n  font-family: \"MuseoSans-Normal\"; }\n\n.flex-blocks {\n  height: 100%; }\n  .flex-blocks .content {\n    padding-left: 50px;\n    height: 100%; }\n    @media (max-width: 768px) {\n      .flex-blocks .content {\n        padding-left: 0px;\n        padding-top: 50px; } }\n\n.clickToOpen {\n  position: fixed;\n  height: 100%;\n  cursor: pointer;\n  background-color: white;\n  z-index: 9999 !important; }\n  @media (max-width: 768px) {\n    .clickToOpen {\n      width: 100%;\n      height: 50px; } }\n  .clickToOpen .open-side-bar {\n    position: relative;\n    height: 100%;\n    width: 50px; }\n    @media (max-width: 768px) {\n      .clickToOpen .open-side-bar {\n        width: 100%;\n        height: 50px; } }\n    .clickToOpen .open-side-bar .logo {\n      position: absolute;\n      top: 30px;\n      left: 7px; }\n      @media (max-width: 768px) {\n        .clickToOpen .open-side-bar .logo {\n          position: absolute;\n          top: 7px;\n          left: 30px; } }\n    .clickToOpen .open-side-bar .text-bottom {\n      display: block;\n      position: absolute;\n      bottom: 100px;\n      left: -7px;\n      font-size: 25px;\n      -moz-transform: rotate(-90deg);\n      -o-transform: rotate(-90deg);\n      -ms-transform: rotate(-90deg);\n      -webkit-transform: rotate(-90deg);\n      transform: rotate(-90deg); }\n      @media (max-width: 768px) {\n        .clickToOpen .open-side-bar .text-bottom {\n          position: absolute;\n          bottom: 7px;\n          left: 80%;\n          -moz-transform: rotate(0deg);\n          -o-transform: rotate(0deg);\n          -ms-transform: rotate(0deg);\n          -webkit-transform: rotate(0deg);\n          transform: rotate(0deg); } }\n\n/*animation menu X*/\n.spinner-master4 * {\n  transition: all 0.3s;\n  -webkit-transition: all 0.3s;\n  box-sizing: border-box; }\n\n.spinner-master4 {\n  position: absolute;\n  margin: 0 auto;\n  height: 30px;\n  width: 30px;\n  bottom: 50px;\n  left: 8px; }\n  @media (max-width: 768px) {\n    .spinner-master4 {\n      left: 70%;\n      bottom: 0;\n      top: 7px; } }\n\n.spinner-master4 input[type=checkbox] {\n  display: none; }\n\n.spinner-master4 label {\n  cursor: pointer;\n  position: absolute;\n  z-index: 99;\n  height: 100%;\n  width: 100%;\n  top: 10px;\n  left: 0; }\n\n.spinner-master4 .spinner4 {\n  position: absolute;\n  height: 2px;\n  width: 100%;\n  background-color: #333;\n  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1); }\n\n.spinner-master4 .diagonal.part-1 {\n  position: relative;\n  float: left; }\n\n.spinner-master4 .horizontal {\n  position: relative;\n  float: left;\n  margin-top: 6px; }\n\n.spinner-master4 .diagonal.part-2 {\n  position: relative;\n  float: left;\n  margin-top: 6px; }\n\n.spinner-master4 input[type=checkbox]:checked ~ .spinner-spin4 > .horizontal {\n  transform: translate(-100px, 0px);\n  opacity: 0; }\n\n.spinner-master4 input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part-1 {\n  transform: rotate(-135deg);\n  margin-top: 10px; }\n\n.spinner-master4 input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part-2 {\n  transform: rotate(135deg);\n  -webkit-transform: rotate(135deg);\n  margin-top: -10px; }\n", ""]);
 
 	// exports
 
@@ -28313,7 +28305,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.custom-sidebar-class {\n  z-index: 8888 !important; }\n\n.switch {\n  color: black; }\n\n.sidebar-content {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-direction: normal;\n  -webkit-box-orient: vertical;\n  -webkit-flex-direction: column;\n  -moz-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  -webkit-justify-content: center;\n  -moz-justify-content: center;\n  justify-content: center;\n  width: 370px;\n  overflow: hidden; }\n  .sidebar-content nav {\n    margin-left: 50px; }\n    .sidebar-content nav ul a {\n      text-decoration: none;\n      color: black; }\n      .sidebar-content nav ul a li {\n        cursor: pointer;\n        font-size: calc(32px + 20 * (100vw - 320px) / 1600);\n        list-style: none;\n        margin-bottom: 25px;\n        transition: transform .5s; }\n        .sidebar-content nav ul a li:hover {\n          transition: transform .5s;\n          -moz-transform: translate(30px, 0px);\n          -o-transform: translate(30px, 0px);\n          -ms-transform: translate(30px, 0px);\n          -webkit-transform: translate(30px, 0px);\n          transform: translate(30px, 0px); }\n  .sidebar-content ul.lang {\n    position: absolute;\n    bottom: 20px;\n    margin-left: 50px; }\n    .sidebar-content ul.lang li {\n      list-style: none; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.custom-sidebar-class {\n  z-index: 8888 !important; }\n  @media (max-width: 768px) {\n    .custom-sidebar-class {\n      width: 100%; } }\n\n.switch {\n  color: black; }\n\n.sidebar-content {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-direction: normal;\n  -webkit-box-orient: vertical;\n  -webkit-flex-direction: column;\n  -moz-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  -webkit-justify-content: center;\n  -moz-justify-content: center;\n  justify-content: center;\n  width: 370px;\n  overflow: hidden; }\n  @media (max-width: 768px) {\n    .sidebar-content {\n      width: 100%; } }\n  .sidebar-content nav {\n    margin-left: 50px; }\n    @media (max-width: 768px) {\n      .sidebar-content nav {\n        text-align: center; } }\n    .sidebar-content nav ul a {\n      text-decoration: none;\n      color: black; }\n      .sidebar-content nav ul a li {\n        cursor: pointer;\n        font-size: calc(32px + 20 * (100vw - 320px) / 1600);\n        list-style: none;\n        margin-bottom: 25px;\n        transition: transform .5s; }\n        .sidebar-content nav ul a li:hover {\n          transition: transform .5s;\n          -moz-transform: translate(30px, 0px);\n          -o-transform: translate(30px, 0px);\n          -ms-transform: translate(30px, 0px);\n          -webkit-transform: translate(30px, 0px);\n          transform: translate(30px, 0px); }\n  .sidebar-content ul.lang {\n    position: absolute;\n    bottom: 20px;\n    margin-left: 50px; }\n    @media (max-width: 768px) {\n      .sidebar-content ul.lang {\n        position: absolute;\n        left: calc(50% - 60px);\n        bottom: 20px; } }\n    .sidebar-content ul.lang li {\n      list-style: none; }\n", ""]);
 
 	// exports
 
@@ -36524,15 +36516,15 @@
 
 	__webpack_require__(440);
 
-	var _popupAgreeJsx = __webpack_require__(443);
+	var _popupAgreeJsx = __webpack_require__(442);
 
 	var _popupAgreeJsx2 = _interopRequireDefault(_popupAgreeJsx);
 
-	var _answerAnswerJs = __webpack_require__(486);
+	var _answerAnswerJs = __webpack_require__(485);
 
 	var _answerAnswerJs2 = _interopRequireDefault(_answerAnswerJs);
 
-	var _reactModal = __webpack_require__(487);
+	var _reactModal = __webpack_require__(486);
 
 	var _reactModal2 = _interopRequireDefault(_reactModal);
 
@@ -38923,19 +38915,13 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.hidden {\n  display: none; }\n\n.smarttests {\n  padding: 10px;\n  height: 100%;\n  width: 100%;\n  background: url(" + __webpack_require__(442) + ");\n  background-size: cover;\n  background-position: center; }\n  .smarttests .flex-container {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n    -ms-flex-pack: start;\n    -webkit-justify-content: flex-start;\n    -moz-justify-content: flex-start;\n    justify-content: flex-start;\n    -webkit-box-direction: normal;\n    -webkit-box-orient: vertical;\n    -webkit-flex-direction: column;\n    -moz-flex-direction: column;\n    -ms-flex-direction: column;\n    flex-direction: column;\n    -webkit-align-self: felx-end;\n    -moz-align-self: felx-end;\n    -ms-flex-item-align: felx-end;\n    align-self: felx-end;\n    position: relative;\n    width: 100%;\n    height: 100%;\n    text-align: center;\n    padding-top: 20px;\n    /**\n      * style for logic\n      */\n    /*all blocks animate with rotate when click no*/\n    /*all blocks animate with up when click yes*/\n    /*animate agree-animation all block*/ }\n    .smarttests .flex-container .main-text h1 {\n      font-size: calc(38px + 20 * (100vw - 320px) / 1600);\n      color: white; }\n    .smarttests .flex-container .main-text h2 {\n      font-size: 20px;\n      font-weight: 500;\n      color: black; }\n    .smarttests .flex-container .logic {\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n      -ms-flex-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      justify-content: center;\n      -webkit-box-direction: normal;\n      -webkit-box-orient: vertical;\n      -webkit-flex-direction: column;\n      -moz-flex-direction: column;\n      -ms-flex-direction: column;\n      flex-direction: column;\n      max-width: 800px;\n      min-width: 200px;\n      margin: 0 auto; }\n      .smarttests .flex-container .logic .question {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -moz-flex;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n        -ms-flex-pack: center;\n        -webkit-justify-content: center;\n        -moz-justify-content: center;\n        justify-content: center;\n        -webkit-box-align: center;\n        -ms-flex-align: center;\n        -webkit-align-items: center;\n        -moz-align-items: center;\n        align-items: center;\n        -webkit-box-flex: 1;\n        -webkit-flex: 1;\n        -moz-box-flex: 1;\n        -moz-flex: 1;\n        -ms-flex: 1;\n        flex: 1;\n        -webkit-box-flex: 2;\n        -webkit-flex-grow: 2;\n        -moz-flex-grow: 2;\n        -ms-flex-positive: 2;\n        flex-grow: 2;\n        padding: 25px;\n        font-size: 35px;\n        -moz-box-shadow: inset 0 0 10px #000000;\n        -webkit-box-shadow: inset 0 0 10px #000000;\n        box-shadow: inset 0 0 10px #000000;\n        width: 100%;\n        border-radius: 20px;\n        margin: auto;\n        background-color: white;\n        text-align: center;\n        font-weight: 500;\n        color: black; }\n      .smarttests .flex-container .logic .answer {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -moz-flex;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n        -ms-flex-pack: center;\n        -webkit-justify-content: center;\n        -moz-justify-content: center;\n        justify-content: center;\n        -webkit-box-align: center;\n        -ms-flex-align: center;\n        -webkit-align-items: center;\n        -moz-align-items: center;\n        align-items: center;\n        -webkit-box-flex: 1;\n        -webkit-flex: 1;\n        -moz-box-flex: 1;\n        -moz-flex: 1;\n        -ms-flex: 1;\n        flex: 1;\n        -webkit-box-flex: 1;\n        -webkit-flex-grow: 1;\n        -moz-flex-grow: 1;\n        -ms-flex-positive: 1;\n        flex-grow: 1;\n        -moz-box-shadow: inset 0 0 10px #000000;\n        -webkit-box-shadow: inset 0 0 10px #000000;\n        box-shadow: inset 0 0 10px #000000;\n        margin: auto;\n        background-color: white;\n        font-size: 25px;\n        margin-top: 10px;\n        border-radius: 20px;\n        min-width: 300px;\n        height: 80px;\n        padding: 15px; }\n        .smarttests .flex-container .logic .answer:hover {\n          cursor: pointer;\n          -webkit-box-shadow: 0 8px 6px -6px black;\n          -moz-box-shadow: 0 8px 6px -6px black;\n          box-shadow: 0 8px 6px -6px black; }\n      .smarttests .flex-container .logic .activeCheck {\n        background-color: #47afff; }\n    .smarttests .flex-container .hide {\n      display: none !important; }\n\n@keyframes forArrowBottom {\n  from, 20%, 49%, 50%, 70%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: translate(0, 0); }\n  49% {\n    transform: translate(0, 0); }\n  50% {\n    transform: translate(0, -55px); }\n  70% {\n    transform: translate(0, -55px); }\n  85% {\n    transform: translate(0, 0); } }\n\n@keyframes forArrowRight {\n  from, 20%, 49%, 50%, 70%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: translate(0, 0) rotate(-90deg); }\n  49% {\n    transform: translate(0, 0) rotate(-90deg); }\n  50% {\n    transform: translate(-55px, 0) rotate(-90deg); }\n  75% {\n    transform: translate(-55px, 0) rotate(-90deg); }\n  85% {\n    transform: translate(0, 0) rotate(-90deg); } }\n\n@keyframes forArrowLeft {\n  from, 20%, 49%, 50%, 70%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: translate(0, 0) rotate(90deg);\n    opacity: 0; }\n  49% {\n    transform: translate(0, 0) rotate(90deg);\n    opacity: 0; }\n  50% {\n    transform: translate(55px, 0) rotate(90deg);\n    opacity: 1; }\n  75% {\n    transform: translate(55px, 0) rotate(90deg); }\n  85% {\n    transform: translate(0, 0) rotate(90deg); } }\n    .smarttests .flex-container .forArrowLeft {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forArrowLeft; }\n    .smarttests .flex-container .forArrowRight {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forArrowRight; }\n    .smarttests .flex-container .forArrowBottom {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forArrowBottom; }\n\n@keyframes rotate {\n  from, 20%, 45%, 50%, 70%, 90%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: rotate(0deg); }\n  20% {\n    transform: rotate(90deg); }\n  45% {\n    transform: rotate(90deg) translate3d(-700px, 0, 0); }\n  50% {\n    opacity: 0; }\n  51% {\n    transform: translate3d(0, 0, 0);\n    opacity: 1;\n    transform: scale(0.1, 0.1); }\n  70% {\n    transform: scale(1, 1) rotate3d(1, 0, 0, 30deg); } }\n\n@keyframes upAnswer {\n  from, 20%, 49%, 50%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: rotate(0deg);\n    opacity: 1; }\n  49% {\n    transform: translate3d(0, -700px, 0);\n    opacity: 0; }\n  50% {\n    transform: translate3d(0, 0, 0);\n    opacity: 1;\n    transform: scale(0.1, 0.1); }\n  70% {\n    transform: scale(1, 1) rotate3d(1, 0, 0, 30deg); } }\n\n@keyframes agree-animation {\n  from, 20%, 49%, 50%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    opacity: 1;\n    transform: scale(0.1, 0.1); }\n  to {\n    opacity: 1;\n    transform: scale(1, 1); } }\n    .smarttests .flex-container .agree-animation {\n      transform-origin: 50% 0%;\n      animation-duration: 0.5s;\n      animation-fill-mode: both;\n      animation-name: agree-animation; }\n\n@keyframes agree-animation-hidden {\n  from, 20%, 49%, 50%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    opacity: 1;\n    transform: translate3d(0, 0, 0); }\n  to {\n    transform: translate3d(0, -700px, 0);\n    opacity: 1; } }\n    .smarttests .flex-container .agree-animation-hidden {\n      transform-origin: 50% 0%;\n      animation-duration: 1s;\n      animation-fill-mode: both;\n      animation-name: agree-animation-hidden; }\n    .smarttests .flex-container .rotate {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: rotate;\n      transform-origin: 50% 50%; }\n    .smarttests .flex-container .upAnswer {\n      transform-origin: 50% 0%;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: upAnswer; }\n\n@keyframes forButtonNo {\n  from, 20%, 49%, 50%, 69%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: scale(1, 1); }\n  50% {\n    transform: scale(1, 1); }\n  51% {\n    transform: scale(0, 0); }\n  85% {\n    transform: scale(0, 0); }\n  to {\n    transform: scale(1, 1); } }\n\n@keyframes forButtonBottom {\n  from, 20%, 49%, 50%, 69%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: scale(1, 1); }\n  50% {\n    transform: scale(1, 1); }\n  51% {\n    transform: scale(0, 0); }\n  85% {\n    transform: scale(0, 0); }\n  to {\n    transform: scale(1, 1); } }\n\n@keyframes forButtonAdditional {\n  from, 50%, 51%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: scale(1, 1);\n    opacity: 0; }\n  50% {\n    transform: scale(1, 1);\n    opacity: 0; }\n  51% {\n    transform: scale(0, 0);\n    opacity: 1; }\n  85% {\n    transform: scale(0, 0); }\n  to {\n    transform: scale(1, 1); } }\n    .smarttests .flex-container .forButtonAdditional {\n      transform-origin: right center;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forButtonAdditional; }\n    .smarttests .flex-container .forButtonBottom {\n      transform-origin: 50% 0;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forButtonBottom; }\n    .smarttests .flex-container .forButtonNo {\n      transform-origin: 0 50%;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forButtonNo; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.hidden {\n  display: none; }\n\n.smarttests {\n  padding: 10px;\n  height: 100%;\n  width: 100%; }\n  .smarttests .flex-container {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n    -ms-flex-pack: start;\n    -webkit-justify-content: flex-start;\n    -moz-justify-content: flex-start;\n    justify-content: flex-start;\n    -webkit-box-direction: normal;\n    -webkit-box-orient: vertical;\n    -webkit-flex-direction: column;\n    -moz-flex-direction: column;\n    -ms-flex-direction: column;\n    flex-direction: column;\n    -webkit-align-self: felx-end;\n    -moz-align-self: felx-end;\n    -ms-flex-item-align: felx-end;\n    align-self: felx-end;\n    position: relative;\n    width: 100%;\n    text-align: center;\n    padding-top: 20px;\n    /**\n      * style for logic\n      */\n    /*all blocks animate with rotate when click no*/\n    /*all blocks animate with up when click yes*/\n    /*animate agree-animation all block*/ }\n    .smarttests .flex-container .main-text h1 {\n      font-size: calc(38px + 20 * (100vw - 320px) / 1600);\n      color: white; }\n    .smarttests .flex-container .main-text h2 {\n      font-size: 20px;\n      font-weight: 500;\n      color: black; }\n    .smarttests .flex-container .logic {\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n      -ms-flex-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      justify-content: center;\n      -webkit-box-direction: normal;\n      -webkit-box-orient: vertical;\n      -webkit-flex-direction: column;\n      -moz-flex-direction: column;\n      -ms-flex-direction: column;\n      flex-direction: column;\n      max-width: 800px;\n      min-width: 200px;\n      margin: 0 auto; }\n      .smarttests .flex-container .logic .question {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -moz-flex;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n        -ms-flex-pack: center;\n        -webkit-justify-content: center;\n        -moz-justify-content: center;\n        justify-content: center;\n        -webkit-box-align: center;\n        -ms-flex-align: center;\n        -webkit-align-items: center;\n        -moz-align-items: center;\n        align-items: center;\n        padding: 25px;\n        font-size: 35px;\n        -moz-box-shadow: inset 0 0 10px #000000;\n        -webkit-box-shadow: inset 0 0 10px #000000;\n        box-shadow: inset 0 0 10px #000000;\n        width: 100%;\n        border-radius: 50px;\n        margin: auto;\n        background-color: #e5e5e5;\n        text-align: center;\n        font-weight: 500;\n        color: black;\n        word-break: break-word; }\n        @media (max-width: 768px) {\n          .smarttests .flex-container .logic .question {\n            font-size: 22px; } }\n      .smarttests .flex-container .logic .answer {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -moz-flex;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n        -ms-flex-pack: center;\n        -webkit-justify-content: center;\n        -moz-justify-content: center;\n        justify-content: center;\n        -webkit-box-align: center;\n        -ms-flex-align: center;\n        -webkit-align-items: center;\n        -moz-align-items: center;\n        align-items: center;\n        -moz-box-shadow: inset 0 0 10px #000000;\n        -webkit-box-shadow: inset 0 0 10px #000000;\n        box-shadow: inset 0 0 10px #000000;\n        margin: auto;\n        background-color: white;\n        font-size: 25px;\n        margin-top: 10px;\n        border-radius: 50px;\n        min-width: 300px;\n        height: 80px;\n        padding: 15px; }\n        .smarttests .flex-container .logic .answer:hover {\n          cursor: pointer;\n          -webkit-box-shadow: 0 8px 6px -6px black;\n          -moz-box-shadow: 0 8px 6px -6px black;\n          box-shadow: 0 8px 6px -6px black; }\n      .smarttests .flex-container .logic .activeCheck {\n        background-color: #47afff; }\n    .smarttests .flex-container .hide {\n      display: none !important; }\n\n@keyframes forArrowBottom {\n  from, 20%, 49%, 50%, 70%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: translate(0, 0); }\n  49% {\n    transform: translate(0, 0); }\n  50% {\n    transform: translate(0, -55px); }\n  70% {\n    transform: translate(0, -55px); }\n  85% {\n    transform: translate(0, 0); } }\n\n@keyframes forArrowRight {\n  from, 20%, 49%, 50%, 70%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: translate(0, 0) rotate(-90deg); }\n  49% {\n    transform: translate(0, 0) rotate(-90deg); }\n  50% {\n    transform: translate(-55px, 0) rotate(-90deg); }\n  75% {\n    transform: translate(-55px, 0) rotate(-90deg); }\n  85% {\n    transform: translate(0, 0) rotate(-90deg); } }\n\n@keyframes forArrowLeft {\n  from, 20%, 49%, 50%, 70%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: translate(0, 0) rotate(90deg);\n    opacity: 0; }\n  49% {\n    transform: translate(0, 0) rotate(90deg);\n    opacity: 0; }\n  50% {\n    transform: translate(55px, 0) rotate(90deg);\n    opacity: 1; }\n  75% {\n    transform: translate(55px, 0) rotate(90deg); }\n  85% {\n    transform: translate(0, 0) rotate(90deg); } }\n    .smarttests .flex-container .forArrowLeft {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forArrowLeft; }\n    .smarttests .flex-container .forArrowRight {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forArrowRight; }\n    .smarttests .flex-container .forArrowBottom {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forArrowBottom; }\n\n@keyframes rotate {\n  from, 20%, 45%, 50%, 70%, 90%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: rotate(0deg); }\n  20% {\n    transform: rotate(90deg); }\n  45% {\n    transform: rotate(90deg) translate3d(-700px, 0, 0); }\n  50% {\n    opacity: 0; }\n  51% {\n    transform: translate3d(0, 0, 0);\n    opacity: 1;\n    transform: scale(0.1, 0.1); }\n  70% {\n    transform: scale(1, 1) rotate3d(1, 0, 0, 30deg); } }\n\n@keyframes upAnswer {\n  from, 20%, 49%, 50%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: rotate(0deg);\n    opacity: 1; }\n  49% {\n    transform: translate3d(0, -700px, 0);\n    opacity: 0; }\n  50% {\n    transform: translate3d(0, 0, 0);\n    opacity: 1;\n    transform: scale(0.1, 0.1); }\n  70% {\n    transform: scale(1, 1) rotate3d(1, 0, 0, 30deg); } }\n\n@keyframes agree-animation {\n  from, 20%, 49%, 50%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    opacity: 1;\n    transform: scale(0.1, 0.1); }\n  to {\n    opacity: 1;\n    transform: scale(1, 1); } }\n    .smarttests .flex-container .agree-animation {\n      transform-origin: 50% 0%;\n      animation-duration: 0.5s;\n      animation-fill-mode: both;\n      animation-name: agree-animation; }\n\n@keyframes agree-animation-hidden {\n  from, 20%, 49%, 50%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    opacity: 1;\n    transform: translate3d(0, 0, 0); }\n  to {\n    transform: translate3d(0, -700px, 0);\n    opacity: 1; } }\n    .smarttests .flex-container .agree-animation-hidden {\n      transform-origin: 50% 0%;\n      animation-duration: 1s;\n      animation-fill-mode: both;\n      animation-name: agree-animation-hidden; }\n    .smarttests .flex-container .rotate {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: rotate;\n      transform-origin: 50% 50%; }\n    .smarttests .flex-container .upAnswer {\n      transform-origin: 50% 0%;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: upAnswer; }\n\n@keyframes forButtonNo {\n  from, 20%, 49%, 50%, 69%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: scale(1, 1); }\n  50% {\n    transform: scale(1, 1); }\n  51% {\n    transform: scale(0, 0); }\n  85% {\n    transform: scale(0, 0); }\n  to {\n    transform: scale(1, 1); } }\n\n@keyframes forButtonBottom {\n  from, 20%, 49%, 50%, 69%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: scale(1, 1); }\n  50% {\n    transform: scale(1, 1); }\n  51% {\n    transform: scale(0, 0); }\n  85% {\n    transform: scale(0, 0); }\n  to {\n    transform: scale(1, 1); } }\n\n@keyframes forButtonAdditional {\n  from, 50%, 51%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: scale(1, 1);\n    opacity: 0; }\n  50% {\n    transform: scale(1, 1);\n    opacity: 0; }\n  51% {\n    transform: scale(0, 0);\n    opacity: 1; }\n  85% {\n    transform: scale(0, 0); }\n  to {\n    transform: scale(1, 1); } }\n    .smarttests .flex-container .forButtonAdditional {\n      transform-origin: right center;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forButtonAdditional; }\n    .smarttests .flex-container .forButtonBottom {\n      transform-origin: 50% 0;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forButtonBottom; }\n    .smarttests .flex-container .forButtonNo {\n      transform-origin: 0 50%;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forButtonNo; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
 
 	// exports
 
 
 /***/ }),
 /* 442 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "9bfb2f9cfd260afb0015c3166d19f55f.jpg";
-
-/***/ }),
-/* 443 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -38960,11 +38946,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _materialUiCheckbox = __webpack_require__(444);
+	var _materialUiCheckbox = __webpack_require__(443);
 
 	var _materialUiCheckbox2 = _interopRequireDefault(_materialUiCheckbox);
 
-	__webpack_require__(484);
+	__webpack_require__(483);
 
 	var Agree = (function (_React$Component) {
 	    _inherits(Agree, _React$Component);
@@ -39056,7 +39042,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Agree.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }),
-/* 444 */
+/* 443 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39066,7 +39052,7 @@
 	});
 	exports.default = undefined;
 
-	var _Checkbox = __webpack_require__(445);
+	var _Checkbox = __webpack_require__(444);
 
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
@@ -39075,7 +39061,7 @@
 	exports.default = _Checkbox2.default;
 
 /***/ }),
-/* 445 */
+/* 444 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -39084,11 +39070,11 @@
 	  value: true
 	});
 
-	var _extends2 = __webpack_require__(446);
+	var _extends2 = __webpack_require__(445);
 
 	var _extends3 = _interopRequireDefault(_extends2);
 
-	var _objectWithoutProperties2 = __webpack_require__(451);
+	var _objectWithoutProperties2 = __webpack_require__(450);
 
 	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -39112,7 +39098,7 @@
 
 	var _inherits3 = _interopRequireDefault(_inherits2);
 
-	var _simpleAssign = __webpack_require__(452);
+	var _simpleAssign = __webpack_require__(451);
 
 	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
 
@@ -39124,19 +39110,19 @@
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
-	var _EnhancedSwitch = __webpack_require__(453);
+	var _EnhancedSwitch = __webpack_require__(452);
 
 	var _EnhancedSwitch2 = _interopRequireDefault(_EnhancedSwitch);
 
-	var _transitions = __webpack_require__(458);
+	var _transitions = __webpack_require__(457);
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _checkBoxOutlineBlank = __webpack_require__(474);
+	var _checkBoxOutlineBlank = __webpack_require__(473);
 
 	var _checkBoxOutlineBlank2 = _interopRequireDefault(_checkBoxOutlineBlank);
 
-	var _checkBox = __webpack_require__(483);
+	var _checkBox = __webpack_require__(482);
 
 	var _checkBox2 = _interopRequireDefault(_checkBox);
 
@@ -39375,14 +39361,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 446 */
+/* 445 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	exports.__esModule = true;
 
-	var _assign = __webpack_require__(447);
+	var _assign = __webpack_require__(446);
 
 	var _assign2 = _interopRequireDefault(_assign);
 
@@ -39403,31 +39389,31 @@
 	};
 
 /***/ }),
+/* 446 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(447), __esModule: true };
+
+/***/ }),
 /* 447 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(448), __esModule: true };
+	__webpack_require__(448);
+	module.exports = __webpack_require__(267).Object.assign;
+
 
 /***/ }),
 /* 448 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(449);
-	module.exports = __webpack_require__(267).Object.assign;
+	// 19.1.3.1 Object.assign(target, source)
+	var $export = __webpack_require__(266);
+
+	$export($export.S + $export.F, 'Object', { assign: __webpack_require__(449) });
 
 
 /***/ }),
 /* 449 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// 19.1.3.1 Object.assign(target, source)
-	var $export = __webpack_require__(266);
-
-	$export($export.S + $export.F, 'Object', { assign: __webpack_require__(450) });
-
-
-/***/ }),
-/* 450 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39467,7 +39453,7 @@
 
 
 /***/ }),
-/* 451 */
+/* 450 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -39487,7 +39473,7 @@
 	};
 
 /***/ }),
-/* 452 */
+/* 451 */
 /***/ (function(module, exports) {
 
 	module.exports = function (target) {
@@ -39504,7 +39490,7 @@
 
 
 /***/ }),
-/* 453 */
+/* 452 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -39513,11 +39499,11 @@
 	  value: true
 	});
 
-	var _extends2 = __webpack_require__(446);
+	var _extends2 = __webpack_require__(445);
 
 	var _extends3 = _interopRequireDefault(_extends2);
 
-	var _objectWithoutProperties2 = __webpack_require__(451);
+	var _objectWithoutProperties2 = __webpack_require__(450);
 
 	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -39541,7 +39527,7 @@
 
 	var _inherits3 = _interopRequireDefault(_inherits2);
 
-	var _simpleAssign = __webpack_require__(452);
+	var _simpleAssign = __webpack_require__(451);
 
 	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
 
@@ -39553,27 +39539,27 @@
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
-	var _reactEventListener = __webpack_require__(454);
+	var _reactEventListener = __webpack_require__(453);
 
 	var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
-	var _keycode = __webpack_require__(457);
+	var _keycode = __webpack_require__(456);
 
 	var _keycode2 = _interopRequireDefault(_keycode);
 
-	var _transitions = __webpack_require__(458);
+	var _transitions = __webpack_require__(457);
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _FocusRipple = __webpack_require__(459);
+	var _FocusRipple = __webpack_require__(458);
 
 	var _FocusRipple2 = _interopRequireDefault(_FocusRipple);
 
-	var _TouchRipple = __webpack_require__(467);
+	var _TouchRipple = __webpack_require__(466);
 
 	var _TouchRipple2 = _interopRequireDefault(_TouchRipple);
 
-	var _Paper = __webpack_require__(471);
+	var _Paper = __webpack_require__(470);
 
 	var _Paper2 = _interopRequireDefault(_Paper);
 
@@ -39974,7 +39960,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 454 */
+/* 453 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -40011,11 +39997,11 @@
 
 	var _keys2 = _interopRequireDefault(_keys);
 
-	var _objectWithoutProperties2 = __webpack_require__(451);
+	var _objectWithoutProperties2 = __webpack_require__(450);
 
 	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
-	var _assign = __webpack_require__(447);
+	var _assign = __webpack_require__(446);
 
 	var _assign2 = _interopRequireDefault(_assign);
 
@@ -40035,7 +40021,7 @@
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _supports = __webpack_require__(455);
+	var _supports = __webpack_require__(454);
 
 	var supports = _interopRequireWildcard(_supports);
 
@@ -40202,7 +40188,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 455 */
+/* 454 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40212,7 +40198,7 @@
 	});
 	exports.passiveOption = exports.detachEvent = exports.attachEvent = exports.removeEventListener = exports.addEventListener = exports.canUseDOM = undefined;
 
-	var _defineProperty = __webpack_require__(456);
+	var _defineProperty = __webpack_require__(455);
 
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -40255,7 +40241,7 @@
 	}();
 
 /***/ }),
-/* 456 */
+/* 455 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40279,7 +40265,7 @@
 	}
 
 /***/ }),
-/* 457 */
+/* 456 */
 /***/ (function(module, exports) {
 
 	// Source: http://jsfiddle.net/vWx8V/
@@ -40431,7 +40417,7 @@
 
 
 /***/ }),
-/* 458 */
+/* 457 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -40470,7 +40456,7 @@
 	};
 
 /***/ }),
-/* 459 */
+/* 458 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -40499,7 +40485,7 @@
 
 	var _inherits3 = _interopRequireDefault(_inherits2);
 
-	var _simpleAssign = __webpack_require__(452);
+	var _simpleAssign = __webpack_require__(451);
 
 	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
 
@@ -40515,19 +40501,19 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _shallowEqual = __webpack_require__(460);
+	var _shallowEqual = __webpack_require__(459);
 
 	var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-	var _autoPrefix = __webpack_require__(461);
+	var _autoPrefix = __webpack_require__(460);
 
 	var _autoPrefix2 = _interopRequireDefault(_autoPrefix);
 
-	var _transitions = __webpack_require__(458);
+	var _transitions = __webpack_require__(457);
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _ScaleIn = __webpack_require__(462);
+	var _ScaleIn = __webpack_require__(461);
 
 	var _ScaleIn2 = _interopRequireDefault(_ScaleIn);
 
@@ -40675,7 +40661,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 460 */
+/* 459 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40691,7 +40677,7 @@
 	exports.default = _shallowEqual2.default;
 
 /***/ }),
-/* 461 */
+/* 460 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -40706,7 +40692,7 @@
 	};
 
 /***/ }),
-/* 462 */
+/* 461 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -40715,11 +40701,11 @@
 	  value: true
 	});
 
-	var _extends2 = __webpack_require__(446);
+	var _extends2 = __webpack_require__(445);
 
 	var _extends3 = _interopRequireDefault(_extends2);
 
-	var _objectWithoutProperties2 = __webpack_require__(451);
+	var _objectWithoutProperties2 = __webpack_require__(450);
 
 	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -40743,7 +40729,7 @@
 
 	var _inherits3 = _interopRequireDefault(_inherits2);
 
-	var _simpleAssign = __webpack_require__(452);
+	var _simpleAssign = __webpack_require__(451);
 
 	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
 
@@ -40755,11 +40741,11 @@
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
-	var _TransitionGroup = __webpack_require__(463);
+	var _TransitionGroup = __webpack_require__(462);
 
 	var _TransitionGroup2 = _interopRequireDefault(_TransitionGroup);
 
-	var _ScaleInChild = __webpack_require__(466);
+	var _ScaleInChild = __webpack_require__(465);
 
 	var _ScaleInChild2 = _interopRequireDefault(_ScaleInChild);
 
@@ -40840,7 +40826,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 463 */
+/* 462 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -40849,7 +40835,7 @@
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var _chainFunction = __webpack_require__(464);
+	var _chainFunction = __webpack_require__(463);
 
 	var _chainFunction2 = _interopRequireDefault(_chainFunction);
 
@@ -40865,7 +40851,7 @@
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _ChildMapping = __webpack_require__(465);
+	var _ChildMapping = __webpack_require__(464);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41115,7 +41101,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 464 */
+/* 463 */
 /***/ (function(module, exports) {
 
 	
@@ -41141,7 +41127,7 @@
 
 
 /***/ }),
-/* 465 */
+/* 464 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41237,7 +41223,7 @@
 	}
 
 /***/ }),
-/* 466 */
+/* 465 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -41246,11 +41232,11 @@
 	  value: true
 	});
 
-	var _extends2 = __webpack_require__(446);
+	var _extends2 = __webpack_require__(445);
 
 	var _extends3 = _interopRequireDefault(_extends2);
 
-	var _objectWithoutProperties2 = __webpack_require__(451);
+	var _objectWithoutProperties2 = __webpack_require__(450);
 
 	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -41274,7 +41260,7 @@
 
 	var _inherits3 = _interopRequireDefault(_inherits2);
 
-	var _simpleAssign = __webpack_require__(452);
+	var _simpleAssign = __webpack_require__(451);
 
 	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
 
@@ -41290,11 +41276,11 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _autoPrefix = __webpack_require__(461);
+	var _autoPrefix = __webpack_require__(460);
 
 	var _autoPrefix2 = _interopRequireDefault(_autoPrefix);
 
-	var _transitions = __webpack_require__(458);
+	var _transitions = __webpack_require__(457);
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
@@ -41413,7 +41399,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 467 */
+/* 466 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -41446,11 +41432,11 @@
 
 	var _inherits3 = _interopRequireDefault(_inherits2);
 
-	var _toArray2 = __webpack_require__(468);
+	var _toArray2 = __webpack_require__(467);
 
 	var _toArray3 = _interopRequireDefault(_toArray2);
 
-	var _simpleAssign = __webpack_require__(452);
+	var _simpleAssign = __webpack_require__(451);
 
 	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
 
@@ -41466,15 +41452,15 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _TransitionGroup = __webpack_require__(463);
+	var _TransitionGroup = __webpack_require__(462);
 
 	var _TransitionGroup2 = _interopRequireDefault(_TransitionGroup);
 
-	var _dom = __webpack_require__(469);
+	var _dom = __webpack_require__(468);
 
 	var _dom2 = _interopRequireDefault(_dom);
 
-	var _CircleRipple = __webpack_require__(470);
+	var _CircleRipple = __webpack_require__(469);
 
 	var _CircleRipple2 = _interopRequireDefault(_CircleRipple);
 
@@ -41730,7 +41716,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 468 */
+/* 467 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41748,7 +41734,7 @@
 	};
 
 /***/ }),
-/* 469 */
+/* 468 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -41777,7 +41763,7 @@
 	};
 
 /***/ }),
-/* 470 */
+/* 469 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -41786,11 +41772,11 @@
 	  value: true
 	});
 
-	var _extends2 = __webpack_require__(446);
+	var _extends2 = __webpack_require__(445);
 
 	var _extends3 = _interopRequireDefault(_extends2);
 
-	var _objectWithoutProperties2 = __webpack_require__(451);
+	var _objectWithoutProperties2 = __webpack_require__(450);
 
 	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -41814,7 +41800,7 @@
 
 	var _inherits3 = _interopRequireDefault(_inherits2);
 
-	var _simpleAssign = __webpack_require__(452);
+	var _simpleAssign = __webpack_require__(451);
 
 	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
 
@@ -41830,15 +41816,15 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _shallowEqual = __webpack_require__(460);
+	var _shallowEqual = __webpack_require__(459);
 
 	var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-	var _autoPrefix = __webpack_require__(461);
+	var _autoPrefix = __webpack_require__(460);
 
 	var _autoPrefix2 = _interopRequireDefault(_autoPrefix);
 
-	var _transitions = __webpack_require__(458);
+	var _transitions = __webpack_require__(457);
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
@@ -41955,7 +41941,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 471 */
+/* 470 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41965,7 +41951,7 @@
 	});
 	exports.default = undefined;
 
-	var _Paper = __webpack_require__(472);
+	var _Paper = __webpack_require__(471);
 
 	var _Paper2 = _interopRequireDefault(_Paper);
 
@@ -41974,7 +41960,7 @@
 	exports.default = _Paper2.default;
 
 /***/ }),
-/* 472 */
+/* 471 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -41983,11 +41969,11 @@
 	  value: true
 	});
 
-	var _extends2 = __webpack_require__(446);
+	var _extends2 = __webpack_require__(445);
 
 	var _extends3 = _interopRequireDefault(_extends2);
 
-	var _objectWithoutProperties2 = __webpack_require__(451);
+	var _objectWithoutProperties2 = __webpack_require__(450);
 
 	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -42011,7 +41997,7 @@
 
 	var _inherits3 = _interopRequireDefault(_inherits2);
 
-	var _simpleAssign = __webpack_require__(452);
+	var _simpleAssign = __webpack_require__(451);
 
 	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
 
@@ -42023,11 +42009,11 @@
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
-	var _propTypes3 = __webpack_require__(473);
+	var _propTypes3 = __webpack_require__(472);
 
 	var _propTypes4 = _interopRequireDefault(_propTypes3);
 
-	var _transitions = __webpack_require__(458);
+	var _transitions = __webpack_require__(457);
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
@@ -42131,7 +42117,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 473 */
+/* 472 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42171,7 +42157,7 @@
 	};
 
 /***/ }),
-/* 474 */
+/* 473 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42184,11 +42170,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _pure = __webpack_require__(475);
+	var _pure = __webpack_require__(474);
 
 	var _pure2 = _interopRequireDefault(_pure);
 
-	var _SvgIcon = __webpack_require__(481);
+	var _SvgIcon = __webpack_require__(480);
 
 	var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
 
@@ -42208,26 +42194,26 @@
 	exports.default = ToggleCheckBoxOutlineBlank;
 
 /***/ }),
-/* 475 */
+/* 474 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
 	exports.__esModule = true;
 
-	var _shouldUpdate = __webpack_require__(476);
+	var _shouldUpdate = __webpack_require__(475);
 
 	var _shouldUpdate2 = _interopRequireDefault(_shouldUpdate);
 
-	var _shallowEqual = __webpack_require__(460);
+	var _shallowEqual = __webpack_require__(459);
 
 	var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-	var _setDisplayName = __webpack_require__(477);
+	var _setDisplayName = __webpack_require__(476);
 
 	var _setDisplayName2 = _interopRequireDefault(_setDisplayName);
 
-	var _wrapDisplayName = __webpack_require__(479);
+	var _wrapDisplayName = __webpack_require__(478);
 
 	var _wrapDisplayName2 = _interopRequireDefault(_wrapDisplayName);
 
@@ -42249,7 +42235,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 476 */
+/* 475 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -42258,11 +42244,11 @@
 
 	var _react = __webpack_require__(183);
 
-	var _setDisplayName = __webpack_require__(477);
+	var _setDisplayName = __webpack_require__(476);
 
 	var _setDisplayName2 = _interopRequireDefault(_setDisplayName);
 
-	var _wrapDisplayName = __webpack_require__(479);
+	var _wrapDisplayName = __webpack_require__(478);
 
 	var _wrapDisplayName2 = _interopRequireDefault(_wrapDisplayName);
 
@@ -42309,14 +42295,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 477 */
+/* 476 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
-	var _setStatic = __webpack_require__(478);
+	var _setStatic = __webpack_require__(477);
 
 	var _setStatic2 = _interopRequireDefault(_setStatic);
 
@@ -42329,7 +42315,7 @@
 	exports.default = setDisplayName;
 
 /***/ }),
-/* 478 */
+/* 477 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -42347,14 +42333,14 @@
 	exports.default = setStatic;
 
 /***/ }),
-/* 479 */
+/* 478 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
-	var _getDisplayName = __webpack_require__(480);
+	var _getDisplayName = __webpack_require__(479);
 
 	var _getDisplayName2 = _interopRequireDefault(_getDisplayName);
 
@@ -42367,7 +42353,7 @@
 	exports.default = wrapDisplayName;
 
 /***/ }),
-/* 480 */
+/* 479 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -42388,7 +42374,7 @@
 	exports.default = getDisplayName;
 
 /***/ }),
-/* 481 */
+/* 480 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42398,7 +42384,7 @@
 	});
 	exports.default = undefined;
 
-	var _SvgIcon = __webpack_require__(482);
+	var _SvgIcon = __webpack_require__(481);
 
 	var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
 
@@ -42407,7 +42393,7 @@
 	exports.default = _SvgIcon2.default;
 
 /***/ }),
-/* 482 */
+/* 481 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -42416,11 +42402,11 @@
 	  value: true
 	});
 
-	var _extends2 = __webpack_require__(446);
+	var _extends2 = __webpack_require__(445);
 
 	var _extends3 = _interopRequireDefault(_extends2);
 
-	var _objectWithoutProperties2 = __webpack_require__(451);
+	var _objectWithoutProperties2 = __webpack_require__(450);
 
 	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -42444,7 +42430,7 @@
 
 	var _inherits3 = _interopRequireDefault(_inherits2);
 
-	var _simpleAssign = __webpack_require__(452);
+	var _simpleAssign = __webpack_require__(451);
 
 	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
 
@@ -42456,7 +42442,7 @@
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
-	var _transitions = __webpack_require__(458);
+	var _transitions = __webpack_require__(457);
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
@@ -42578,7 +42564,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 483 */
+/* 482 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42591,11 +42577,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _pure = __webpack_require__(475);
+	var _pure = __webpack_require__(474);
 
 	var _pure2 = _interopRequireDefault(_pure);
 
-	var _SvgIcon = __webpack_require__(481);
+	var _SvgIcon = __webpack_require__(480);
 
 	var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
 
@@ -42615,13 +42601,13 @@
 	exports.default = ToggleCheckBox;
 
 /***/ }),
-/* 484 */
+/* 483 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(485);
+	var content = __webpack_require__(484);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(246)(content, {});
@@ -42641,7 +42627,7 @@
 	}
 
 /***/ }),
-/* 485 */
+/* 484 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(245)();
@@ -42655,7 +42641,7 @@
 
 
 /***/ }),
-/* 486 */
+/* 485 */
 /***/ (function(module, exports) {
 
 	// array with questions
@@ -42998,7 +42984,7 @@
 	module.exports = exports["default"];
 
 /***/ }),
-/* 487 */
+/* 486 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43007,7 +42993,7 @@
 	  value: true
 	});
 
-	var _Modal = __webpack_require__(488);
+	var _Modal = __webpack_require__(487);
 
 	var _Modal2 = _interopRequireDefault(_Modal);
 
@@ -43017,7 +43003,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 488 */
+/* 487 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -43043,15 +43029,15 @@
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
-	var _ModalPortal = __webpack_require__(489);
+	var _ModalPortal = __webpack_require__(488);
 
 	var _ModalPortal2 = _interopRequireDefault(_ModalPortal);
 
-	var _ariaAppHider = __webpack_require__(493);
+	var _ariaAppHider = __webpack_require__(492);
 
 	var ariaAppHider = _interopRequireWildcard(_ariaAppHider);
 
-	var _safeHTMLElement = __webpack_require__(496);
+	var _safeHTMLElement = __webpack_require__(495);
 
 	var _safeHTMLElement2 = _interopRequireDefault(_safeHTMLElement);
 
@@ -43243,7 +43229,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 489 */
+/* 488 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -43264,27 +43250,27 @@
 
 	var _propTypes = __webpack_require__(187);
 
-	var _focusManager = __webpack_require__(490);
+	var _focusManager = __webpack_require__(489);
 
 	var focusManager = _interopRequireWildcard(_focusManager);
 
-	var _scopeTab = __webpack_require__(492);
+	var _scopeTab = __webpack_require__(491);
 
 	var _scopeTab2 = _interopRequireDefault(_scopeTab);
 
-	var _ariaAppHider = __webpack_require__(493);
+	var _ariaAppHider = __webpack_require__(492);
 
 	var ariaAppHider = _interopRequireWildcard(_ariaAppHider);
 
-	var _refCount = __webpack_require__(494);
+	var _refCount = __webpack_require__(493);
 
 	var refCount = _interopRequireWildcard(_refCount);
 
-	var _bodyClassList = __webpack_require__(495);
+	var _bodyClassList = __webpack_require__(494);
 
 	var bodyClassList = _interopRequireWildcard(_bodyClassList);
 
-	var _safeHTMLElement = __webpack_require__(496);
+	var _safeHTMLElement = __webpack_require__(495);
 
 	var _safeHTMLElement2 = _interopRequireDefault(_safeHTMLElement);
 
@@ -43629,7 +43615,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 490 */
+/* 489 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43644,7 +43630,7 @@
 	exports.setupScopedFocus = setupScopedFocus;
 	exports.teardownScopedFocus = teardownScopedFocus;
 
-	var _tabbable = __webpack_require__(491);
+	var _tabbable = __webpack_require__(490);
 
 	var _tabbable2 = _interopRequireDefault(_tabbable);
 
@@ -43721,7 +43707,7 @@
 	}
 
 /***/ }),
-/* 491 */
+/* 490 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -43777,7 +43763,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 492 */
+/* 491 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43787,7 +43773,7 @@
 	});
 	exports.default = scopeTab;
 
-	var _tabbable = __webpack_require__(491);
+	var _tabbable = __webpack_require__(490);
 
 	var _tabbable2 = _interopRequireDefault(_tabbable);
 
@@ -43811,7 +43797,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 493 */
+/* 492 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -43880,7 +43866,7 @@
 	}
 
 /***/ }),
-/* 494 */
+/* 493 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -43921,7 +43907,7 @@
 	}
 
 /***/ }),
-/* 495 */
+/* 494 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43932,7 +43918,7 @@
 	exports.add = add;
 	exports.remove = remove;
 
-	var _refCount = __webpack_require__(494);
+	var _refCount = __webpack_require__(493);
 
 	var refCount = _interopRequireWildcard(_refCount);
 
@@ -43957,7 +43943,7 @@
 	}
 
 /***/ }),
-/* 496 */
+/* 495 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43966,7 +43952,7 @@
 	  value: true
 	});
 
-	var _exenv = __webpack_require__(497);
+	var _exenv = __webpack_require__(496);
 
 	var _exenv2 = _interopRequireDefault(_exenv);
 
@@ -43980,7 +43966,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 497 */
+/* 496 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -44026,7 +44012,7 @@
 
 
 /***/ }),
-/* 498 */
+/* 497 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -44053,7 +44039,7 @@
 
 	var _reactRouter = __webpack_require__(184);
 
-	__webpack_require__(499);
+	__webpack_require__(498);
 
 	var Social = (function (_React$Component) {
 	    _inherits(Social, _React$Component);
@@ -44089,13 +44075,13 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Social.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }),
-/* 499 */
+/* 498 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(500);
+	var content = __webpack_require__(499);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(246)(content, {});
@@ -44115,7 +44101,7 @@
 	}
 
 /***/ }),
-/* 500 */
+/* 499 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(245)();
@@ -44129,7 +44115,7 @@
 
 
 /***/ }),
-/* 501 */
+/* 500 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -44156,7 +44142,7 @@
 
 	var _reactRouter = __webpack_require__(184);
 
-	__webpack_require__(502);
+	__webpack_require__(501);
 
 	var Contacts = (function (_React$Component) {
 	    _inherits(Contacts, _React$Component);
@@ -44192,13 +44178,13 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Contacts.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }),
-/* 502 */
+/* 501 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(503);
+	var content = __webpack_require__(502);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(246)(content, {});
@@ -44218,7 +44204,7 @@
 	}
 
 /***/ }),
-/* 503 */
+/* 502 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(245)();
@@ -44232,7 +44218,7 @@
 
 
 /***/ }),
-/* 504 */
+/* 503 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -44243,9 +44229,9 @@
 
 	var _redux = __webpack_require__(414);
 
-	var _reactRouterRedux = __webpack_require__(505);
+	var _reactRouterRedux = __webpack_require__(504);
 
-	var _smartTestReduserJs = __webpack_require__(510);
+	var _smartTestReduserJs = __webpack_require__(509);
 
 	exports["default"] = (0, _redux.combineReducers)({
 	    // routing: routerReducer,
@@ -44254,7 +44240,7 @@
 	module.exports = exports["default"];
 
 /***/ }),
-/* 505 */
+/* 504 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -44264,7 +44250,7 @@
 	});
 	exports.routerMiddleware = exports.routerActions = exports.goForward = exports.goBack = exports.go = exports.replace = exports.push = exports.CALL_HISTORY_METHOD = exports.routerReducer = exports.LOCATION_CHANGE = exports.syncHistoryWithStore = undefined;
 
-	var _reducer = __webpack_require__(506);
+	var _reducer = __webpack_require__(505);
 
 	Object.defineProperty(exports, 'LOCATION_CHANGE', {
 	  enumerable: true,
@@ -44279,7 +44265,7 @@
 	  }
 	});
 
-	var _actions = __webpack_require__(507);
+	var _actions = __webpack_require__(506);
 
 	Object.defineProperty(exports, 'CALL_HISTORY_METHOD', {
 	  enumerable: true,
@@ -44324,11 +44310,11 @@
 	  }
 	});
 
-	var _sync = __webpack_require__(508);
+	var _sync = __webpack_require__(507);
 
 	var _sync2 = _interopRequireDefault(_sync);
 
-	var _middleware = __webpack_require__(509);
+	var _middleware = __webpack_require__(508);
 
 	var _middleware2 = _interopRequireDefault(_middleware);
 
@@ -44338,7 +44324,7 @@
 	exports.routerMiddleware = _middleware2['default'];
 
 /***/ }),
-/* 506 */
+/* 505 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -44381,7 +44367,7 @@
 	}
 
 /***/ }),
-/* 507 */
+/* 506 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -44423,7 +44409,7 @@
 	var routerActions = exports.routerActions = { push: push, replace: replace, go: go, goBack: goBack, goForward: goForward };
 
 /***/ }),
-/* 508 */
+/* 507 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -44436,7 +44422,7 @@
 
 	exports['default'] = syncHistoryWithStore;
 
-	var _reducer = __webpack_require__(506);
+	var _reducer = __webpack_require__(505);
 
 	var defaultSelectLocationState = function defaultSelectLocationState(state) {
 	  return state.routing;
@@ -44583,7 +44569,7 @@
 	}
 
 /***/ }),
-/* 509 */
+/* 508 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -44593,7 +44579,7 @@
 	});
 	exports['default'] = routerMiddleware;
 
-	var _actions = __webpack_require__(507);
+	var _actions = __webpack_require__(506);
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
@@ -44621,7 +44607,7 @@
 	}
 
 /***/ }),
-/* 510 */
+/* 509 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -44654,7 +44640,7 @@
 	}
 
 /***/ }),
-/* 511 */
+/* 510 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -44682,7 +44668,7 @@
 	exports['default'] = thunk;
 
 /***/ }),
-/* 512 */
+/* 511 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
