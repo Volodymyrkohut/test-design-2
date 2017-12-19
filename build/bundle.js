@@ -36524,6 +36524,10 @@
 
 	var _answerAnswerJs2 = _interopRequireDefault(_answerAnswerJs);
 
+	var _materialUiCheckbox = __webpack_require__(444);
+
+	var _materialUiCheckbox2 = _interopRequireDefault(_materialUiCheckbox);
+
 	var Smarttests = (function (_React$Component) {
 	    _inherits(Smarttests, _React$Component);
 
@@ -36545,8 +36549,7 @@
 	                    next: 3,
 	                    text: "35-45"
 	                }]
-	            },
-	            battonAnmate: ""
+	            }
 	        };
 	    }
 
@@ -36555,8 +36558,6 @@
 	    _createClass(Smarttests, [{
 	        key: 'handleFindNextQuestion',
 	        value: function handleFindNextQuestion(key, event) {
-	            var _this = this;
-
 	            var answer = _answerAnswerJs2['default'].find(function (item) {
 	                return item.key === key;
 	            });
@@ -36568,28 +36569,19 @@
 
 	            this.props.addAnswer(answerToQuestion);
 
-	            this.setState({ battonAnmate: "battonAnmate" });
-
-	            setTimeout(function () {
-	                _this.setState({ ask: answer });
-	            }, 1000);
-
-	            setTimeout(function () {
-	                _this.setState({ battonAnmate: "" });
-	            }, 2000);
+	            this.setState({ ask: answer });
 	        }
 	    }, {
 	        key: 'handleCheck',
 	        value: function handleCheck(e) {
-	            e.target.className = e.target.className + " colorAdd";
-	            console.log("asad ", e.target.classList.add);
+	            // e.target.className = e.target.className === "answer activeCheck" ? "answer" : "answer activeCheck";
 
 	            this.setState({ check: !this.state.chack });
 	        }
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            var _this2 = this;
+	            var _this = this;
 
 	            var _state$ask = this.state.ask;
 	            var key = _state$ask.key;
@@ -36611,45 +36603,47 @@
 	                            'div',
 	                            { className: 'question' },
 	                            _react2['default'].createElement(
-	                                'div',
-	                                { className: 'textQuestion' },
-	                                question
+	                                'span',
+	                                { className: 'questionMark' },
+	                                '?'
 	                            ),
-	                            this.state.ask.lotOf ? _react2['default'].createElement(
-	                                'div',
-	                                null,
-	                                this.state.ask.lotOf.map(function (item, index) {
-	                                    i++;
-
-	                                    return _react2['default'].createElement(
-	                                        'dvi',
-	                                        { key: item + index },
-	                                        _react2['default'].createElement('div', { className: "arrow arrow" + i }),
-	                                        _react2['default'].createElement(
-	                                            'div',
-	                                            { className: "answer answer" + i,
-	                                                onClick: _this2.handleCheck.bind(_this2) },
-	                                            item.item
-	                                        )
-	                                    );
-	                                })
-	                            ) : "",
-	                            answers.map(function (item, index) {
+	                            question
+	                        ),
+	                        this.state.ask.lotOf ? _react2['default'].createElement(
+	                            'div',
+	                            null,
+	                            this.state.ask.lotOf.map(function (item, index) {
 	                                i++;
 
 	                                return _react2['default'].createElement(
 	                                    'div',
-	                                    { key: index, className: 'arrowAnswer' },
-	                                    _react2['default'].createElement('div', { className: "arrow arrow" + i }),
+	                                    { key: item + index },
 	                                    _react2['default'].createElement(
 	                                        'div',
-	                                        { className: "answer answer" + i,
-	                                            onClick: _this2.handleFindNextQuestion.bind(_this2, item.next) },
-	                                        item.text
+	                                        { className: "answer",
+	                                            onClick: _this.handleCheck.bind(_this) },
+	                                        _react2['default'].createElement(_materialUiCheckbox2['default'], { iconStyle: { fill: 'rgb(47,143,155)' },
+	                                            label: item.item,
+	                                            labelStyle: {
+	                                                color: 'rgb(47,143,155)',
+	                                                font: '16px',
+	                                                fontWeight: '300'
+	                                            }
+	                                        })
 	                                    )
 	                                );
 	                            })
-	                        )
+	                        ) : "",
+	                        answers.map(function (item, index) {
+	                            i++;
+
+	                            return _react2['default'].createElement(
+	                                'div',
+	                                { className: "answer answer" + i, key: index,
+	                                    onClick: _this.handleFindNextQuestion.bind(_this, item.next) },
+	                                item.text
+	                            );
+	                        })
 	                    )
 	                )
 	            );
@@ -39000,7 +38994,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.hidden {\n  display: none; }\n\n.smarttests {\n  padding: 10px;\n  width: 100%;\n  min-height: 100%;\n  font: normal 1.5px/normal Arial, Helvetica, sans-serif;\n  -o-text-overflow: clip;\n  text-overflow: clip;\n  background: -webkit-radial-gradient(circle, #2f8f9b 0, #2f8f9b 25%, #3f3932 25%, transparent 25%, transparent 100%), #54aab1;\n  background: -moz-radial-gradient(circle, #2f8f9b 0, #2f8f9b 25%, #3f3932 25%, transparent 25%, transparent 100%), #54aab1;\n  background: radial-gradient(circle, #2f8f9b 0, #2f8f9b 25%, #3f3932 25%, transparent 25%, transparent 100%), #54aab1;\n  background-position: 3px 1em;\n  -webkit-background-origin: padding-box;\n  background-origin: padding-box;\n  -webkit-background-clip: border-box;\n  background-clip: border-box;\n  -webkit-background-size: 4em 4em;\n  background-size: 4em 4em; }\n  .smarttests .flex-container {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n    -ms-flex-pack: start;\n    -webkit-justify-content: flex-start;\n    -moz-justify-content: flex-start;\n    justify-content: flex-start;\n    -webkit-box-direction: normal;\n    -webkit-box-orient: vertical;\n    -webkit-flex-direction: column;\n    -moz-flex-direction: column;\n    -ms-flex-direction: column;\n    flex-direction: column;\n    -webkit-align-self: felx-end;\n    -moz-align-self: felx-end;\n    -ms-flex-item-align: felx-end;\n    align-self: felx-end;\n    position: relative;\n    width: 100%;\n    text-align: center;\n    padding-top: 20px;\n    margin-top: 100px;\n    /**\n      * style for logic\n      */ }\n    .smarttests .flex-container .main-text h1 {\n      font-size: calc(38px + 20 * (100vw - 320px) / 1600);\n      color: white; }\n    .smarttests .flex-container .main-text h2 {\n      font-size: 20px;\n      font-weight: 500;\n      color: black; }\n    .smarttests .flex-container .logic {\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n      -ms-flex-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      justify-content: center;\n      -webkit-box-direction: normal;\n      -webkit-box-orient: vertical;\n      -webkit-flex-direction: column;\n      -moz-flex-direction: column;\n      -ms-flex-direction: column;\n      flex-direction: column;\n      max-width: 800px;\n      min-width: 200px;\n      margin: 0 auto; }\n      .smarttests .flex-container .logic .question {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -moz-flex;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n        -ms-flex-pack: center;\n        -webkit-justify-content: center;\n        -moz-justify-content: center;\n        justify-content: center;\n        -webkit-box-align: center;\n        -ms-flex-align: center;\n        -webkit-align-items: center;\n        -moz-align-items: center;\n        align-items: center;\n        position: relative;\n        padding: 25px;\n        font-size: 25px;\n        width: 100%;\n        border-radius: 50%;\n        width: 250px;\n        height: 250px;\n        border: 10px solid white;\n        margin: auto;\n        background-color: rgba(255, 255, 255, 0);\n        text-align: center;\n        font-weight: 800;\n        color: white;\n        word-break: break-word; }\n        .smarttests .flex-container .logic .question .textQuestion {\n          position: absolute;\n          margin: auto; }\n        @media (max-width: 768px) {\n          .smarttests .flex-container .logic .question {\n            font-size: 22px; } }\n        .smarttests .flex-container .logic .question .arrowAnswer {\n          transform-origin: 0 0; }\n        .smarttests .flex-container .logic .question .arrow {\n          position: absolute;\n          width: 103px;\n          background-color: white;\n          height: 4px; }\n        .smarttests .flex-container .logic .question .arrow1 {\n          top: 20px;\n          left: 200px;\n          transform: rotate(-30deg); }\n        .smarttests .flex-container .logic .question .arrow3 {\n          top: 115px;\n          left: 235px; }\n        .smarttests .flex-container .logic .question .arrow2 {\n          top: 210px;\n          left: 200px;\n          transform: rotate(30deg); }\n        .smarttests .flex-container .logic .question .arrow4 {\n          top: 20px;\n          left: -85px;\n          transform: rotate(30deg); }\n        .smarttests .flex-container .logic .question .arrow5 {\n          top: 207px;\n          left: -85px;\n          transform: rotate(-30deg); }\n        .smarttests .flex-container .logic .question .arrow6 {\n          top: 115px;\n          left: -105px; }\n        .smarttests .flex-container .logic .question .answer {\n          display: block;\n          position: absolute;\n          border-bottom: 4px solid white;\n          min-width: 100px;\n          width: 120%;\n          transform-origin: 0 0; }\n        .smarttests .flex-container .logic .question .answer1 {\n          top: -36px;\n          left: 292px; }\n        .smarttests .flex-container .logic .question .answer3 {\n          top: 84px;\n          left: 335px; }\n        .smarttests .flex-container .logic .question .answer2 {\n          top: 204px;\n          left: 292px; }\n        .smarttests .flex-container .logic .question .answer4 {\n          top: -36px;\n          left: -350px; }\n        .smarttests .flex-container .logic .question .answer5 {\n          top: 84px;\n          left: -380px; }\n        .smarttests .flex-container .logic .question .answer6 {\n          top: 200px;\n          left: -350px; }\n        .smarttests .flex-container .logic .question .colorAdd {\n          color: #009200; }\n    .smarttests .flex-container .hide {\n      display: none !important; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.smarttests, .smarttests .flex-container .logic .question:after, .smarttests .flex-container .logic .answer.answer6 {\n  font: normal 1.5px/normal Arial, Helvetica, sans-serif;\n  -o-text-overflow: clip;\n  text-overflow: clip;\n  background: -webkit-radial-gradient(circle, #2f8f9b 0, #2f8f9b 25%, #3f3932 25%, transparent 25%, transparent 100%), #54aab1;\n  background: -moz-radial-gradient(circle, #2f8f9b 0, #2f8f9b 25%, #3f3932 25%, transparent 25%, transparent 100%), #54aab1;\n  background: radial-gradient(circle, #2f8f9b 0, #2f8f9b 25%, #3f3932 25%, transparent 25%, transparent 100%), #54aab1;\n  background-position: 3px 1em;\n  -webkit-background-origin: padding-box;\n  background-origin: padding-box;\n  -webkit-background-clip: border-box;\n  background-clip: border-box;\n  -webkit-background-size: 4em 4em;\n  background-size: 4em 4em; }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.hidden {\n  display: none; }\n\n.smarttests {\n  padding: 10px;\n  width: 100%;\n  min-height: 100%; }\n  .smarttests .flex-container {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n    -ms-flex-pack: start;\n    -webkit-justify-content: flex-start;\n    -moz-justify-content: flex-start;\n    justify-content: flex-start;\n    -webkit-box-direction: normal;\n    -webkit-box-orient: vertical;\n    -webkit-flex-direction: column;\n    -moz-flex-direction: column;\n    -ms-flex-direction: column;\n    flex-direction: column;\n    -webkit-align-self: felx-end;\n    -moz-align-self: felx-end;\n    -ms-flex-item-align: felx-end;\n    align-self: felx-end;\n    position: relative;\n    width: 100%;\n    text-align: center;\n    padding-top: 20px;\n    padding-left: 70px;\n    /**\n      * style for logic\n      */ }\n    .smarttests .flex-container .main-text h1 {\n      font-size: calc(38px + 20 * (100vw - 320px) / 1600);\n      color: white; }\n    .smarttests .flex-container .main-text h2 {\n      font-size: 20px;\n      font-weight: 500;\n      color: black; }\n    .smarttests .flex-container .logic {\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n      -ms-flex-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      justify-content: center;\n      -webkit-box-direction: normal;\n      -webkit-box-orient: vertical;\n      -webkit-flex-direction: column;\n      -moz-flex-direction: column;\n      -ms-flex-direction: column;\n      flex-direction: column;\n      max-width: 800px;\n      min-width: 200px;\n      margin: 0 auto; }\n      .smarttests .flex-container .logic .question {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -moz-flex;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n        -ms-flex-pack: center;\n        -webkit-justify-content: center;\n        -moz-justify-content: center;\n        justify-content: center;\n        -webkit-box-align: center;\n        -ms-flex-align: center;\n        -webkit-align-items: center;\n        -moz-align-items: center;\n        align-items: center;\n        position: relative;\n        box-sizing: border-box;\n        padding-left: 30px;\n        padding-right: 0px;\n        width: 80%;\n        min-height: 100px;\n        margin: auto;\n        background-color: white;\n        color: #54aab1;\n        text-align: center;\n        font-size: 20px;\n        font-weight: 700;\n        word-break: break-word; }\n        .smarttests .flex-container .logic .question .questionMark {\n          display: block;\n          position: absolute;\n          font-size: 60px;\n          color: white;\n          top: 15px;\n          left: -42px;\n          z-index: 100; }\n        .smarttests .flex-container .logic .question:after {\n          content: \"\";\n          display: block;\n          position: absolute;\n          top: -12px;\n          left: -91px;\n          height: 110%;\n          width: 110px;\n          border-radius: 50%;\n          border: 6px solid white; }\n        .smarttests .flex-container .logic .question:before {\n          content: \"\";\n          display: block;\n          position: absolute;\n          left: 100%;\n          width: 0;\n          height: 0;\n          border-top: 50px solid transparent;\n          border-left: 20px solid white;\n          border-bottom: 50px solid transparent; }\n      .smarttests .flex-container .logic .answer {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -moz-flex;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n        -ms-flex-pack: center;\n        -webkit-justify-content: center;\n        -moz-justify-content: center;\n        justify-content: center;\n        -webkit-box-align: center;\n        -ms-flex-align: center;\n        -webkit-align-items: center;\n        -moz-align-items: center;\n        align-items: center;\n        position: relative;\n        cursor: pointer;\n        margin: auto;\n        background-color: white;\n        font-size: 20px;\n        font-weight: 700;\n        margin-top: 10px;\n        color: #54aab1;\n        width: 80%;\n        height: 50px;\n        padding: 15px; }\n        .smarttests .flex-container .logic .answer:before {\n          content: \"\";\n          display: block;\n          position: absolute;\n          left: 100%;\n          top: 0;\n          width: 0;\n          height: 0;\n          border-top: 25px solid transparent;\n          border-left: 10px solid white;\n          border-bottom: 25px solid transparent; }\n        .smarttests .flex-container .logic .answer.answer6 {\n          width: 50px;\n          height: 50px;\n          border: 5px solid white;\n          border-radius: 50%;\n          color: white; }\n          .smarttests .flex-container .logic .answer.answer6:before {\n            border-top: 10px solid white;\n            border-left: 10px solid transparent;\n            border-right: 10px solid transparent;\n            left: 10px;\n            top: 17px; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
 
 	// exports
 
@@ -42903,7 +42897,7 @@
 	    question: "Какое лечение Вы получали",
 	    answers: [{
 	        next: 204,
-	        text: "Next"
+	        text: "" //next
 	    }],
 	    lotOf: [{
 	        id: 1,
@@ -42950,14 +42944,6 @@
 	    }, {
 	        next: 101,
 	        text: "Маммография"
-	    }
-	    //example
-	    , {
-	        next: 101,
-	        text: "some  2"
-	    }, {
-	        next: 101,
-	        text: "some 3"
 	    }]
 
 	}, {
@@ -43011,7 +42997,7 @@
 	    question: "Где ?",
 	    answers: [{
 	        next: 105, //null
-	        text: "Next"
+	        text: "" //Next
 	    }],
 	    lotOf: [{
 	        id: 1,
