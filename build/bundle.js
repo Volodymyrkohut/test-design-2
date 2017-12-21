@@ -66,19 +66,23 @@
 
 	var _componentsCategoryMedauditJsx2 = _interopRequireDefault(_componentsCategoryMedauditJsx);
 
-	var _componentsCategorySmarttestsJsx = __webpack_require__(401);
+	var _componentsCategorySmarttestSmarttestsJsx = __webpack_require__(401);
 
-	var _componentsCategorySmarttestsJsx2 = _interopRequireDefault(_componentsCategorySmarttestsJsx);
+	var _componentsCategorySmarttestSmarttestsJsx2 = _interopRequireDefault(_componentsCategorySmarttestSmarttestsJsx);
 
-	var _componentsCategorySocialJsx = __webpack_require__(486);
+	var _componentsCategorySmarttestSmartTestResultJsx = __webpack_require__(486);
+
+	var _componentsCategorySmarttestSmartTestResultJsx2 = _interopRequireDefault(_componentsCategorySmarttestSmartTestResultJsx);
+
+	var _componentsCategorySocialJsx = __webpack_require__(489);
 
 	var _componentsCategorySocialJsx2 = _interopRequireDefault(_componentsCategorySocialJsx);
 
-	var _componentsCategoryContactsJsx = __webpack_require__(490);
+	var _componentsCategoryContactsJsx = __webpack_require__(493);
 
 	var _componentsCategoryContactsJsx2 = _interopRequireDefault(_componentsCategoryContactsJsx);
 
-	var _reducers = __webpack_require__(493);
+	var _reducers = __webpack_require__(496);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -88,11 +92,11 @@
 
 	var _redux2 = _interopRequireDefault(_redux);
 
-	var _reduxThunk = __webpack_require__(500);
+	var _reduxThunk = __webpack_require__(503);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-	var _reduxDevtoolsExtension = __webpack_require__(501);
+	var _reduxDevtoolsExtension = __webpack_require__(504);
 
 	// import { syncHistoryWithStore } from "react-router-redux";
 	// window.store = .......
@@ -112,7 +116,8 @@
 	            _reactRouter.Route,
 	            { path: '/', component: _AppJsx2['default'] },
 	            _react2['default'].createElement(_reactRouter.Route, { path: '/medaudit', component: _componentsCategoryMedauditJsx2['default'] }),
-	            _react2['default'].createElement(_reactRouter.Route, { path: '/smarttests', component: _componentsCategorySmarttestsJsx2['default'] }),
+	            _react2['default'].createElement(_reactRouter.Route, { path: '/smarttests', component: _componentsCategorySmarttestSmarttestsJsx2['default'] }),
+	            _react2['default'].createElement(_reactRouter.Route, { path: '/smarttestresult', components: _componentsCategorySmarttestSmartTestResultJsx2['default'] }),
 	            _react2['default'].createElement(_reactRouter.Route, { path: '/social', component: _componentsCategorySocialJsx2['default'] }),
 	            _react2['default'].createElement(_reactRouter.Route, { path: '/contacts', component: _componentsCategoryContactsJsx2['default'] })
 	        )
@@ -36528,13 +36533,17 @@
 
 	var _materialUiCheckbox2 = _interopRequireDefault(_materialUiCheckbox);
 
+	var _propTypes = __webpack_require__(187);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
 	var Smarttests = (function (_React$Component) {
 	    _inherits(Smarttests, _React$Component);
 
-	    function Smarttests(props) {
+	    function Smarttests(props, context) {
 	        _classCallCheck(this, Smarttests);
 
-	        _get(Object.getPrototypeOf(Smarttests.prototype), 'constructor', this).call(this, props);
+	        _get(Object.getPrototypeOf(Smarttests.prototype), 'constructor', this).call(this, props, context);
 	        this.state = {
 	            ask: {
 	                key: 2,
@@ -36549,39 +36558,84 @@
 	                    next: 3,
 	                    text: "35-45"
 	                }]
-	            }
+	            },
+	            zoomClass: "ZoomIn",
+	            options: [],
+	            checkboxes: []
 	        };
 	    }
 
-	    // Redux
-
 	    _createClass(Smarttests, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            this.props.clearAnswer();
+	        }
+	    }, {
 	        key: 'handleFindNextQuestion',
 	        value: function handleFindNextQuestion(key, event) {
-	            var answer = _answerAnswerJs2['default'].find(function (item) {
-	                return item.key === key;
-	            });
+	            var _this = this;
 
-	            var answerToQuestion = {
-	                question: this.state.ask.question,
-	                answer: event.target.textContent
-	            };
+	            if (key != null) {
+	                (function () {
+	                    var answer = _answerAnswerJs2['default'].find(function (item) {
+	                        return item.key === key;
+	                    });
 
-	            this.props.addAnswer(answerToQuestion);
+	                    _this.setState({ zoomClass: "ZoomOut" });
 
-	            this.setState({ ask: answer });
+	                    setTimeout(function () {
+	                        // this state for fix bag for mobile with hover
+	                        _this.setState({ ask: { answers: [] } });
+	                        _this.setState({ ask: answer, zoomClass: "ZoomIn" });
+	                    }, 1000);
+
+	                    // To store
+	                    var answerToQuestion = {
+	                        question: _this.state.ask.question,
+	                        answer: event.target.textContent,
+	                        checkboxes: _this.state.checkboxes
+	                    };
+
+	                    _this.props.addAnswer(answerToQuestion);
+	                })();
+	            } else {
+	                //To reload new page
+	                this.context.router.push("/smarttestresult");
+	            }
+
+	            //clear list after previous checkboxes
+	            this.setState({ options: [], checkboxes: [] });
 	        }
 	    }, {
 	        key: 'handleCheck',
 	        value: function handleCheck(e) {
-	            // e.target.className = e.target.className === "answer activeCheck" ? "answer" : "answer activeCheck";
+	            var _this2 = this;
 
-	            this.setState({ check: !this.state.chack });
+	            var options = this.state.options;
+	            var index = undefined;
+
+	            // check if the check box is checked or unchecked
+	            if (e.target.checked) {
+	                options.push(+e.target.value);
+	            } else {
+	                index = options.indexOf(+e.target.value);
+	                options.splice(index, 1);
+	            }
+
+	            //Here we have checkbox what is checked
+	            this.setState({ options: options });
+
+	            //here we have text value
+	            var textValue = [];
+	            this.state.options.map(function (item) {
+	                textValue.push(_this2.state.ask.lotOf[item]);
+	            });
+	            this.setState({ checkboxes: textValue });
 	        }
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            var _this = this;
+	            var _this3 = this;
 
 	            var _state$ask = this.state.ask;
 	            var key = _state$ask.key;
@@ -36620,13 +36674,15 @@
 	                                    { key: item + index },
 	                                    _react2['default'].createElement(
 	                                        'div',
-	                                        { className: 'answer',
-	                                            onClick: _this.handleCheck.bind(_this) },
-	                                        _react2['default'].createElement(_materialUiCheckbox2['default'], { iconStyle: { fill: 'rgb(47,143,155)' },
+	                                        { className: _this3.state.zoomClass + " answer" },
+	                                        _react2['default'].createElement(_materialUiCheckbox2['default'], {
+	                                            value: index,
+	                                            onCheck: _this3.handleCheck.bind(_this3),
+	                                            iconStyle: { fill: 'rgb(47,143,155)' },
 	                                            label: item.item,
 	                                            labelStyle: {
 	                                                color: 'rgb(47,143,155)',
-	                                                font: '16px',
+	                                                font: '15px',
 	                                                fontWeight: '300'
 	                                            }
 	                                        })
@@ -36636,12 +36692,11 @@
 	                        ) : "",
 	                        answers.map(function (item, index) {
 	                            i++;
-
 	                            return _react2['default'].createElement(
 	                                'div',
-	                                { className: "answer forAnswersOnly answer" + i,
+	                                { className: _this3.state.zoomClass + " answer forAnswersOnly answer" + i,
 	                                    key: index,
-	                                    onClick: _this.handleFindNextQuestion.bind(_this, item.next) },
+	                                    onClick: _this3.handleFindNextQuestion.bind(_this3, item.next) },
 	                                _react2['default'].createElement(
 	                                    'div',
 	                                    { className: 'text' },
@@ -36658,6 +36713,11 @@
 	    return Smarttests;
 	})(_react2['default'].Component);
 
+	Smarttests.contextTypes = {
+	    router: _propTypes2['default'].object
+	};
+
+	// Redux
 	function mapStateToProps(state) {
 	    console.log(state);
 	    return {
@@ -36669,14 +36729,13 @@
 	    return {
 	        addAnswer: function addAnswer(answer) {
 	            dispach({ type: "ADD_ANSWER", answer: answer });
+	        },
+	        clearAnswer: function clearAnswer() {
+	            dispach({ type: "CLEAR_ANSWER" });
 	        }
 	    };
 	}
 
-	// sendAnwers: (answers) => {
-	//     console.log("(answers",answers)
-	//     dispach({type: "SEND_ANSWER", clientAnswer: answers})
-	// }
 	exports['default'] = (0, _reactRedux.connect)(mapStateToProps, dispatchStateToProps)(Smarttests);
 	module.exports = exports['default'];
 
@@ -36716,7 +36775,29 @@
 	        )
 	    );
 	};
+
 	exports.Arrow = Arrow;
+	var DubleArrow = function DubleArrow() {
+	    return _react2["default"].createElement(
+	        "svg",
+	        { width: "18px",
+	            height: "17px",
+	            viewBox: "0 0 18 17",
+	            version: "1.1"
+	        },
+	        _react2["default"].createElement(
+	            "g",
+	            { id: "prev",
+	                transform: "translate(8.500000, 8.500000) scale(-1, 1) translate(-8.500000, -8.500000)" },
+	            _react2["default"].createElement("polygon", { className: "arrow",
+	                points: "16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596" }),
+	            _react2["default"].createElement("polygon", { className: "arrow-fixed",
+	                points: "16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596" }),
+	            _react2["default"].createElement("path", { d: "M-1.48029737e-15,0.56157424 L-1.48029737e-15,16.1929159 L9.708,8.33860465 L-2.66453526e-15,0.56157424 L-1.48029737e-15,0.56157424 Z M1.33333333,3.30246869 L7.62533333,8.34246869 L1.33333333,13.4327013 L1.33333333,3.30246869 L1.33333333,3.30246869 Z" })
+	        )
+	    );
+	};
+	exports.DubleArrow = DubleArrow;
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "arrow.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
@@ -38980,8 +39061,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Smarttests.scss", function() {
-				var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Smarttests.scss");
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/sass-loader/lib/loader.js!./Smarttests.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/sass-loader/lib/loader.js!./Smarttests.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -38999,7 +39080,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.smarttests, .smarttests .flex-container .logic .question:after, .smarttests .flex-container .logic .answer.answer6 {\n  font: normal 1.5px/normal Arial, Helvetica, sans-serif;\n  -o-text-overflow: clip;\n  text-overflow: clip;\n  background: -webkit-radial-gradient(circle, #2f8f9b 0, #2f8f9b 25%, #3f3932 25%, transparent 25%, transparent 100%), #54aab1;\n  background: -moz-radial-gradient(circle, #2f8f9b 0, #2f8f9b 25%, #3f3932 25%, transparent 25%, transparent 100%), #54aab1;\n  background: radial-gradient(circle, #2f8f9b 0, #2f8f9b 25%, #3f3932 25%, transparent 25%, transparent 100%), #54aab1;\n  background-position: 3px 1em;\n  -webkit-background-origin: padding-box;\n  background-origin: padding-box;\n  -webkit-background-clip: border-box;\n  background-clip: border-box;\n  -webkit-background-size: 4em 4em;\n  background-size: 4em 4em; }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.hidden {\n  display: none; }\n\n.smarttests {\n  padding: 10px;\n  width: 100%;\n  min-height: 100%; }\n  .smarttests .flex-container {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n    -ms-flex-pack: start;\n    -webkit-justify-content: flex-start;\n    -moz-justify-content: flex-start;\n    justify-content: flex-start;\n    -webkit-box-direction: normal;\n    -webkit-box-orient: vertical;\n    -webkit-flex-direction: column;\n    -moz-flex-direction: column;\n    -ms-flex-direction: column;\n    flex-direction: column;\n    -webkit-align-self: felx-end;\n    -moz-align-self: felx-end;\n    -ms-flex-item-align: felx-end;\n    align-self: felx-end;\n    position: relative;\n    width: 100%;\n    text-align: center;\n    padding-top: 20px;\n    padding-left: 70px;\n    /**\n      * style for logic\n      */ }\n    .smarttests .flex-container .main-text h1 {\n      font-size: calc(38px + 20 * (100vw - 320px) / 1600);\n      color: white; }\n    .smarttests .flex-container .main-text h2 {\n      font-size: 20px;\n      font-weight: 500;\n      color: black; }\n    .smarttests .flex-container .logic {\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n      -ms-flex-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      justify-content: center;\n      -webkit-box-direction: normal;\n      -webkit-box-orient: vertical;\n      -webkit-flex-direction: column;\n      -moz-flex-direction: column;\n      -ms-flex-direction: column;\n      flex-direction: column;\n      max-width: 800px;\n      min-width: 200px;\n      margin: 0 auto; }\n      .smarttests .flex-container .logic .question {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -moz-flex;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n        -ms-flex-pack: center;\n        -webkit-justify-content: center;\n        -moz-justify-content: center;\n        justify-content: center;\n        -webkit-box-align: center;\n        -ms-flex-align: center;\n        -webkit-align-items: center;\n        -moz-align-items: center;\n        align-items: center;\n        position: relative;\n        width: 80%;\n        box-sizing: border-box;\n        padding-left: 30px;\n        padding-right: 0px;\n        min-height: 100px;\n        margin: auto;\n        background-color: white;\n        color: #2f8f9b;\n        text-align: center;\n        font-size: 20px;\n        font-weight: 700;\n        word-break: break-word; }\n        .smarttests .flex-container .logic .question .questionMark {\n          display: block;\n          position: absolute;\n          top: 15px;\n          left: -42px;\n          z-index: 100;\n          color: white;\n          font-size: 60px; }\n        .smarttests .flex-container .logic .question:after {\n          content: \"\";\n          display: block;\n          position: absolute;\n          top: -9px;\n          left: -89px;\n          height: 105%;\n          width: 105px;\n          border-radius: 50%;\n          border: 6px solid white; }\n        .smarttests .flex-container .logic .question:before {\n          content: \"\";\n          display: block;\n          position: absolute;\n          left: 100%;\n          width: 0;\n          height: 0;\n          border-top: 50px solid transparent;\n          border-left: 20px solid white;\n          border-bottom: 50px solid transparent; }\n      .smarttests .flex-container .logic .answer {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -moz-flex;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n        -ms-flex-pack: center;\n        -webkit-justify-content: center;\n        -moz-justify-content: center;\n        justify-content: center;\n        -webkit-box-align: center;\n        -ms-flex-align: center;\n        -webkit-align-items: center;\n        -moz-align-items: center;\n        align-items: center;\n        position: relative;\n        cursor: pointer;\n        margin: auto;\n        background-color: white;\n        margin-top: 10px;\n        width: 80%;\n        height: 50px;\n        padding: 15px;\n        font-size: 20px;\n        font-weight: 700;\n        color: #2f8f9b;\n        overflow: hidden; }\n        .smarttests .flex-container .logic .answer .text {\n          position: relative;\n          z-index: 2; }\n        .smarttests .flex-container .logic .answer.forAnswersOnly:after {\n          content: \"\";\n          position: absolute;\n          top: 0;\n          right: -50px;\n          bottom: 0;\n          left: 0;\n          border-right: 50px solid transparent;\n          border-bottom: 80px solid #54aab1;\n          -webkit-transform: translateX(-100%);\n          transform: translateX(-100%); }\n        .smarttests .flex-container .logic .answer.forAnswersOnly:hover {\n          color: white;\n          border: 1px solid white; }\n          .smarttests .flex-container .logic .answer.forAnswersOnly:hover:after {\n            z-index: 1;\n            transition: .6s all;\n            transform: translateX(0); }\n        .smarttests .flex-container .logic .answer.answer6 {\n          width: 50px;\n          height: 50px;\n          border: 5px solid white;\n          border-radius: 50%;\n          color: white; }\n          .smarttests .flex-container .logic .answer.answer6:before {\n            border-top: 10px solid white;\n            border-left: 10px solid transparent;\n            border-right: 10px solid transparent;\n            left: 10px;\n            top: 17px;\n            z-index: 90; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.smarttests, .smarttests .flex-container .logic .question:after, .smarttests .flex-container .logic .answer.answer6 {\n  font: normal 1.5px/normal Arial, Helvetica, sans-serif;\n  -o-text-overflow: clip;\n  text-overflow: clip;\n  background: -webkit-radial-gradient(circle, #2f8f9b 0, #2f8f9b 25%, #3f3932 25%, transparent 25%, transparent 100%), #54aab1;\n  background: -moz-radial-gradient(circle, #2f8f9b 0, #2f8f9b 25%, #3f3932 25%, transparent 25%, transparent 100%), #54aab1;\n  background: radial-gradient(circle, #2f8f9b 0, #2f8f9b 25%, #3f3932 25%, transparent 25%, transparent 100%), #54aab1;\n  background-position: 3px 1em;\n  -webkit-background-origin: padding-box;\n  background-origin: padding-box;\n  -webkit-background-clip: border-box;\n  background-clip: border-box;\n  -webkit-background-size: 4em 4em;\n  background-size: 4em 4em; }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.hidden {\n  display: none; }\n\n.smarttests {\n  padding: 10px;\n  width: 100%;\n  min-height: 100%; }\n  .smarttests .flex-container {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n    -ms-flex-pack: start;\n    -webkit-justify-content: flex-start;\n    -moz-justify-content: flex-start;\n    justify-content: flex-start;\n    -webkit-box-direction: normal;\n    -webkit-box-orient: vertical;\n    -webkit-flex-direction: column;\n    -moz-flex-direction: column;\n    -ms-flex-direction: column;\n    flex-direction: column;\n    -webkit-align-self: felx-end;\n    -moz-align-self: felx-end;\n    -ms-flex-item-align: felx-end;\n    align-self: felx-end;\n    position: relative;\n    width: 100%;\n    text-align: center;\n    padding-top: 20px;\n    padding-left: 70px;\n    /**\n      * style for logic\n      */ }\n    .smarttests .flex-container .main-text h1 {\n      font-size: calc(38px + 20 * (100vw - 320px) / 1600);\n      color: white; }\n    .smarttests .flex-container .main-text h2 {\n      font-size: 20px;\n      font-weight: 500;\n      color: black; }\n    .smarttests .flex-container .logic {\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n      -ms-flex-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      justify-content: center;\n      -webkit-box-direction: normal;\n      -webkit-box-orient: vertical;\n      -webkit-flex-direction: column;\n      -moz-flex-direction: column;\n      -ms-flex-direction: column;\n      flex-direction: column;\n      max-width: 800px;\n      min-width: 200px;\n      margin: 0 auto; }\n      .smarttests .flex-container .logic .question {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -moz-flex;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n        -ms-flex-pack: center;\n        -webkit-justify-content: center;\n        -moz-justify-content: center;\n        justify-content: center;\n        -webkit-box-align: center;\n        -ms-flex-align: center;\n        -webkit-align-items: center;\n        -moz-align-items: center;\n        align-items: center;\n        position: relative;\n        width: 80%;\n        box-sizing: border-box;\n        padding-left: 30px;\n        padding-right: 0px;\n        min-height: 100px;\n        margin: auto;\n        background-color: white;\n        color: #2f8f9b;\n        text-align: center;\n        font-size: 20px;\n        font-weight: 700;\n        word-break: break-word; }\n        .smarttests .flex-container .logic .question .questionMark {\n          display: block;\n          position: absolute;\n          top: 15px;\n          left: -42px;\n          z-index: 100;\n          color: white;\n          font-size: 60px; }\n        .smarttests .flex-container .logic .question:after {\n          content: \"\";\n          display: block;\n          position: absolute;\n          top: -9px;\n          left: -89px;\n          height: 105%;\n          width: 105px;\n          border-radius: 50%;\n          border: 6px solid white; }\n        .smarttests .flex-container .logic .question:before {\n          content: \"\";\n          display: block;\n          position: absolute;\n          left: 100%;\n          width: 0;\n          height: 0;\n          border-top: 50px solid transparent;\n          border-left: 20px solid white;\n          border-bottom: 50px solid transparent; }\n      .smarttests .flex-container .logic .answer {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -moz-flex;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n        -ms-flex-pack: center;\n        -webkit-justify-content: center;\n        -moz-justify-content: center;\n        justify-content: center;\n        -webkit-box-align: center;\n        -ms-flex-align: center;\n        -webkit-align-items: center;\n        -moz-align-items: center;\n        align-items: center;\n        position: relative;\n        cursor: pointer;\n        margin: auto;\n        background-color: white;\n        margin-top: 10px;\n        width: 80%;\n        height: 50px;\n        padding: 15px;\n        font-size: 20px;\n        font-weight: 700;\n        color: #2f8f9b;\n        overflow: hidden; }\n        .smarttests .flex-container .logic .answer .text {\n          position: relative;\n          z-index: 2; }\n        .smarttests .flex-container .logic .answer label, .smarttests .flex-container .logic .answer .text {\n          font-size: 16px; }\n          @media (max-width: 480px) {\n            .smarttests .flex-container .logic .answer label, .smarttests .flex-container .logic .answer .text {\n              font-size: 14px; } }\n        .smarttests .flex-container .logic .answer.forAnswersOnly:after {\n          content: \"\";\n          position: absolute;\n          top: 0;\n          right: -50px;\n          bottom: 0;\n          left: 0;\n          border-right: 50px solid transparent;\n          border-bottom: 80px solid #54aab1;\n          -webkit-transform: translateX(-100%);\n          transform: translateX(-100%); }\n        .smarttests .flex-container .logic .answer.forAnswersOnly:hover {\n          color: white;\n          border: 1px solid white; }\n          .smarttests .flex-container .logic .answer.forAnswersOnly:hover:after {\n            z-index: 1;\n            transition: .6s all;\n            transform: translateX(0); }\n        .smarttests .flex-container .logic .answer:before {\n          content: \"\";\n          display: block;\n          position: absolute;\n          left: 100%;\n          top: 0;\n          width: 0;\n          height: 0;\n          border-top: 25px solid transparent;\n          border-left: 10px solid white;\n          border-bottom: 25px solid transparent; }\n        .smarttests .flex-container .logic .answer.answer6 {\n          width: 50px;\n          height: 50px;\n          border: 5px solid white;\n          border-radius: 50%;\n          color: white; }\n          .smarttests .flex-container .logic .answer.answer6:hover {\n            border: 5px solid white; }\n          .smarttests .flex-container .logic .answer.answer6:before {\n            border-top: 10px solid white;\n            border-left: 10px solid transparent;\n            border-right: 10px solid transparent;\n            left: 10px;\n            top: 17px;\n            z-index: 90; }\n\n@keyframes ZoomOut {\n  from, 100%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: scale(1, 1); }\n  to {\n    transform: scale(0, 0); } }\n      .smarttests .flex-container .logic .ZoomOut {\n        animation-duration: 1s;\n        animation-fill-mode: both;\n        animation-name: ZoomOut; }\n\n@keyframes ZoomIn {\n  from, 100%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: scale(0, 0); }\n  to {\n    transform: scale(1, 1); } }\n      .smarttests .flex-container .logic .ZoomIn {\n        animation-duration: 1s;\n        animation-fill-mode: both;\n        animation-name: ZoomIn; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
 
 	// exports
 
@@ -42783,7 +42864,7 @@
 	    question: "Где ?",
 	    answers: [{
 	        next: 10,
-	        text: "Next"
+	        text: "" // Next
 	    }],
 	    lotOf: [{
 	        id: 1,
@@ -42832,7 +42913,7 @@
 	    question: "Какое лечение Вы получали",
 	    answers: [{
 	        next: 13,
-	        text: "Next"
+	        text: "" //Next
 	    }],
 	    lotOf: [{
 	        id: 1,
@@ -42855,7 +42936,7 @@
 	    key: 13,
 	    question: "Рецидив Заболевания",
 	    answers: [{
-	        next: 13, // null
+	        next: null, // null
 	        text: "Да"
 	    }, {
 	        next: 13, //null
@@ -43032,7 +43113,7 @@
 	    }]
 	}, {
 	    key: 111,
-	    question: "Скорее всего Вам будет предложена оргоносохраняющая операция. Вы хотите получить программу обследования и возможный план операции заграницей  ?",
+	    question: "Скорее ... ?",
 	    answers: [{
 	        next: 111,
 	        text: "Да"
@@ -43049,6 +43130,162 @@
 
 /***/ }),
 /* 486 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(183);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(405);
+
+	__webpack_require__(487);
+
+	var SmartTestsResult = (function (_React$Component) {
+	    _inherits(SmartTestsResult, _React$Component);
+
+	    function SmartTestsResult(props) {
+	        _classCallCheck(this, SmartTestsResult);
+
+	        _get(Object.getPrototypeOf(SmartTestsResult.prototype), 'constructor', this).call(this, props);
+	    }
+
+	    _createClass(SmartTestsResult, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2['default'].createElement(
+	                'div',
+	                { className: 'smarttests' },
+	                _react2['default'].createElement(
+	                    'div',
+	                    { className: 'bootomLogic' },
+	                    _react2['default'].createElement(
+	                        'h1',
+	                        null,
+	                        ' Скорее всего , Вам должно быть предложено молекулярное исследование тканей для точного определения возможных вариантов новейших линий лечения .'
+	                    ),
+	                    _react2['default'].createElement(
+	                        'h2',
+	                        null,
+	                        ' Вы заинтересованны узнать больше и получить мнение специалистов из-за границы ?'
+	                    ),
+	                    _react2['default'].createElement(
+	                        'table',
+	                        null,
+	                        _react2['default'].createElement(
+	                            'tbody',
+	                            null,
+	                            _react2['default'].createElement(
+	                                'tr',
+	                                null,
+	                                _react2['default'].createElement(
+	                                    'th',
+	                                    null,
+	                                    'Ask'
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'th',
+	                                    null,
+	                                    'answer'
+	                                )
+	                            ),
+	                            this.props.answer.map(function (item, index) {
+	                                return _react2['default'].createElement(
+	                                    'tr',
+	                                    { key: index + 2000 },
+	                                    _react2['default'].createElement(
+	                                        'td',
+	                                        null,
+	                                        item.question
+	                                    ),
+	                                    _react2['default'].createElement(
+	                                        'td',
+	                                        null,
+	                                        item.answer
+	                                    )
+	                                );
+	                            })
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SmartTestsResult;
+	})(_react2['default'].Component);
+
+	function mapStateToProps(state) {
+	    console.log(state);
+	    return {
+	        answer: state.answer
+	    };
+	}
+
+	exports['default'] = (0, _reactRedux.connect)(mapStateToProps)(SmartTestsResult);
+	module.exports = exports['default'];
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "SmartTestResult.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ }),
+/* 487 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(488);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(246)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/sass-loader/lib/loader.js!./SmartTestResult.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/sass-loader/lib/loader.js!./SmartTestResult.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 488 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(245)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.bootomLogic {\n  margin: 0 auto;\n  width: 80%;\n  margin-top: 20px;\n  margin-bottom: 20px;\n  min-height: 100%;\n  background-color: white;\n  font-size: 16px;\n  padding: 10px;\n  text-align: center; }\n  @media (max-width: 480px) {\n    .bootomLogic h1 {\n      font-size: 17px; } }\n  @media (max-width: 480px) {\n    .bootomLogic h2 {\n      font-size: 14px; } }\n  .bootomLogic table {\n    margin-top: 20px;\n    table-layout: fixed;\n    width: 100%;\n    border-collapse: collapse;\n    border: 1px solid black; }\n    .bootomLogic table td {\n      padding: 10px; }\n    .bootomLogic table tr {\n      word-break: break-all;\n      height: 30px; }\n    .bootomLogic table tr:nth-child(odd) {\n      background-color: #54aab1; }\n    .bootomLogic table tr:nth-child(even) {\n      background-color: #2f8f9b; }\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 489 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -43071,7 +43308,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(487);
+	__webpack_require__(490);
 
 	//
 	// class Social extends React.Component {
@@ -43361,13 +43598,13 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Social.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }),
-/* 487 */
+/* 490 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(488);
+	var content = __webpack_require__(491);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(246)(content, {});
@@ -43387,7 +43624,7 @@
 	}
 
 /***/ }),
-/* 488 */
+/* 491 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(245)();
@@ -43395,19 +43632,19 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.hidden {\n  display: none; }\n\n.smarttests2 {\n  padding: 10px;\n  height: 100%;\n  width: 100%;\n  background: url(" + __webpack_require__(489) + ");\n  background-size: cover;\n  background-position: center; }\n  .smarttests2 .flex-container {\n    position: relative;\n    width: 100%;\n    height: 100%;\n    text-align: center;\n    padding-top: 20px;\n    /**\n      * style for logic\n      */\n    /**\n    * style for squire figure\n    */\n    /*all blocks animate with rotate when click no*/\n    /*all blocks animate with up when click yes*/\n    /*animate agree-animation all block*/ }\n    .smarttests2 .flex-container .main-text h1 {\n      font-size: calc(38px + 20 * (100vw - 320px) / 1600);\n      color: white; }\n    .smarttests2 .flex-container .main-text h2 {\n      font-size: 20px;\n      font-weight: 500;\n      color: black; }\n    .smarttests2 .flex-container .logic {\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -moz-transform: rotate3d(1, 0, 0, 30deg);\n      -o-transform: rotate3d(1, 0, 0, 30deg);\n      -ms-transform: rotate3d(1, 0, 0, 30deg);\n      -webkit-transform: rotate3d(1, 0, 0, 30deg);\n      transform: rotate3d(1, 0, 0, 30deg);\n      -webkit-box-pack: center;\n      -ms-flex-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      justify-content: center;\n      width: 200px;\n      height: 200px;\n      margin: 0 auto;\n      top: calc(50% - 200px);\n      transition: transform 1s;\n      margin-top: 20px; }\n      @media (max-width: 768px) {\n        .smarttests2 .flex-container .logic {\n          -moz-transform: scale(0.7, 0.7);\n          -o-transform: scale(0.7, 0.7);\n          -ms-transform: scale(0.7, 0.7);\n          -webkit-transform: scale(0.7, 0.7);\n          transform: scale(0.7, 0.7);\n          transition: transform 1s; } }\n      @media (max-width: 500px) {\n        .smarttests2 .flex-container .logic {\n          -moz-transform: scale(0.5, 0.5);\n          -o-transform: scale(0.5, 0.5);\n          -ms-transform: scale(0.5, 0.5);\n          -webkit-transform: scale(0.5, 0.5);\n          transform: scale(0.5, 0.5);\n          transition: transform 1s; } }\n      .smarttests2 .flex-container .logic .helper {\n        -moz-transform: rotate3d(0, 0, 1, 45deg);\n        -o-transform: rotate3d(0, 0, 1, 45deg);\n        -ms-transform: rotate3d(0, 0, 1, 45deg);\n        -webkit-transform: rotate3d(0, 0, 1, 45deg);\n        transform: rotate3d(0, 0, 1, 45deg);\n        position: absolute;\n        width: 200px;\n        height: 200px;\n        border: 2px solid white;\n        background-color: white;\n        border-radius: 3px;\n        z-index: 4; }\n      .smarttests2 .flex-container .logic .question {\n        margin: auto;\n        text-align: center;\n        font-size: 25px;\n        font-weight: 700;\n        color: black;\n        z-index: 5; }\n      .smarttests2 .flex-container .logic .yes, .smarttests2 .flex-container .logic .no, .smarttests2 .flex-container .logic .additional {\n        display: block;\n        position: absolute;\n        cursor: pointer;\n        padding-top: 17px;\n        width: 60px;\n        height: 60px;\n        background-color: white;\n        border: 2px solid white;\n        border-radius: 50%;\n        color: black;\n        font-weight: 700;\n        word-break: word-break;\n        text-align: center; }\n      .smarttests2 .flex-container .logic .yes {\n        margin-top: 110%;\n        align-self: center;\n        z-index: 4; }\n        .smarttests2 .flex-container .logic .yes:hover {\n          transition: all 1s;\n          transform: rotate3d(0, 1, 0, 360deg); }\n      .smarttests2 .flex-container .logic .no {\n        align-self: center;\n        margin-left: 110%;\n        z-index: 5; }\n        .smarttests2 .flex-container .logic .no:hover {\n          transition: all 1s;\n          transform: rotate3d(0, 1, 0, 360deg); }\n      .smarttests2 .flex-container .logic .additional {\n        align-self: center;\n        margin-left: -111%;\n        z-index: 7; }\n        .smarttests2 .flex-container .logic .additional:hover {\n          transition: all 1s;\n          transform: rotate3d(0, 1, 0, 360deg); }\n      .smarttests2 .flex-container .logic .hide {\n        display: none; }\n    .smarttests2 .flex-container .main-squire {\n      position: relative;\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n      -ms-flex-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      justify-content: center; }\n      .smarttests2 .flex-container .main-squire .squire {\n        position: absolute;\n        max-width: 400px !important;\n        margin: 0 auto;\n        margin-top: 20px;\n        padding: 15px;\n        background-color: white;\n        z-index: 2; }\n        .smarttests2 .flex-container .main-squire .squire .innerBlock {\n          position: relative;\n          border-radius: 4px;\n          height: 200px;\n          overflow-y: scroll;\n          overflow-x: hidden; }\n          .smarttests2 .flex-container .main-squire .squire .innerBlock .agree-text {\n            display: block;\n            margin: 10px 0;\n            line-height: 1.7;\n            list-style-type: none;\n            text-align: left; }\n      .smarttests2 .flex-container .main-squire .svg-line-down-for-squire {\n        margin-top: 20%; }\n\n@keyframes forArrowBottom {\n  from, 20%, 49%, 50%, 70%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: translate(0, 0); }\n  49% {\n    transform: translate(0, 0); }\n  50% {\n    transform: translate(0, -55px); }\n  70% {\n    transform: translate(0, -55px); }\n  85% {\n    transform: translate(0, 0); } }\n\n@keyframes forArrowRight {\n  from, 20%, 49%, 50%, 70%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: translate(0, 0) rotate(-90deg); }\n  49% {\n    transform: translate(0, 0) rotate(-90deg); }\n  50% {\n    transform: translate(-55px, 0) rotate(-90deg); }\n  75% {\n    transform: translate(-55px, 0) rotate(-90deg); }\n  85% {\n    transform: translate(0, 0) rotate(-90deg); } }\n\n@keyframes forArrowLeft {\n  from, 20%, 49%, 50%, 70%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: translate(0, 0) rotate(90deg);\n    opacity: 0; }\n  49% {\n    transform: translate(0, 0) rotate(90deg);\n    opacity: 0; }\n  50% {\n    transform: translate(55px, 0) rotate(90deg);\n    opacity: 1; }\n  75% {\n    transform: translate(55px, 0) rotate(90deg); }\n  85% {\n    transform: translate(0, 0) rotate(90deg); } }\n    .smarttests2 .flex-container .forArrowLeft {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forArrowLeft; }\n    .smarttests2 .flex-container .forArrowRight {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forArrowRight; }\n    .smarttests2 .flex-container .forArrowBottom {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forArrowBottom; }\n\n@keyframes rotate {\n  from, 20%, 45%, 50%, 70%, 90%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: rotate(0deg); }\n  20% {\n    transform: rotate(90deg); }\n  45% {\n    transform: rotate(90deg) translate3d(-700px, 0, 0); }\n  50% {\n    opacity: 0; }\n  51% {\n    transform: translate3d(0, 0, 0);\n    opacity: 1;\n    transform: scale(0.1, 0.1); }\n  70% {\n    transform: scale(1, 1) rotate3d(1, 0, 0, 30deg); } }\n\n@keyframes upAnswer {\n  from, 20%, 49%, 50%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: rotate(0deg);\n    opacity: 1; }\n  49% {\n    transform: translate3d(0, -700px, 0);\n    opacity: 0; }\n  50% {\n    transform: translate3d(0, 0, 0);\n    opacity: 1;\n    transform: scale(0.1, 0.1); }\n  70% {\n    transform: scale(1, 1) rotate3d(1, 0, 0, 30deg); } }\n\n@keyframes agree-animation {\n  from, 20%, 49%, 50%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    opacity: 1;\n    transform: scale(0.1, 0.1); }\n  to {\n    opacity: 1;\n    transform: scale(1, 1); } }\n    .smarttests2 .flex-container .agree-animation {\n      transform-origin: 50% 0%;\n      animation-duration: 0.5s;\n      animation-fill-mode: both;\n      animation-name: agree-animation; }\n\n@keyframes agree-animation-hidden {\n  from, 20%, 49%, 50%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    opacity: 1;\n    transform: translate3d(0, 0, 0); }\n  to {\n    transform: translate3d(0, -700px, 0);\n    opacity: 1; } }\n    .smarttests2 .flex-container .agree-animation-hidden {\n      transform-origin: 50% 0%;\n      animation-duration: 1s;\n      animation-fill-mode: both;\n      animation-name: agree-animation-hidden; }\n    .smarttests2 .flex-container .rotate {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: rotate;\n      transform-origin: 50% 50%; }\n    .smarttests2 .flex-container .upAnswer {\n      transform-origin: 50% 0%;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: upAnswer; }\n\n@keyframes forButtonNo {\n  from, 20%, 49%, 50%, 69%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: scale(1, 1); }\n  50% {\n    transform: scale(1, 1); }\n  51% {\n    transform: scale(0, 0); }\n  85% {\n    transform: scale(0, 0); }\n  to {\n    transform: scale(1, 1); } }\n\n@keyframes forButtonBottom {\n  from, 20%, 49%, 50%, 69%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: scale(1, 1); }\n  50% {\n    transform: scale(1, 1); }\n  51% {\n    transform: scale(0, 0); }\n  85% {\n    transform: scale(0, 0); }\n  to {\n    transform: scale(1, 1); } }\n\n@keyframes forButtonAdditional {\n  from, 50%, 51%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: scale(1, 1);\n    opacity: 0; }\n  50% {\n    transform: scale(1, 1);\n    opacity: 0; }\n  51% {\n    transform: scale(0, 0);\n    opacity: 1; }\n  85% {\n    transform: scale(0, 0); }\n  to {\n    transform: scale(1, 1); } }\n    .smarttests2 .flex-container .forButtonAdditional {\n      transform-origin: right center;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forButtonAdditional; }\n    .smarttests2 .flex-container .forButtonBottom {\n      transform-origin: 50% 0;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forButtonBottom; }\n    .smarttests2 .flex-container .forButtonNo {\n      transform-origin: 0 50%;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forButtonNo; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.hidden {\n  display: none; }\n\n.smarttests2 {\n  padding: 10px;\n  height: 100%;\n  width: 100%;\n  background: url(" + __webpack_require__(492) + ");\n  background-size: cover;\n  background-position: center; }\n  .smarttests2 .flex-container {\n    position: relative;\n    width: 100%;\n    height: 100%;\n    text-align: center;\n    padding-top: 20px;\n    /**\n      * style for logic\n      */\n    /**\n    * style for squire figure\n    */\n    /*all blocks animate with rotate when click no*/\n    /*all blocks animate with up when click yes*/\n    /*animate agree-animation all block*/ }\n    .smarttests2 .flex-container .main-text h1 {\n      font-size: calc(38px + 20 * (100vw - 320px) / 1600);\n      color: white; }\n    .smarttests2 .flex-container .main-text h2 {\n      font-size: 20px;\n      font-weight: 500;\n      color: black; }\n    .smarttests2 .flex-container .logic {\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -moz-transform: rotate3d(1, 0, 0, 30deg);\n      -o-transform: rotate3d(1, 0, 0, 30deg);\n      -ms-transform: rotate3d(1, 0, 0, 30deg);\n      -webkit-transform: rotate3d(1, 0, 0, 30deg);\n      transform: rotate3d(1, 0, 0, 30deg);\n      -webkit-box-pack: center;\n      -ms-flex-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      justify-content: center;\n      width: 200px;\n      height: 200px;\n      margin: 0 auto;\n      top: calc(50% - 200px);\n      transition: transform 1s;\n      margin-top: 20px; }\n      @media (max-width: 768px) {\n        .smarttests2 .flex-container .logic {\n          -moz-transform: scale(0.7, 0.7);\n          -o-transform: scale(0.7, 0.7);\n          -ms-transform: scale(0.7, 0.7);\n          -webkit-transform: scale(0.7, 0.7);\n          transform: scale(0.7, 0.7);\n          transition: transform 1s; } }\n      @media (max-width: 500px) {\n        .smarttests2 .flex-container .logic {\n          -moz-transform: scale(0.5, 0.5);\n          -o-transform: scale(0.5, 0.5);\n          -ms-transform: scale(0.5, 0.5);\n          -webkit-transform: scale(0.5, 0.5);\n          transform: scale(0.5, 0.5);\n          transition: transform 1s; } }\n      .smarttests2 .flex-container .logic .helper {\n        -moz-transform: rotate3d(0, 0, 1, 45deg);\n        -o-transform: rotate3d(0, 0, 1, 45deg);\n        -ms-transform: rotate3d(0, 0, 1, 45deg);\n        -webkit-transform: rotate3d(0, 0, 1, 45deg);\n        transform: rotate3d(0, 0, 1, 45deg);\n        position: absolute;\n        width: 200px;\n        height: 200px;\n        border: 2px solid white;\n        background-color: white;\n        border-radius: 3px;\n        z-index: 4; }\n      .smarttests2 .flex-container .logic .question {\n        margin: auto;\n        text-align: center;\n        font-size: 25px;\n        font-weight: 700;\n        color: black;\n        z-index: 5; }\n      .smarttests2 .flex-container .logic .yes, .smarttests2 .flex-container .logic .no, .smarttests2 .flex-container .logic .additional {\n        display: block;\n        position: absolute;\n        cursor: pointer;\n        padding-top: 17px;\n        width: 60px;\n        height: 60px;\n        background-color: white;\n        border: 2px solid white;\n        border-radius: 50%;\n        color: black;\n        font-weight: 700;\n        word-break: word-break;\n        text-align: center; }\n      .smarttests2 .flex-container .logic .yes {\n        margin-top: 110%;\n        align-self: center;\n        z-index: 4; }\n        .smarttests2 .flex-container .logic .yes:hover {\n          transition: all 1s;\n          transform: rotate3d(0, 1, 0, 360deg); }\n      .smarttests2 .flex-container .logic .no {\n        align-self: center;\n        margin-left: 110%;\n        z-index: 5; }\n        .smarttests2 .flex-container .logic .no:hover {\n          transition: all 1s;\n          transform: rotate3d(0, 1, 0, 360deg); }\n      .smarttests2 .flex-container .logic .additional {\n        align-self: center;\n        margin-left: -111%;\n        z-index: 7; }\n        .smarttests2 .flex-container .logic .additional:hover {\n          transition: all 1s;\n          transform: rotate3d(0, 1, 0, 360deg); }\n      .smarttests2 .flex-container .logic .hide {\n        display: none; }\n    .smarttests2 .flex-container .main-squire {\n      position: relative;\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n      -ms-flex-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      justify-content: center; }\n      .smarttests2 .flex-container .main-squire .squire {\n        position: absolute;\n        max-width: 400px !important;\n        margin: 0 auto;\n        margin-top: 20px;\n        padding: 15px;\n        background-color: white;\n        z-index: 2; }\n        .smarttests2 .flex-container .main-squire .squire .innerBlock {\n          position: relative;\n          border-radius: 4px;\n          height: 200px;\n          overflow-y: scroll;\n          overflow-x: hidden; }\n          .smarttests2 .flex-container .main-squire .squire .innerBlock .agree-text {\n            display: block;\n            margin: 10px 0;\n            line-height: 1.7;\n            list-style-type: none;\n            text-align: left; }\n      .smarttests2 .flex-container .main-squire .svg-line-down-for-squire {\n        margin-top: 20%; }\n\n@keyframes forArrowBottom {\n  from, 20%, 49%, 50%, 70%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: translate(0, 0); }\n  49% {\n    transform: translate(0, 0); }\n  50% {\n    transform: translate(0, -55px); }\n  70% {\n    transform: translate(0, -55px); }\n  85% {\n    transform: translate(0, 0); } }\n\n@keyframes forArrowRight {\n  from, 20%, 49%, 50%, 70%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: translate(0, 0) rotate(-90deg); }\n  49% {\n    transform: translate(0, 0) rotate(-90deg); }\n  50% {\n    transform: translate(-55px, 0) rotate(-90deg); }\n  75% {\n    transform: translate(-55px, 0) rotate(-90deg); }\n  85% {\n    transform: translate(0, 0) rotate(-90deg); } }\n\n@keyframes forArrowLeft {\n  from, 20%, 49%, 50%, 70%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: translate(0, 0) rotate(90deg);\n    opacity: 0; }\n  49% {\n    transform: translate(0, 0) rotate(90deg);\n    opacity: 0; }\n  50% {\n    transform: translate(55px, 0) rotate(90deg);\n    opacity: 1; }\n  75% {\n    transform: translate(55px, 0) rotate(90deg); }\n  85% {\n    transform: translate(0, 0) rotate(90deg); } }\n    .smarttests2 .flex-container .forArrowLeft {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forArrowLeft; }\n    .smarttests2 .flex-container .forArrowRight {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forArrowRight; }\n    .smarttests2 .flex-container .forArrowBottom {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forArrowBottom; }\n\n@keyframes rotate {\n  from, 20%, 45%, 50%, 70%, 90%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: rotate(0deg); }\n  20% {\n    transform: rotate(90deg); }\n  45% {\n    transform: rotate(90deg) translate3d(-700px, 0, 0); }\n  50% {\n    opacity: 0; }\n  51% {\n    transform: translate3d(0, 0, 0);\n    opacity: 1;\n    transform: scale(0.1, 0.1); }\n  70% {\n    transform: scale(1, 1) rotate3d(1, 0, 0, 30deg); } }\n\n@keyframes upAnswer {\n  from, 20%, 49%, 50%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: rotate(0deg);\n    opacity: 1; }\n  49% {\n    transform: translate3d(0, -700px, 0);\n    opacity: 0; }\n  50% {\n    transform: translate3d(0, 0, 0);\n    opacity: 1;\n    transform: scale(0.1, 0.1); }\n  70% {\n    transform: scale(1, 1) rotate3d(1, 0, 0, 30deg); } }\n\n@keyframes agree-animation {\n  from, 20%, 49%, 50%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    opacity: 1;\n    transform: scale(0.1, 0.1); }\n  to {\n    opacity: 1;\n    transform: scale(1, 1); } }\n    .smarttests2 .flex-container .agree-animation {\n      transform-origin: 50% 0%;\n      animation-duration: 0.5s;\n      animation-fill-mode: both;\n      animation-name: agree-animation; }\n\n@keyframes agree-animation-hidden {\n  from, 20%, 49%, 50%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    opacity: 1;\n    transform: translate3d(0, 0, 0); }\n  to {\n    transform: translate3d(0, -700px, 0);\n    opacity: 1; } }\n    .smarttests2 .flex-container .agree-animation-hidden {\n      transform-origin: 50% 0%;\n      animation-duration: 1s;\n      animation-fill-mode: both;\n      animation-name: agree-animation-hidden; }\n    .smarttests2 .flex-container .rotate {\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: rotate;\n      transform-origin: 50% 50%; }\n    .smarttests2 .flex-container .upAnswer {\n      transform-origin: 50% 0%;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: upAnswer; }\n\n@keyframes forButtonNo {\n  from, 20%, 49%, 50%, 69%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: scale(1, 1); }\n  50% {\n    transform: scale(1, 1); }\n  51% {\n    transform: scale(0, 0); }\n  85% {\n    transform: scale(0, 0); }\n  to {\n    transform: scale(1, 1); } }\n\n@keyframes forButtonBottom {\n  from, 20%, 49%, 50%, 69%, 70%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: scale(1, 1); }\n  50% {\n    transform: scale(1, 1); }\n  51% {\n    transform: scale(0, 0); }\n  85% {\n    transform: scale(0, 0); }\n  to {\n    transform: scale(1, 1); } }\n\n@keyframes forButtonAdditional {\n  from, 50%, 51%, 85%, to {\n    animation-timing-function: linear; }\n  from {\n    transform: scale(1, 1);\n    opacity: 0; }\n  50% {\n    transform: scale(1, 1);\n    opacity: 0; }\n  51% {\n    transform: scale(0, 0);\n    opacity: 1; }\n  85% {\n    transform: scale(0, 0); }\n  to {\n    transform: scale(1, 1); } }\n    .smarttests2 .flex-container .forButtonAdditional {\n      transform-origin: right center;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forButtonAdditional; }\n    .smarttests2 .flex-container .forButtonBottom {\n      transform-origin: 50% 0;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forButtonBottom; }\n    .smarttests2 .flex-container .forButtonNo {\n      transform-origin: 0 50%;\n      animation-duration: 2s;\n      animation-fill-mode: both;\n      animation-name: forButtonNo; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
 
 	// exports
 
 
 /***/ }),
-/* 489 */
+/* 492 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "9daf560b1c7f587181798bbe0217af49.jpg";
 
 /***/ }),
-/* 490 */
+/* 493 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -43434,7 +43671,7 @@
 
 	var _reactRouter = __webpack_require__(184);
 
-	__webpack_require__(491);
+	__webpack_require__(494);
 
 	var Contacts = (function (_React$Component) {
 	    _inherits(Contacts, _React$Component);
@@ -43470,13 +43707,13 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Стільниця/medical-project/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Contacts.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }),
-/* 491 */
+/* 494 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(492);
+	var content = __webpack_require__(495);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(246)(content, {});
@@ -43496,7 +43733,7 @@
 	}
 
 /***/ }),
-/* 492 */
+/* 495 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(245)();
@@ -43510,7 +43747,7 @@
 
 
 /***/ }),
-/* 493 */
+/* 496 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -43521,9 +43758,9 @@
 
 	var _redux = __webpack_require__(415);
 
-	var _reactRouterRedux = __webpack_require__(494);
+	var _reactRouterRedux = __webpack_require__(497);
 
-	var _smartTestReduserJs = __webpack_require__(499);
+	var _smartTestReduserJs = __webpack_require__(502);
 
 	exports["default"] = (0, _redux.combineReducers)({
 	    // routing: routerReducer,
@@ -43532,7 +43769,7 @@
 	module.exports = exports["default"];
 
 /***/ }),
-/* 494 */
+/* 497 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43542,7 +43779,7 @@
 	});
 	exports.routerMiddleware = exports.routerActions = exports.goForward = exports.goBack = exports.go = exports.replace = exports.push = exports.CALL_HISTORY_METHOD = exports.routerReducer = exports.LOCATION_CHANGE = exports.syncHistoryWithStore = undefined;
 
-	var _reducer = __webpack_require__(495);
+	var _reducer = __webpack_require__(498);
 
 	Object.defineProperty(exports, 'LOCATION_CHANGE', {
 	  enumerable: true,
@@ -43557,7 +43794,7 @@
 	  }
 	});
 
-	var _actions = __webpack_require__(496);
+	var _actions = __webpack_require__(499);
 
 	Object.defineProperty(exports, 'CALL_HISTORY_METHOD', {
 	  enumerable: true,
@@ -43602,11 +43839,11 @@
 	  }
 	});
 
-	var _sync = __webpack_require__(497);
+	var _sync = __webpack_require__(500);
 
 	var _sync2 = _interopRequireDefault(_sync);
 
-	var _middleware = __webpack_require__(498);
+	var _middleware = __webpack_require__(501);
 
 	var _middleware2 = _interopRequireDefault(_middleware);
 
@@ -43616,7 +43853,7 @@
 	exports.routerMiddleware = _middleware2['default'];
 
 /***/ }),
-/* 495 */
+/* 498 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -43659,7 +43896,7 @@
 	}
 
 /***/ }),
-/* 496 */
+/* 499 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -43701,7 +43938,7 @@
 	var routerActions = exports.routerActions = { push: push, replace: replace, go: go, goBack: goBack, goForward: goForward };
 
 /***/ }),
-/* 497 */
+/* 500 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43714,7 +43951,7 @@
 
 	exports['default'] = syncHistoryWithStore;
 
-	var _reducer = __webpack_require__(495);
+	var _reducer = __webpack_require__(498);
 
 	var defaultSelectLocationState = function defaultSelectLocationState(state) {
 	  return state.routing;
@@ -43861,7 +44098,7 @@
 	}
 
 /***/ }),
-/* 498 */
+/* 501 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43871,7 +44108,7 @@
 	});
 	exports['default'] = routerMiddleware;
 
-	var _actions = __webpack_require__(496);
+	var _actions = __webpack_require__(499);
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
@@ -43899,7 +44136,7 @@
 	}
 
 /***/ }),
-/* 499 */
+/* 502 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -43913,7 +44150,7 @@
 
 	var ADD_ANSWER = "ADD_ANSWER";
 	var SEND_ANSWER = "SEND_ANSWER";
-
+	var CLEAR_ANSWER = "CLEAR_ANSWER";
 	/**
 	 * This Reduser get client's answer
 	 * **/
@@ -43927,12 +44164,15 @@
 	    if (action.type === SEND_ANSWER) {
 	        return state;
 	    }
+	    if (action.type === CLEAR_ANSWER) {
+	        return [];
+	    }
 
 	    return state;
 	}
 
 /***/ }),
-/* 500 */
+/* 503 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -43960,7 +44200,7 @@
 	exports['default'] = thunk;
 
 /***/ }),
-/* 501 */
+/* 504 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
