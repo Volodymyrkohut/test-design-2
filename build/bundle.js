@@ -43518,14 +43518,62 @@
 	        _classCallCheck(this, SmartTestsResult);
 
 	        _get(Object.getPrototypeOf(SmartTestsResult.prototype), 'constructor', this).call(this, props);
+	        this.state = {
+	            result: ""
+	        };
 	    }
 
 	    _createClass(SmartTestsResult, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            var result = "";
+
+	            this.props.answer.map(function (item) {
+	                if (item.question == "Размер опухоли") {
+	                    if (item.answer == ">2 см") {
+	                        result = result + "T1-";
+	                    } else if (item.answer == "2 - 5 см") {
+	                        result = result + "T2-";
+	                    } else if (item.answer == "5> см") {
+	                        result = result + "T3-";
+	                    } else {
+	                        result = result + "T4-";
+	                    }
+	                }
+
+	                if (item.question == "Были обнаружены удаленные метастазы ?") {
+	                    if (item.answer == "Да") {
+	                        result = result + "M1-";
+	                    } else {
+	                        result = result + "M0-";
+	                    }
+	                }
+
+	                if (item.question == "Сколько ?") {
+	                    if (item.answer == "2-3") {
+	                        result = result + "N1";
+	                    } else if (item.answer == "4-9") {
+	                        result = result + "N2";
+	                    } else {
+	                        result = result + "N3";
+	                    }
+	                }
+	            });
+
+	            this.setState({ result: result });
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2['default'].createElement(
 	                'div',
 	                { className: 'smarttestresult' },
+	                _react2['default'].createElement(
+	                    'h1',
+	                    { className: 'resulttest' },
+	                    'You result: ',
+	                    this.state.result
+	                ),
 	                _react2['default'].createElement(
 	                    'div',
 	                    { className: 'bootomLogic' },
@@ -43646,7 +43694,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.smarttestresult {\n  width: 100%;\n  min-height: 100%;\n  background-color: white; }\n  .smarttestresult .bootomLogic {\n    margin: 0 auto;\n    width: 80%;\n    margin-top: 20px;\n    margin-bottom: 20px;\n    min-height: 100%;\n    background-color: white;\n    font-size: 16px;\n    padding: 10px;\n    text-align: center; }\n    .smarttestresult .bootomLogic h1 {\n      color: #2f8f9b;\n      font-family: \"MuseoSans-Light\"; }\n      @media (max-width: 480px) {\n        .smarttestresult .bootomLogic h1 {\n          font-size: 17px; } }\n    .smarttestresult .bootomLogic h2 {\n      font-family: \"MuseoSans-Light\";\n      color: #54aab1; }\n      @media (max-width: 480px) {\n        .smarttestresult .bootomLogic h2 {\n          font-size: 14px; } }\n    .smarttestresult .bootomLogic table {\n      margin-top: 20px;\n      margin-bottom: 50px;\n      table-layout: fixed;\n      width: 100%;\n      border-collapse: collapse;\n      border: 1px solid black;\n      color: white; }\n      .smarttestresult .bootomLogic table td {\n        padding: 10px; }\n      .smarttestresult .bootomLogic table tr {\n        word-break: break-all;\n        height: 30px; }\n      .smarttestresult .bootomLogic table tr:nth-child(odd) {\n        background-color: #54aab1; }\n      .smarttestresult .bootomLogic table tr:nth-child(even) {\n        background-color: #2f8f9b; }\n    .smarttestresult .bootomLogic .buttonGroup {\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-pack: distribute;\n      -webkit-justify-content: space-around;\n      -moz-justify-content: space-around;\n      justify-content: space-around;\n      margin-bottom: 100px; }\n      .smarttestresult .bootomLogic .buttonGroup button {\n        cursor: pointer;\n        width: 120px;\n        height: 40px;\n        border: 1px solid #2f8f9b;\n        color: #2f8f9b; }\n        .smarttestresult .bootomLogic .buttonGroup button:hover {\n          background-color: #2f8f9b;\n          color: white;\n          transition: all .3s; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.smarttestresult {\n  width: 100%;\n  min-height: 100%;\n  background-color: white; }\n  .smarttestresult .resulttest {\n    margin: 20px;\n    color: #2f8f9b;\n    text-align: center; }\n  .smarttestresult .bootomLogic {\n    margin: 0 auto;\n    width: 80%;\n    margin-top: 20px;\n    margin-bottom: 20px;\n    min-height: 100%;\n    background-color: white;\n    font-size: 16px;\n    padding: 10px;\n    text-align: center; }\n    .smarttestresult .bootomLogic h1 {\n      color: #2f8f9b;\n      font-family: \"MuseoSans-Light\"; }\n      @media (max-width: 480px) {\n        .smarttestresult .bootomLogic h1 {\n          font-size: 17px; } }\n    .smarttestresult .bootomLogic h2 {\n      font-family: \"MuseoSans-Light\";\n      color: #54aab1; }\n      @media (max-width: 480px) {\n        .smarttestresult .bootomLogic h2 {\n          font-size: 14px; } }\n    .smarttestresult .bootomLogic table {\n      margin-top: 20px;\n      margin-bottom: 50px;\n      table-layout: fixed;\n      width: 100%;\n      border-collapse: collapse;\n      border: 1px solid black;\n      color: white; }\n      .smarttestresult .bootomLogic table td {\n        padding: 10px; }\n      .smarttestresult .bootomLogic table tr {\n        word-break: break-all;\n        height: 30px; }\n      .smarttestresult .bootomLogic table tr:nth-child(odd) {\n        background-color: #54aab1; }\n      .smarttestresult .bootomLogic table tr:nth-child(even) {\n        background-color: #2f8f9b; }\n    .smarttestresult .bootomLogic .buttonGroup {\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-pack: distribute;\n      -webkit-justify-content: space-around;\n      -moz-justify-content: space-around;\n      justify-content: space-around;\n      margin-bottom: 100px; }\n      .smarttestresult .bootomLogic .buttonGroup button {\n        cursor: pointer;\n        width: 120px;\n        height: 40px;\n        border: 1px solid #2f8f9b;\n        color: #2f8f9b; }\n        .smarttestresult .bootomLogic .buttonGroup button:hover {\n          background-color: #2f8f9b;\n          color: white;\n          transition: all .3s; }\n", ""]);
 
 	// exports
 
