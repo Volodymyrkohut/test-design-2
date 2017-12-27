@@ -27296,7 +27296,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n@font-face {\n  font-family: 'MuseoSans-Bold';\n  src: local(\"MuseoSansCyrl-900\"), url(\"https://nomail.com.ua/files/woff/73e5c73d4e80e6c080cd1bc5894cf3e8.woff\") format(\"woff\"); }\n\n@font-face {\n  font-family: 'MuseoSans-Normal';\n  src: local(\"MuseoSansCyrl-500\"), url(\"https://nomail.com.ua/files/woff/02f7d6b8e3cda79742b374cbc5595a8f.woff\") format(\"woff\"); }\n\n@font-face {\n  font-family: 'MuseoSans-Normal';\n  src: local(\"MuseoSansCyrl-400\"), url(\"https://nomail.com.ua/files/woff/02f7d6b8e3cda79742b374cbc5595a8f.woff\") format(\"woff\"); }\n\n@font-face {\n  font-family: 'MuseoSans-Light';\n  src: local(\"MuseoSansCyrl-100\"), url(\"https://nomail.com.ua/files/woff/1913b09835e902f7123ad3ac38b4cd93.woff\") format(\"woff\"); }\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0; }\n\nhtml, body {\n  height: 100%;\n  min-height: 100%;\n  width: 100%; }\n\na, p, span, div {\n  font-family: \"MuseoSans-Light\"; }\n\nh1, h2, h3, h4, h5, h6 {\n  font-family: \"MuseoSans-Normal\"; }\n\n.flex-blocks {\n  height: 100%; }\n  .flex-blocks .content {\n    padding-left: 50px;\n    height: 100%; }\n    @media (max-width: 768px) {\n      .flex-blocks .content {\n        padding-left: 0px;\n        padding-top: 50px; } }\n\n.clickToOpen {\n  position: fixed;\n  height: 100%;\n  cursor: pointer;\n  background-color: white;\n  z-index: 9999 !important; }\n  @media (max-width: 768px) {\n    .clickToOpen {\n      width: 100%;\n      height: 50px; } }\n  .clickToOpen .open-side-bar {\n    position: relative;\n    height: 100%;\n    width: 50px; }\n    @media (max-width: 768px) {\n      .clickToOpen .open-side-bar {\n        width: 100%;\n        height: 50px; } }\n    .clickToOpen .open-side-bar .logo {\n      position: absolute;\n      top: 30px;\n      left: 7px; }\n      @media (max-width: 768px) {\n        .clickToOpen .open-side-bar .logo {\n          position: absolute;\n          top: 7px;\n          left: 30px; } }\n    .clickToOpen .open-side-bar .text-bottom {\n      display: block;\n      position: absolute;\n      bottom: 100px;\n      left: -7px;\n      font-size: 25px;\n      -moz-transform: rotate(-90deg);\n      -o-transform: rotate(-90deg);\n      -ms-transform: rotate(-90deg);\n      -webkit-transform: rotate(-90deg);\n      transform: rotate(-90deg); }\n      @media (max-width: 768px) {\n        .clickToOpen .open-side-bar .text-bottom {\n          position: absolute;\n          bottom: 7px;\n          left: 80%;\n          -moz-transform: rotate(0deg);\n          -o-transform: rotate(0deg);\n          -ms-transform: rotate(0deg);\n          -webkit-transform: rotate(0deg);\n          transform: rotate(0deg); } }\n\n/*animation menu X*/\n.spinner-master4 * {\n  transition: all 0.3s;\n  -webkit-transition: all 0.3s;\n  box-sizing: border-box; }\n\n.spinner-master4 {\n  position: absolute;\n  margin: 0 auto;\n  height: 30px;\n  width: 30px;\n  bottom: 50px;\n  left: 8px; }\n  @media (max-width: 768px) {\n    .spinner-master4 {\n      left: 70%;\n      bottom: 0;\n      top: 7px; } }\n\n.spinner-master4 input[type=checkbox] {\n  display: none; }\n\n.spinner-master4 label {\n  cursor: pointer;\n  position: absolute;\n  z-index: 99;\n  height: 100%;\n  width: 100%;\n  top: 10px;\n  left: 0; }\n\n.spinner-master4 .spinner4 {\n  position: absolute;\n  height: 2px;\n  width: 100%;\n  background-color: #333;\n  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1); }\n\n.spinner-master4 .diagonal.part-1 {\n  position: relative;\n  float: left; }\n\n.spinner-master4 .horizontal {\n  position: relative;\n  float: left;\n  margin-top: 6px; }\n\n.spinner-master4 .diagonal.part-2 {\n  position: relative;\n  float: left;\n  margin-top: 6px; }\n\n.spinner-master4 input[type=checkbox]:checked ~ .spinner-spin4 > .horizontal {\n  transform: translate(-100px, 0px);\n  opacity: 0; }\n\n.spinner-master4 input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part-1 {\n  transform: rotate(-135deg);\n  margin-top: 10px; }\n\n.spinner-master4 input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part-2 {\n  transform: rotate(135deg);\n  -webkit-transform: rotate(135deg);\n  margin-top: -10px; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0; }\n\nhtml, body {\n  height: 100%;\n  min-height: 100%;\n  width: 100%; }\n\na, p, span, div, li {\n  font-family: 'Lato', sans-serif;\n  font-weight: 400; }\n\nh1, h2, h3, h4, h5, h6 {\n  font-family: 'Lato', sans-serif;\n  font-weight: 700; }\n\n.flex-blocks {\n  height: 100%; }\n  .flex-blocks .content {\n    padding-left: 50px;\n    height: 100%; }\n    @media (max-width: 768px) {\n      .flex-blocks .content {\n        padding-left: 0px;\n        padding-top: 50px; } }\n\n.clickToOpen {\n  position: fixed;\n  height: 100%;\n  cursor: pointer;\n  background-color: white;\n  z-index: 9999 !important; }\n  @media (max-width: 768px) {\n    .clickToOpen {\n      width: 100%;\n      height: 50px; } }\n  .clickToOpen .open-side-bar {\n    position: relative;\n    height: 100%;\n    width: 50px; }\n    @media (max-width: 768px) {\n      .clickToOpen .open-side-bar {\n        width: 100%;\n        height: 50px; } }\n    .clickToOpen .open-side-bar .logo {\n      position: absolute;\n      top: 30px;\n      left: 7px; }\n      @media (max-width: 768px) {\n        .clickToOpen .open-side-bar .logo {\n          position: absolute;\n          top: 7px;\n          left: 30px; } }\n    .clickToOpen .open-side-bar .text-bottom {\n      display: block;\n      position: absolute;\n      bottom: 100px;\n      left: -7px;\n      font-size: 25px;\n      -moz-transform: rotate(-90deg);\n      -o-transform: rotate(-90deg);\n      -ms-transform: rotate(-90deg);\n      -webkit-transform: rotate(-90deg);\n      transform: rotate(-90deg); }\n      @media (max-width: 768px) {\n        .clickToOpen .open-side-bar .text-bottom {\n          position: absolute;\n          bottom: 7px;\n          left: 80%;\n          -moz-transform: rotate(0deg);\n          -o-transform: rotate(0deg);\n          -ms-transform: rotate(0deg);\n          -webkit-transform: rotate(0deg);\n          transform: rotate(0deg); } }\n\n/*animation menu X*/\n.spinner-master4 * {\n  transition: all 0.3s;\n  -webkit-transition: all 0.3s;\n  box-sizing: border-box; }\n\n.spinner-master4 {\n  position: absolute;\n  margin: 0 auto;\n  height: 30px;\n  width: 30px;\n  bottom: 50px;\n  left: 8px; }\n  @media (max-width: 768px) {\n    .spinner-master4 {\n      left: 70%;\n      bottom: 0;\n      top: 7px; } }\n\n.spinner-master4 input[type=checkbox] {\n  display: none; }\n\n.spinner-master4 label {\n  cursor: pointer;\n  position: absolute;\n  z-index: 99;\n  height: 100%;\n  width: 100%;\n  top: 10px;\n  left: 0; }\n\n.spinner-master4 .spinner4 {\n  position: absolute;\n  height: 2px;\n  width: 100%;\n  background-color: #333;\n  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1); }\n\n.spinner-master4 .diagonal.part-1 {\n  position: relative;\n  float: left; }\n\n.spinner-master4 .horizontal {\n  position: relative;\n  float: left;\n  margin-top: 6px; }\n\n.spinner-master4 .diagonal.part-2 {\n  position: relative;\n  float: left;\n  margin-top: 6px; }\n\n.spinner-master4 input[type=checkbox]:checked ~ .spinner-spin4 > .horizontal {\n  transform: translate(-100px, 0px);\n  opacity: 0; }\n\n.spinner-master4 input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part-1 {\n  transform: rotate(-135deg);\n  margin-top: 10px; }\n\n.spinner-master4 input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part-2 {\n  transform: rotate(135deg);\n  -webkit-transform: rotate(135deg);\n  margin-top: -10px; }\n", ""]);
 
 	// exports
 
@@ -28354,7 +28354,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.custom-sidebar-class {\n  z-index: 8888 !important; }\n  @media (max-width: 768px) {\n    .custom-sidebar-class {\n      width: 100%; } }\n\n.switch {\n  color: black; }\n\n.sidebar-content {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-direction: normal;\n  -webkit-box-orient: vertical;\n  -webkit-flex-direction: column;\n  -moz-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  -webkit-justify-content: center;\n  -moz-justify-content: center;\n  justify-content: center;\n  width: 370px;\n  overflow: hidden; }\n  @media (max-width: 768px) {\n    .sidebar-content {\n      width: 100%; } }\n  .sidebar-content nav {\n    margin-left: 50px; }\n    @media (max-width: 768px) {\n      .sidebar-content nav {\n        text-align: center; } }\n    .sidebar-content nav ul a {\n      text-decoration: none;\n      color: black; }\n      .sidebar-content nav ul a li {\n        cursor: pointer;\n        font-size: calc(32px + 20 * (100vw - 320px) / 1600);\n        list-style: none;\n        margin-bottom: 25px;\n        transition: transform .5s; }\n        .sidebar-content nav ul a li:hover {\n          transition: transform .5s;\n          -moz-transform: translate(30px, 0px);\n          -o-transform: translate(30px, 0px);\n          -ms-transform: translate(30px, 0px);\n          -webkit-transform: translate(30px, 0px);\n          transform: translate(30px, 0px); }\n  .sidebar-content ul.lang {\n    position: absolute;\n    bottom: 20px;\n    margin-left: 50px; }\n    @media (max-width: 768px) {\n      .sidebar-content ul.lang {\n        position: absolute;\n        left: calc(50% - 60px);\n        bottom: 20px; } }\n    .sidebar-content ul.lang li {\n      list-style: none; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.custom-sidebar-class {\n  z-index: 8888 !important; }\n  @media (max-width: 768px) {\n    .custom-sidebar-class {\n      width: 100%; } }\n\n.switch {\n  color: black; }\n\n.sidebar-content {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-direction: normal;\n  -webkit-box-orient: vertical;\n  -webkit-flex-direction: column;\n  -moz-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  -webkit-justify-content: center;\n  -moz-justify-content: center;\n  justify-content: center;\n  width: 370px;\n  overflow: hidden; }\n  @media (max-width: 768px) {\n    .sidebar-content {\n      width: 100%; } }\n  .sidebar-content nav {\n    margin-left: 50px; }\n    @media (max-width: 768px) {\n      .sidebar-content nav {\n        text-align: center; } }\n    .sidebar-content nav ul a {\n      text-decoration: none;\n      color: black; }\n      .sidebar-content nav ul a li {\n        cursor: pointer;\n        font-size: calc(32px + 20 * (100vw - 320px) / 1600);\n        list-style: none;\n        margin-bottom: 25px;\n        font-weight: 300;\n        transition: transform .5s; }\n        .sidebar-content nav ul a li:hover {\n          transition: transform .5s;\n          -moz-transform: translate(30px, 0px);\n          -o-transform: translate(30px, 0px);\n          -ms-transform: translate(30px, 0px);\n          -webkit-transform: translate(30px, 0px);\n          transform: translate(30px, 0px); }\n  .sidebar-content ul.lang {\n    position: absolute;\n    bottom: 20px;\n    margin-left: 50px; }\n    @media (max-width: 768px) {\n      .sidebar-content ul.lang {\n        position: absolute;\n        left: calc(50% - 60px);\n        bottom: 20px; } }\n    .sidebar-content ul.lang li {\n      list-style: none; }\n", ""]);
 
 	// exports
 
@@ -36625,6 +36625,18 @@
 	        value: function handleFindNextQuestion(key, event) {
 	            var _this = this;
 
+	            /**
+	             * Write result to store by redux
+	             * */
+
+	            var answerToQuestion = {
+	                question: this.state.ask.question,
+	                answer: event.target.textContent,
+	                checkboxes: this.state.checkboxes
+	            };
+
+	            this.props.addAnswer(answerToQuestion);
+
 	            if (key != null) {
 	                (function () {
 
@@ -36657,18 +36669,6 @@
 	                        _this.setState({ ask: { answers: [] } });
 	                        _this.setState({ ask: answer, zoomClass: "ZoomIn" });
 	                    }, 500);
-
-	                    /**
-	                     * Write result to store by redux
-	                     * */
-
-	                    var answerToQuestion = {
-	                        question: _this.state.ask.question,
-	                        answer: event.target.textContent,
-	                        checkboxes: _this.state.checkboxes
-	                    };
-
-	                    _this.props.addAnswer(answerToQuestion);
 	                })();
 	            } else {
 	                // To reload new page
@@ -36771,7 +36771,8 @@
 	                                            labelStyle: {
 	                                                color: 'rgb(47,143,155)',
 	                                                font: '15px',
-	                                                fontWeight: '300'
+	                                                fontWeight: '400',
+	                                                fontFamily: 'Lato'
 	                                            }
 	                                        })
 	                                    )
@@ -43583,75 +43584,85 @@
 	                'div',
 	                { className: 'smarttestresult' },
 	                _react2['default'].createElement(
-	                    'h1',
-	                    { className: 'resulttest' },
-	                    'You result: ',
-	                    this.state.result
+	                    'div',
+	                    { className: 'smartTestTop' },
+	                    _react2['default'].createElement(
+	                        'div',
+	                        { className: 'column column1' },
+	                        _react2['default'].createElement('img', { src: 'images/logo/Logobig.png' })
+	                    ),
+	                    _react2['default'].createElement(
+	                        'div',
+	                        { className: 'column column2' },
+	                        _react2['default'].createElement(
+	                            'h1',
+	                            { className: 'resulttest' },
+	                            'You result: ',
+	                            this.state.result
+	                        )
+	                    )
 	                ),
 	                _react2['default'].createElement(
 	                    'div',
-	                    { className: 'bootomLogic' },
+	                    { className: 'smartTestBottom' },
 	                    _react2['default'].createElement(
-	                        'table',
-	                        null,
+	                        'div',
+	                        { className: 'column column1' },
 	                        _react2['default'].createElement(
-	                            'tbody',
+	                            'h1',
 	                            null,
-	                            _react2['default'].createElement(
-	                                'tr',
-	                                null,
-	                                _react2['default'].createElement(
-	                                    'th',
-	                                    null,
-	                                    'Ask'
-	                                ),
-	                                _react2['default'].createElement(
-	                                    'th',
-	                                    null,
-	                                    'answer'
-	                                )
-	                            ),
-	                            this.props.answer.map(function (item, index) {
-	                                return _react2['default'].createElement(
-	                                    'tr',
-	                                    { key: index + 2000 },
-	                                    _react2['default'].createElement(
-	                                        'td',
-	                                        null,
-	                                        item.question
-	                                    ),
-	                                    _react2['default'].createElement(
-	                                        'td',
-	                                        null,
-	                                        item.answer
-	                                    )
-	                                );
-	                            })
+	                            'Lorem ipsum dolor'
+	                        ),
+	                        _react2['default'].createElement(
+	                            'p',
+	                            null,
+	                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+	                        ),
+	                        _react2['default'].createElement(
+	                            'p',
+	                            null,
+	                            'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'
+	                        ),
+	                        _react2['default'].createElement(
+	                            'p',
+	                            null,
+	                            'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+	                        ),
+	                        _react2['default'].createElement(
+	                            'p',
+	                            null,
+	                            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 	                        )
 	                    ),
 	                    _react2['default'].createElement(
 	                        'div',
-	                        { className: 'buttonGroup' },
-	                        _react2['default'].createElement(
-	                            'button',
-	                            null,
-	                            'Верно'
-	                        ),
-	                        _react2['default'].createElement(
-	                            'button',
-	                            null,
-	                            'Неверно'
-	                        )
-	                    ),
-	                    _react2['default'].createElement(
-	                        'h1',
-	                        null,
-	                        ' Скорее всего , Вам должно быть предложено молекулярное исследование тканей для точного определения возможных вариантов новейших линий лечения .'
-	                    ),
-	                    _react2['default'].createElement(
-	                        'h2',
-	                        null,
-	                        ' Вы заинтересованны узнать больше и получить мнение специалистов из-за границы ?'
+	                        { className: 'column column2' },
+	                        this.props.answer.map(function (item, index) {
+	                            return _react2['default'].createElement(
+	                                'ul',
+	                                { key: index + 2000 },
+	                                _react2['default'].createElement(
+	                                    'li',
+	                                    null,
+	                                    _react2['default'].createElement('div', { className: 'blueMarker' }),
+	                                    item.question,
+	                                    _react2['default'].createElement(
+	                                        'div',
+	                                        null,
+	                                        item.answer
+	                                    ),
+	                                    item.checkboxes.map(function (item, index) {
+	                                        return _react2['default'].createElement(
+	                                            'div',
+	                                            { key: index + 1000 },
+	                                            item.item,
+	                                            ', '
+	                                        );
+	                                    })
+	                                )
+	                            );
+	                        }),
+	                        _react2['default'].createElement('div', { className: 'line' })
 	                    )
 	                )
 	            );
@@ -43669,6 +43680,47 @@
 	}
 
 	exports['default'] = (0, _reactRedux.connect)(mapStateToProps)(SmartTestsResult);
+
+	/*
+	*
+	*
+	*
+	*  <div className="bootomLogic">
+	                    <table>
+	                        <tbody>
+	                        <tr>
+	                            <th>Ask</th>
+	                            <th>answer</th>
+	                        </tr>
+	                        {
+	                            this.props.answer.map((item, index) => {
+	                                return (
+	                                    <tr key={index + 2000}>
+	                                        <td>{item.question}</td>
+	                                        <td>{item.answer}</td>
+	                                    </tr>
+	                                )
+	                            })
+	                        }
+	                        </tbody>
+	                    </table>
+	                    <div className="buttonGroup">
+	                        <button>Верно</button>
+	                        <button>Неверно</button>
+	                    </div>
+
+	                    <h1> Скорее всего , Вам должно быть предложено
+	                        молекулярное исследование тканей
+	                        для точного определения возможных вариантов
+	                        новейших линий лечения .
+	                    </h1>
+	                    <h2> Вы заинтересованны узнать больше и получить
+	                        мнение специалистов из-за границы ?
+	                    </h2>
+	                </div>
+	*
+	*
+	* */
 	module.exports = exports['default'];
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Стільниця/Medical/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "SmartTestResult.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
@@ -43708,7 +43760,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.smarttestresult {\n  width: 100%;\n  min-height: 100%;\n  background-color: white; }\n  .smarttestresult .resulttest {\n    margin: 20px;\n    color: #2f8f9b;\n    text-align: center; }\n  .smarttestresult .bootomLogic {\n    margin: 0 auto;\n    width: 80%;\n    margin-top: 20px;\n    margin-bottom: 20px;\n    min-height: 100%;\n    background-color: white;\n    font-size: 16px;\n    padding: 10px;\n    text-align: center; }\n    .smarttestresult .bootomLogic h1 {\n      color: #2f8f9b;\n      font-family: \"MuseoSans-Light\"; }\n      @media (max-width: 480px) {\n        .smarttestresult .bootomLogic h1 {\n          font-size: 17px; } }\n    .smarttestresult .bootomLogic h2 {\n      font-family: \"MuseoSans-Light\";\n      color: #54aab1; }\n      @media (max-width: 480px) {\n        .smarttestresult .bootomLogic h2 {\n          font-size: 14px; } }\n    .smarttestresult .bootomLogic table {\n      margin-top: 20px;\n      margin-bottom: 50px;\n      table-layout: fixed;\n      width: 100%;\n      border-collapse: collapse;\n      border: 1px solid black;\n      color: white; }\n      .smarttestresult .bootomLogic table td {\n        padding: 10px; }\n      .smarttestresult .bootomLogic table tr {\n        word-break: break-all;\n        height: 30px; }\n      .smarttestresult .bootomLogic table tr:nth-child(odd) {\n        background-color: #54aab1; }\n      .smarttestresult .bootomLogic table tr:nth-child(even) {\n        background-color: #2f8f9b; }\n    .smarttestresult .bootomLogic .buttonGroup {\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-pack: distribute;\n      -webkit-justify-content: space-around;\n      -moz-justify-content: space-around;\n      justify-content: space-around;\n      margin-bottom: 100px; }\n      .smarttestresult .bootomLogic .buttonGroup button {\n        cursor: pointer;\n        width: 120px;\n        height: 40px;\n        border: 1px solid #2f8f9b;\n        color: #2f8f9b; }\n        .smarttestresult .bootomLogic .buttonGroup button:hover {\n          background-color: #2f8f9b;\n          color: white;\n          transition: all .3s; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.smarttestresult .smartTestTop {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n  -webkit-justify-content: space-around;\n  -moz-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-flex-wrap: wrap;\n  -moz-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  min-height: 200px; }\n  .smarttestresult .smartTestTop .column1 {\n    -webkit-box-flex: 1;\n    -webkit-flex-grow: 1;\n    -moz-flex-grow: 1;\n    -ms-flex-positive: 1;\n    flex-grow: 1; }\n    .smarttestresult .smartTestTop .column1 img {\n      margin: 20px; }\n  .smarttestresult .smartTestTop .column2 {\n    -webkit-box-flex: 2;\n    -webkit-flex-grow: 2;\n    -moz-flex-grow: 2;\n    -ms-flex-positive: 2;\n    flex-grow: 2; }\n    .smarttestresult .smartTestTop .column2 h1 {\n      color: gray;\n      font-size: 40px;\n      font-weight: 300;\n      margin-top: 80px; }\n\n.smarttestresult .smartTestBottom {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n  -webkit-justify-content: space-around;\n  -moz-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-flex-wrap: wrap;\n  -moz-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  width: 100%;\n  min-height: 100%;\n  background-color: white; }\n  .smarttestresult .smartTestBottom .column1 {\n    -webkit-box-flex: 1;\n    -webkit-flex-grow: 1;\n    -moz-flex-grow: 1;\n    -ms-flex-positive: 1;\n    flex-grow: 1;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    padding: 20px; }\n  .smarttestresult .smartTestBottom .column2 {\n    -webkit-box-flex: 2;\n    -webkit-flex-grow: 2;\n    -moz-flex-grow: 2;\n    -ms-flex-positive: 2;\n    flex-grow: 2;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    position: relative;\n    padding-left: 50px; }\n    .smarttestresult .smartTestBottom .column2 ul {\n      list-style: none; }\n      .smarttestresult .smartTestBottom .column2 ul li {\n        position: relative;\n        margin-top: 20px;\n        font-weight: 700;\n        font-size: 20px; }\n        .smarttestresult .smartTestBottom .column2 ul li .blueMarker {\n          position: absolute;\n          left: -37px;\n          top: 5px;\n          width: 15px;\n          height: 15px;\n          border-radius: 50%;\n          background-color: #0099ff; }\n        .smarttestresult .smartTestBottom .column2 ul li div {\n          font-weight: 500;\n          font-size: 16px; }\n    .smarttestresult .smartTestBottom .column2 .line {\n      position: absolute;\n      top: 0;\n      left: 20px;\n      margin-top: 40px;\n      height: 100%;\n      width: 2px;\n      background-color: #0099ff; }\n\n/*\n\n.resulttest {\n      margin: 20px;\n      color:$bg_circle;\n      text-align: center;\n  }\n\n  .bootomLogic{\n    margin: 0 auto;\n    width: 80%;\n    margin-top: 20px;\n    margin-bottom: 20px;\n    min-height: 100%;\n\n    background-color: white;\n    font-size: 16px;\n    padding: 10px;\n    text-align: center;\n\n    h1{\n      color:$bg_circle;\n      font-family: \"MuseoSans-Light\";\n      @media (max-width: 480px) {\n        font-size: 17px;\n      }\n    }\n\n    h2{\n      font-family: \"MuseoSans-Light\";\n      color:$bg_color_blue;\n      @media (max-width: 480px) {\n        font-size: 14px;\n      }\n    }\n\n    table {\n      margin-top: 20px;\n      margin-bottom: 50px;\n\n      table-layout: fixed;\n      width: 100%;\n      border-collapse: collapse;\n      border: 1px solid $black_color;\n      color:$white_color;\n\n\n      td{\n        padding: 10px;\n      }\n\n      tr{\n        word-break: break-all;\n        height: 30px;\n      }\n\n      tr:nth-child(odd) {\n        background-color: $bg_color_blue;\n      }\n\n      tr:nth-child(even) {\n        background-color: $bg_circle;\n      }\n    }\n\n    .buttonGroup{\n      @include flexbox;\n      @include justify-content(space-around);\n\n      margin-bottom: 100px;\n\n      button{\n        cursor: pointer;\n        width: 120px;\n        height: 40px;\n        border: 1px solid $bg_circle;\n        color:$bg_circle;\n\n        &:hover{\n          background-color: $bg_circle;\n          color:white;\n          transition: all .3s;\n        }\n      }\n\n    }\n\n    //transition: 1s all;\n    //opacity: 1;\n\n  }\n\n*/\n", ""]);
 
 	// exports
 
