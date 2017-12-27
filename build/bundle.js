@@ -43122,7 +43122,7 @@
 	        next: 16, // null
 	        text: "Да"
 	    }, {
-	        next: 15, //null
+	        next: 16, //null
 	        text: "Нет"
 	    }]
 	}, {
@@ -43275,7 +43275,7 @@
 	        next: 57, // null
 	        text: "Да"
 	    }, {
-	        next: 56, //null
+	        next: 57, //null
 	        text: "Нет"
 
 	    }]
