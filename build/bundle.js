@@ -42929,14 +42929,14 @@
 	        _react2["default"].createElement("source", { src: "http://thenewcode.com/assets/videos/nambia3.webm" })
 	    ),
 	    answers: [{
-	        next: 17,
+	        next: 170,
 	        text: "Лемпектомия"
 	    }, {
-	        next: 17,
+	        next: 170,
 	        text: "Мастектония"
 	    }]
 	}, {
-	    key: 17,
+	    key: 170,
 	    question: "Размер опухоли",
 	    answers: [{
 	        next: 7,
@@ -43116,12 +43116,13 @@
 	    }]
 	}, {
 	    key: 15,
-	    question: "ПэТ/КТ/ после лечения",
+	    question: "ПэТ/КТ/ после лечения ?",
+
 	    answers: [{
 	        next: 16, // null
 	        text: "Да"
 	    }, {
-	        next: 16, //null
+	        next: 15, //null
 	        text: "Нет"
 	    }]
 	}, {
@@ -43263,7 +43264,7 @@
 	        next: 56, // null
 	        text: "Да"
 	    }, {
-	        next: 55, //null  /**СТРАНИЦА РЕКОМЕНДАЦИИ*/
+	        next: 55, //null
 	        text: "Нет"
 
 	    }]
@@ -43274,7 +43275,7 @@
 	        next: 57, // null
 	        text: "Да"
 	    }, {
-	        next: 56, //null  /**СТРАНИЦА РЕКОМЕНДАЦИИ*/
+	        next: 56, //null
 	        text: "Нет"
 
 	    }]
