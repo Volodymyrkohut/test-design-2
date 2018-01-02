@@ -36620,7 +36620,7 @@
 	            //         }
 	            //     ]
 	            // },
-	            PositionStyle: 0,
+	            PositionStyle: 80,
 	            options: [],
 	            checkboxes: [],
 	            finished: false,
@@ -36818,7 +36818,13 @@
 	                    { className: 'logic' },
 	                    _react2['default'].createElement(
 	                        'div',
-	                        { style: { maxWidth: 380, maxHeight: 400, margin: 'auto', position: 'absolute', top: this.state.PositionStyle + 'px', transition: 'all 1s' } },
+	                        { style: {
+	                                maxWidth: 380,
+	                                maxHeight: 400,
+	                                margin: 'auto',
+	                                position: 'absolute',
+	                                top: this.state.PositionStyle + 'px',
+	                                transition: 'all 1s' } },
 	                        _react2['default'].createElement(
 	                            _materialUiStepper.Stepper,
 	                            { activeStep: stepIndex, orientation: 'vertical' },
@@ -39293,7 +39299,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.smarttests {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -ms-flex-pack: justify;\n  -webkit-justify-content: space-between;\n  -moz-justify-content: space-between;\n  justify-content: space-between; }\n  .smarttests .left-part-of-screen {\n    -webkit-box-flex: 0;\n    -webkit-flex-grow: 0;\n    -moz-flex-grow: 0;\n    -ms-flex-positive: 0;\n    flex-grow: 0;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    padding: 30px;\n    text-align: center; }\n    .smarttests .left-part-of-screen ul {\n      text-align: left;\n      list-style: none; }\n      .smarttests .left-part-of-screen ul li {\n        margin-bottom: 10px; }\n        .smarttests .left-part-of-screen ul li span {\n          color: #00bcd4; }\n  .smarttests .logic {\n    -webkit-box-flex: 1;\n    -webkit-flex-grow: 1;\n    -moz-flex-grow: 1;\n    -ms-flex-positive: 1;\n    flex-grow: 1; }\n  .smarttests .askQuestion {\n    font-size: 18px;\n    font-family: 'MuseoSans-Light'; }\n\n.button {\n  display: inline-block;\n  cursor: pointer;\n  border: 1px solid transparent;\n  position: relative;\n  margin: 10px; }\n  .button .text {\n    font-family: proxima-nova; }\n  .button:after {\n    position: absolute;\n    content: '';\n    bottom: -1px;\n    left: calc(0.7em * 1.2);\n    right: calc(0.7em * 1.2);\n    height: 1px;\n    background: #00bcd4;\n    z-index: -1;\n    transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;\n    transform-origin: left; }\n\n.line {\n  position: absolute;\n  background: #00bcd4; }\n  .line.-right, .line.-left {\n    width: 1px;\n    bottom: -1px;\n    top: -1px;\n    transform: scale3d(1, 0, 1); }\n  .line.-top, .line.-bottom {\n    height: 1px;\n    left: -1px;\n    right: -1px;\n    transform: scale3d(0, 1, 1); }\n  .line.-right {\n    right: -1px;\n    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;\n    transform-origin: top; }\n  .line.-top {\n    top: -1px;\n    transition: transform 0.08s linear 0.43s;\n    transform-origin: left; }\n  .line.-left {\n    left: -1px;\n    transition: transform 0.08s linear 0.51s;\n    transform-origin: bottom; }\n  .line.-bottom {\n    bottom: -1px;\n    transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);\n    transform-origin: right; }\n\n.button:hover .text,\n.button:active .text {\n  transform: translate3d(0, 0, 0);\n  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s; }\n\n.button:hover:after,\n.button:active:after {\n  transform: scale3d(0, 1, 1);\n  right: -1px;\n  left: -1px;\n  transform-origin: right;\n  transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s, right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s; }\n\n.button:hover .line,\n.button:active .line {\n  transform: scale3d(1, 1, 1); }\n  .button:hover .line.-right,\n  .button:active .line.-right {\n    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;\n    transform-origin: bottom; }\n  .button:hover .line.-top,\n  .button:active .line.-top {\n    transition: transform 0.08s linear 0.4s;\n    transform-origin: right; }\n  .button:hover .line.-left,\n  .button:active .line.-left {\n    transition: transform 0.08s linear 0.48s;\n    transform-origin: top; }\n  .button:hover .line.-bottom,\n  .button:active .line.-bottom {\n    transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;\n    transform-origin: left; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.smarttests {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -ms-flex-pack: justify;\n  -webkit-justify-content: space-between;\n  -moz-justify-content: space-between;\n  justify-content: space-between; }\n  .smarttests .left-part-of-screen {\n    -webkit-box-flex: 0;\n    -webkit-flex-grow: 0;\n    -moz-flex-grow: 0;\n    -ms-flex-positive: 0;\n    flex-grow: 0;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    padding: 30px;\n    text-align: center; }\n    @media (max-width: 600px) {\n      .smarttests .left-part-of-screen {\n        display: none; } }\n    .smarttests .left-part-of-screen ul {\n      text-align: left;\n      list-style: none; }\n      .smarttests .left-part-of-screen ul li {\n        margin-bottom: 10px; }\n        .smarttests .left-part-of-screen ul li span {\n          color: #00bcd4; }\n  .smarttests .logic {\n    -webkit-box-flex: 1;\n    -webkit-flex-grow: 1;\n    -moz-flex-grow: 1;\n    -ms-flex-positive: 1;\n    flex-grow: 1; }\n  .smarttests .askQuestion {\n    font-size: 18px;\n    font-family: 'MuseoSans-Light'; }\n\n.button {\n  display: inline-block;\n  cursor: pointer;\n  border: 1px solid transparent;\n  position: relative;\n  margin: 10px; }\n  .button .text {\n    font-family: proxima-nova; }\n  .button:after {\n    position: absolute;\n    content: '';\n    bottom: -1px;\n    left: calc(0.7em * 1.2);\n    right: calc(0.7em * 1.2);\n    height: 1px;\n    background: #00bcd4;\n    z-index: -1;\n    transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;\n    transform-origin: left; }\n\n.line {\n  position: absolute;\n  background: #00bcd4; }\n  .line.-right, .line.-left {\n    width: 1px;\n    bottom: -1px;\n    top: -1px;\n    transform: scale3d(1, 0, 1); }\n  .line.-top, .line.-bottom {\n    height: 1px;\n    left: -1px;\n    right: -1px;\n    transform: scale3d(0, 1, 1); }\n  .line.-right {\n    right: -1px;\n    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;\n    transform-origin: top; }\n  .line.-top {\n    top: -1px;\n    transition: transform 0.08s linear 0.43s;\n    transform-origin: left; }\n  .line.-left {\n    left: -1px;\n    transition: transform 0.08s linear 0.51s;\n    transform-origin: bottom; }\n  .line.-bottom {\n    bottom: -1px;\n    transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);\n    transform-origin: right; }\n\n.button:hover .text,\n.button:active .text {\n  transform: translate3d(0, 0, 0);\n  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s; }\n\n.button:hover:after,\n.button:active:after {\n  transform: scale3d(0, 1, 1);\n  right: -1px;\n  left: -1px;\n  transform-origin: right;\n  transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s, right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s; }\n\n.button:hover .line,\n.button:active .line {\n  transform: scale3d(1, 1, 1); }\n  .button:hover .line.-right,\n  .button:active .line.-right {\n    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;\n    transform-origin: bottom; }\n  .button:hover .line.-top,\n  .button:active .line.-top {\n    transition: transform 0.08s linear 0.4s;\n    transform-origin: right; }\n  .button:hover .line.-left,\n  .button:active .line.-left {\n    transition: transform 0.08s linear 0.48s;\n    transform-origin: top; }\n  .button:hover .line.-bottom,\n  .button:active .line.-bottom {\n    transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;\n    transform-origin: left; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
 
 	// exports
 
@@ -43018,7 +43024,6 @@
 	var arrayOfQuestions = [{
 	    key: 2,
 	    question: "Ваш возраст ?",
-	    // video: <video autoPlay playsInline muted loop preload width='360'><source src="http://thenewcode.com/assets/videos/nambia3.webm" /></video>,
 	    answers: [{
 	        next: 3,
 	        text: "28-35"
@@ -43031,30 +43036,20 @@
 	    }]
 	}, {
 	    key: 3,
-	    question: "Била ли операция ?",
-	    // video: <video autoPlay playsInline muted loop preload width='360'><source src="http://thenewcode.com/assets/videos/fashion-export.mp4" /></video>,
-	    answers: [{
-	        next: 4,
-	        text: "Да"
-	    }, {
-	        next: 6,
-	        text: "Нет"
-	    }]
-	}, {
-	    key: 4,
-	    question: "Вид операции",
-	    // video: <video autoPlay playsInline muted loop preload width='360'><source src="http://thenewcode.com/assets/videos/nambia3.webm" /></video>,
+	    question: "Прошли ли вы операцию ?",
 	    answers: [{
 	        next: 170,
 	        text: "Лемпектомия"
 	    }, {
 	        next: 170,
 	        text: "Мастектония"
+	    }, {
+	        next: 6,
+	        text: "Не проходили"
 	    }]
 	}, {
 	    key: 170,
 	    question: "Размер опухоли",
-	    // video: <video autoPlay playsInline muted loop preload width='360'><source src="http://thenewcode.com/assets/videos/nambia3.webm" /></video>,
 	    answers: [{
 	        next: 7,
 	        text: ">2 см"
@@ -48841,12 +48836,15 @@
 	 * This Reduser get client's answer
 	 * **/
 	var initialState = [{ ask: {
-
 	        key: 1,
-	        question: "Lorem ipsum dolor sit amet, ei vel option " + "latine consetetur,aeque labitur deseruisse per no. Te has" + " magna alienum, ei viserat quidam denique. Mazim vidisse " + "detraxit cum te, dicitclita deserunt mea cu. " + "An ius nemore accumsan dissentias.",
+	        question: "Данный сервис находится в стадии разработки и тестирования.\n" + "  Все рекомендации предназначены только для общего ознакомления и требуют\n" + "  обязательной проверки Вашего лечащего врача.\n" + "  Проходя тест , вы соглашаетесь с условиями . ",
 	        answers: [{
 	            next: 2,
 	            text: "Next"
+	        }],
+	        lotOf: [{
+	            id: 1,
+	            item: "Agree"
 	        }]
 	    },
 	    question: "",
