@@ -36612,7 +36612,6 @@
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            this.props.clearAnswer();
-	            console.log("aaaaaaa aaa: ", this.props.answer);
 	        }
 	    }, {
 	        key: 'handleFindNextQuestion',
@@ -36634,12 +36633,25 @@
 	                PositionStyle: this.state.PositionStyle - 56
 	            });
 
+	            var formAnswer = answerCurrent.answerForView;
+
+	            if (questionCurrent && questionCurrent.lotOf && questionCurrent.lotOf.length > 1) {
+	                console.log(this.state.checkboxes);
+
+	                // map for get property for  join
+	                var items = this.state.checkboxes.map(function (item) {
+	                    return item.item;
+	                });
+
+	                formAnswer = formAnswer + " " + items.join(', ');
+	            }
 	            /**
 	             * Write result to store by redux
 	             * */
 	            var answerToQuestion = {
 	                ask: answer,
 	                question: questionCurrent.question,
+	                answerForView: formAnswer || '', // answer what was formulate
 	                answer: answerCurrent.text,
 	                checkboxes: this.state.checkboxes
 	            };
@@ -36819,9 +36831,15 @@
 	                        'Если у Вас диагностирован  РМЖ Мы предлагаем пройти данный тест , для выявления возможных альтернатив в лечении и диагностики'
 	                    ),
 	                    _react2['default'].createElement(
-	                        'div',
-	                        null,
-	                        this.state.video
+	                        'ul',
+	                        { className: 'answerFormulate' },
+	                        this.props.answer.map(function (item, index) {
+	                            return _react2['default'].createElement(
+	                                'li',
+	                                { key: index + 400 },
+	                                item.answerForView
+	                            );
+	                        })
 	                    )
 	                ),
 	                _react2['default'].createElement(
@@ -39189,7 +39207,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.smarttests {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -ms-flex-pack: justify;\n  -webkit-justify-content: space-between;\n  -moz-justify-content: space-between;\n  justify-content: space-between; }\n  .smarttests .left-part-of-screen {\n    -webkit-box-flex: 0;\n    -webkit-flex-grow: 0;\n    -moz-flex-grow: 0;\n    -ms-flex-positive: 0;\n    flex-grow: 0;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    padding: 30px;\n    text-align: left; }\n    @media (max-width: 600px) {\n      .smarttests .left-part-of-screen {\n        display: none; } }\n    .smarttests .left-part-of-screen h2 {\n      font-family: 'MuseoSans-Light';\n      margin-bottom: 10px; }\n    .smarttests .left-part-of-screen table {\n      margin-bottom: 30px; }\n      .smarttests .left-part-of-screen table tr {\n        font-family: 'MuseoSans-Light'; }\n      .smarttests .left-part-of-screen table td:nth-child(even) {\n        color: #00bcd4; }\n    .smarttests .left-part-of-screen p {\n      font-family: 'MuseoSans-Light'; }\n  .smarttests .logic {\n    -webkit-box-flex: 1;\n    -webkit-flex-grow: 1;\n    -moz-flex-grow: 1;\n    -ms-flex-positive: 1;\n    flex-grow: 1; }\n    .smarttests .logic .btn {\n      position: relative;\n      cursor: pointer;\n      overflow: hidden;\n      margin-top: 10px;\n      width: 190px;\n      padding: 4px;\n      text-align: center;\n      border: 1px solid #00bcd4;\n      color: #00bcd4;\n      border-radius: 5px; }\n      .smarttests .logic .btn:after {\n        content: \"\";\n        display: block;\n        position: absolute;\n        height: 0%;\n        left: 50%;\n        top: 50%;\n        width: 150%;\n        z-index: -1;\n        -webkit-transition: all 1s ease 0s;\n        -moz-transition: all 1s ease 0s;\n        -o-transition: all 1s ease 0s;\n        transition: all 1s ease 0s;\n        background: #00bcd4;\n        -moz-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        -ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        -webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        transform: translateX(-50%) translateY(-50%) rotate(-25deg); }\n      .smarttests .logic .btn:hover:after {\n        height: 480%; }\n      .smarttests .logic .btn:hover {\n        color: white; }\n  .smarttests .askQuestion {\n    font-size: 18px;\n    font-family: 'MuseoSans-Light'; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.smarttests {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -ms-flex-pack: justify;\n  -webkit-justify-content: space-between;\n  -moz-justify-content: space-between;\n  justify-content: space-between; }\n  .smarttests .left-part-of-screen {\n    -webkit-box-flex: 0;\n    -webkit-flex-grow: 0;\n    -moz-flex-grow: 0;\n    -ms-flex-positive: 0;\n    flex-grow: 0;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    padding: 30px;\n    text-align: left; }\n    @media (max-width: 600px) {\n      .smarttests .left-part-of-screen {\n        display: none; } }\n    .smarttests .left-part-of-screen h2 {\n      font-family: 'MuseoSans-Light';\n      margin-bottom: 10px; }\n    .smarttests .left-part-of-screen table {\n      margin-bottom: 30px; }\n      .smarttests .left-part-of-screen table tr {\n        font-family: 'MuseoSans-Light'; }\n      .smarttests .left-part-of-screen table td:nth-child(even) {\n        color: #00bcd4; }\n    .smarttests .left-part-of-screen p {\n      font-family: 'MuseoSans-Light'; }\n    .smarttests .left-part-of-screen .answerFormulate {\n      margin-top: 50px;\n      color: #696969;\n      list-style: none;\n      font-size: 14px; }\n  .smarttests .logic {\n    -webkit-box-flex: 1;\n    -webkit-flex-grow: 1;\n    -moz-flex-grow: 1;\n    -ms-flex-positive: 1;\n    flex-grow: 1; }\n    .smarttests .logic .btn {\n      position: relative;\n      cursor: pointer;\n      overflow: hidden;\n      margin-top: 10px;\n      width: 190px;\n      padding: 4px;\n      text-align: center;\n      border: 1px solid #00bcd4;\n      color: #00bcd4;\n      border-radius: 5px; }\n      .smarttests .logic .btn:after {\n        content: \"\";\n        display: block;\n        position: absolute;\n        height: 0%;\n        left: 50%;\n        top: 50%;\n        width: 150%;\n        z-index: -1;\n        -webkit-transition: all 1s ease 0s;\n        -moz-transition: all 1s ease 0s;\n        -o-transition: all 1s ease 0s;\n        transition: all 1s ease 0s;\n        background: #00bcd4;\n        -moz-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        -ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        -webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        transform: translateX(-50%) translateY(-50%) rotate(-25deg); }\n      .smarttests .logic .btn:hover:after {\n        height: 480%; }\n      .smarttests .logic .btn:hover {\n        color: white; }\n  .smarttests .askQuestion {\n    font-size: 18px;\n    font-family: 'MuseoSans-Light'; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
 
 	// exports
 
@@ -39221,13 +39239,16 @@
 	    ),
 	    answers: [{
 	        next: 3,
-	        text: "28-35"
+	        text: "28-35",
+	        answerForView: "Ваш возраст 28-35"
 	    }, {
 	        next: 5,
-	        text: "45-65"
+	        text: "45-65",
+	        answerForView: "Ваш возраст 45-65"
 	    }, {
 	        next: 3,
-	        text: "35-45"
+	        text: "35-45",
+	        answerForView: "Ваш возраст 35-45"
 	    }]
 	}, {
 	    key: 3,
@@ -39239,13 +39260,17 @@
 	    ),
 	    answers: [{
 	        next: 170,
-	        text: "Лемпектомия"
+	        text: "Лемпектомия",
+	        answerForView: 'Вы прошли Лемпектомию'
 	    }, {
 	        next: 170,
-	        text: "Мастектония"
+	        text: "Мастектония",
+	        answerForView: 'Вы прошли Мастектонию'
+
 	    }, {
 	        next: 6,
-	        text: "Не проходили"
+	        text: "Не проходили",
+	        answerForView: 'Вы непрошли операцию'
 	    }]
 	}, {
 	    key: 170,
@@ -39257,26 +39282,32 @@
 	    ),
 	    answers: [{
 	        next: 7,
-	        text: ">2 см"
+	        text: ">2 см",
+	        answerForView: 'Размер удаленной опухоли >2 см'
 	    }, {
 	        next: 7,
-	        text: "2 - 5 см"
+	        text: "2 - 5 см",
+	        answerForView: 'Размер удаленной опухоли 2 - 5 см'
 	    }, {
 	        next: 7,
-	        text: "5> см"
+	        text: "5> см",
+	        answerForView: 'Размер удаленной опухоли 5> см'
 	    }, {
 	        next: 7,
-	        text: "into"
+	        text: "into",
+	        answerForView: 'Размер удаленной опухоли into'
 	    }]
 	}, {
 	    key: 5,
 	    question: "Наступила ли у вас менопауза ?",
 	    answers: [{
 	        next: 3,
-	        text: "Да"
+	        text: "Да",
+	        answerForView: 'У Вас наступила менопауза'
 	    }, {
 	        next: 3,
-	        text: "Нет"
+	        text: "Нет",
+	        answerForView: 'У Вас не наступила менопауза'
 	    }]
 	}, {
 	    key: 7,
@@ -39293,50 +39324,60 @@
 	    }],
 	    answers: [{
 	        next: 8,
-	        text: "next" // SOME HERE
+	        text: "next", // SOME HERE
+	        answerForView: 'Вы проходили '
 	    }]
 	}, {
 	    key: 8,
 	    question: "Были обнаружены удаленные метастазы ?",
 	    answers: [{
 	        next: 49,
-	        text: "Да"
+	        text: "Да",
+	        answerForView: 'Были обнаружены удаленные метастазы.'
 	    }, {
 	        next: 9,
-	        text: "Нет"
+	        text: "Нет",
+	        answerForView: 'Не были обнаружены удаленные метастазы.'
 	    }]
 	}, {
 	    key: 9,
 	    question: "Удалены прилегающие Лимфоузлы ?",
 	    answers: [{
 	        next: 10,
-	        text: "Да"
+	        text: "Да",
+	        answerForView: 'Не были удалены прилегающие Лимфоузлы.'
 	    }, {
 	        next: 10,
-	        text: "Нет"
+	        text: "Нет",
+	        answerForView: 'Были удалены прилегающие Лимфоузлы.'
 	    }]
 	}, {
 	    key: 10,
 	    question: "Сколько ?",
 	    answers: [{
 	        next: 11,
-	        text: "2-3"
+	        text: "2-3",
+	        answerForView: 'Были удалены 2-3 Лимфоузлы.'
 	    }, {
 	        next: 11,
-	        text: "4-9"
+	        text: "4-9",
+	        answerForView: 'Были удалены 4-9 Лимфоузлы.'
 	    }, {
 	        next: 11,
-	        text: "10< collarbone"
+	        text: "10< collarbone",
+	        answerForView: 'Были удалены 10< collarbone Лимфоузлы.'
 	    }]
 	}, {
 	    key: 11,
 	    question: "Рецепторы ?",
 	    answers: [{
 	        next: 12,
-	        text: "Гармонозависимая"
+	        text: "Гармонозависимая",
+	        answerForView: 'Рецепторы гармонозависимая'
 	    }, {
 	        next: 12,
-	        text: "Не гормонозависимая"
+	        text: "Не гормонозависимая",
+	        answerForView: 'Рецепторы не гармонозависимая'
 	    }]
 	},
 
@@ -39386,23 +39427,28 @@
 	    question: "Установлена cтадия ?",
 	    answers: [{
 	        next: 13,
-	        text: "1"
+	        text: "1",
+	        answerForView: 'Стадия 1'
 	    }, {
 	        next: 13,
-	        text: "2"
+	        text: "2",
+	        answerForView: 'Стадия 2'
 	    }, {
 	        next: 13,
-	        text: "3"
+	        text: "3",
+	        answerForView: 'Стадия 3'
 	    }, {
 	        next: 13,
-	        text: "4"
+	        text: "4",
+	        answerForView: 'Стадия 4'
 	    }]
 	}, {
 	    key: 13,
 	    question: "Какое лечение Вы получали",
 	    answers: [{
 	        next: 14,
-	        text: "Next" //Next
+	        text: "Next", //Next
+	        answerForView: 'Вы получали лечение: '
 	    }],
 	    lotOf: [{
 	        id: 1,
@@ -39426,10 +39472,12 @@
 	    question: "Рецидив Заболевания",
 	    answers: [{
 	        next: 15, // null
-	        text: "Да"
+	        text: "Да",
+	        answerForView: 'Были рецидиви Заболевания'
 	    }, {
 	        next: 15, //null
-	        text: "Нет"
+	        text: "Нет",
+	        answerForView: 'Не было рецидивов Заболевания'
 	    }]
 	}, {
 	    key: 15,
@@ -39437,27 +39485,32 @@
 
 	    answers: [{
 	        next: 16, // null
-	        text: "Да"
+	        text: "Да",
+	        answerForView: 'Был ПэТ/КТ/ после лечения.'
 	    }, {
 	        next: 16, //null
-	        text: "Нет"
+	        text: "Нет",
+	        answerForView: 'Не было ПэТ/КТ/ после лечения.'
 	    }]
 	}, {
 	    key: 16,
 	    question: "Обнаружены новые образования ?",
 	    answers: [{
 	        next: 17, // null
-	        text: "Да"
+	        text: "Да",
+	        answerForView: 'Были oбнаружены новые образования.'
 	    }, {
 	        next: 17, //null
-	        text: "Нет" ////////////////////////////////////
+	        text: "Нет", ////////////////////////////////////
+	        answerForView: 'Не было oбнаружены новые образования.'
 	    }]
 	}, {
 	    key: 17,
 	    question: "Где ?",
 	    answers: [{
 	        next: null,
-	        text: "Next" // Next
+	        text: "Next", // Next
+	        answerForView: 'Образования было oбнаружены в '
 	    }],
 	    lotOf: [
 	    // {
@@ -39486,7 +39539,8 @@
 	    question: "Где ?",
 	    answers: [{
 	        next: 50,
-	        text: "Next" // Next
+	        text: "Next", // Next
+	        answerForView: 'Прилегающие лимфоузлы были удалены в ' //TO DO
 	    }],
 	    lotOf: [{
 	        id: 2,
@@ -39503,59 +39557,71 @@
 	    }]
 	}, {
 	    key: 50,
-	    question: "Били удалены прилегающие Лимфоузлы ?",
+	    question: "Были удалены прилегающие Лимфоузлы ?",
 	    answers: [{
 	        next: 50,
-	        text: "Нет"
+	        text: "Нет",
+	        answerForView: 'Были удалены прилегающие Лимфоузлы'
 	    }, {
 	        next: 51,
-	        text: "Да"
+	        text: "Да",
+	        answerForView: 'Не были удалены прилегающие Лимфоузлы'
 	    }]
 	}, {
 	    key: 51,
 	    question: "Сколько ?",
 	    answers: [{
 	        next: 52,
-	        text: "2-3"
+	        text: "2-3",
+	        answerForView: 'Были удалены 2-3 Лимфоузлы.'
 	    }, {
 	        next: 52,
-	        text: "4-9"
+	        text: "4-9",
+	        answerForView: 'Были удалены 4-9 Лимфоузлы.'
 	    }, {
 	        next: 52,
-	        text: "10< collarbone"
+	        text: "10< collarbone",
+	        answerForView: 'Были удалены 10< collarbone Лимфоузлы.'
 	    }]
 	}, {
 	    key: 52,
 	    question: "Рецепторы ?",
 	    answers: [{
 	        next: 53,
-	        text: "Гармонозависимая"
+	        text: "Гармонозависимая",
+	        answerForView: 'Рецепторы гармонозависимая'
 	    }, {
 	        next: 53,
-	        text: "Не гормонозависимая"
+	        text: "Не гормонозависимая",
+	        answerForView: 'Рецепторы не гармонозависимая'
 	    }]
 	}, {
 	    key: 53,
 	    question: "Установлена cтадия ?",
 	    answers: [{
 	        next: 54,
-	        text: "1"
+	        text: "1",
+	        answerForView: 'Стадия 1'
 	    }, {
 	        next: 54,
-	        text: "2"
+	        text: "2",
+	        answerForView: 'Стадия 2'
 	    }, {
 	        next: 54,
-	        text: "3"
+	        text: "3",
+	        answerForView: 'Стадия 3'
 	    }, {
 	        next: 54,
-	        text: "4"
+	        text: "4",
+	        answerForView: 'Стадия 4'
 	    }]
 	}, {
 	    key: 54,
 	    question: "Какое лечение Вы получали",
 	    answers: [{
 	        next: 55,
-	        text: "Next" //Next
+	        text: "Next", //Next
+	        answerForView: 'Вы получали лечение: '
 	    }],
 	    lotOf: [{
 	        id: 1,
@@ -39579,10 +39645,12 @@
 	    question: "Рецидив Заболевания",
 	    answers: [{
 	        next: 56, // null
-	        text: "Да"
+	        text: "Да",
+	        answerForView: 'Были рецидиви Заболевания'
 	    }, {
 	        next: 55, //null
-	        text: "Нет"
+	        text: "Нет",
+	        answerForView: 'Не было рецидиви Заболевания'
 
 	    }]
 	}, {
@@ -39590,18 +39658,20 @@
 	    question: "ПэТ/КТ/ после лечения ?",
 	    answers: [{
 	        next: 57, // null
-	        text: "Да"
+	        text: "Да",
+	        answerForView: 'Было ПэТ/КТ/ после лечения.'
 	    }, {
 	        next: 57, //null
-	        text: "Нет"
-
+	        text: "Нет",
+	        answerForView: 'Не было ПэТ/КТ/ после лечения.'
 	    }]
 	}, {
 	    key: 57,
 	    question: "Где ?",
 	    answers: [{
 	        next: null,
-	        text: "Next" // Next
+	        text: "Next", // Next
+	        answerForView: 'ПэТ/КТ/ после лечения было в '
 	    }],
 	    lotOf: [{
 	        id: 1,
@@ -39706,19 +39776,25 @@
 	    question: "Заболевание было Выявлено ",
 	    answers: [{
 	        next: 101,
-	        text: "Врачом гинекологом"
+	        text: "Врачом гинекологом",
+	        answerForView: 'Заболевание было выявлено врачом гинекологом'
 	    }, {
 	        next: 101,
-	        text: "Мамологом"
+	        text: "Мамологом",
+	        answerForView: 'Заболевание было выявлено мамологом'
 	    }, {
 	        next: 101,
-	        text: "Узи"
+	        text: "Узи",
+	        answerForView: 'Заболевание было выявлено узи'
 	    }, {
 	        next: 101,
-	        text: "Маммография"
+	        text: "Маммография",
+	        answerForView: 'Заболевание было выявлено маммография'
 	    }]
 
-	}, {
+	},
+	/////////////////////////////////////////////////////////////////////////////////////////
+	{
 	    key: 101,
 	    question: "Была Взята биопсия ?",
 	    answers: [{
