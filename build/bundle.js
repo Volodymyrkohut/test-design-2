@@ -36745,47 +36745,66 @@
 	                    'div',
 	                    { className: 'left-part-of-screen' },
 	                    _react2['default'].createElement(
-	                        'ul',
+	                        'table',
 	                        { className: 'contacts' },
 	                        _react2['default'].createElement(
-	                            'li',
+	                            'tbody',
 	                            null,
-	                            'Disease : ',
 	                            _react2['default'].createElement(
-	                                'span',
+	                                'tr',
 	                                null,
-	                                ' Breast Cancer'
-	                            )
-	                        ),
-	                        _react2['default'].createElement(
-	                            'li',
-	                            null,
-	                            'Test : ',
+	                                _react2['default'].createElement(
+	                                    'td',
+	                                    null,
+	                                    'Disease : '
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'td',
+	                                    null,
+	                                    'Breast Cancer'
+	                                )
+	                            ),
 	                            _react2['default'].createElement(
-	                                'span',
+	                                'tr',
 	                                null,
-	                                ' Treatment '
-	                            )
-	                        ),
-	                        _react2['default'].createElement(
-	                            'li',
-	                            null,
-	                            'Date : ',
+	                                _react2['default'].createElement(
+	                                    'td',
+	                                    null,
+	                                    'Test : '
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'td',
+	                                    null,
+	                                    'Treatment'
+	                                )
+	                            ),
 	                            _react2['default'].createElement(
-	                                'span',
+	                                'tr',
 	                                null,
-	                                ' ',
-	                                this.state.date
-	                            )
-	                        ),
-	                        _react2['default'].createElement(
-	                            'li',
-	                            null,
-	                            'Test ID: ',
+	                                _react2['default'].createElement(
+	                                    'td',
+	                                    null,
+	                                    'Date : '
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'td',
+	                                    null,
+	                                    this.state.date
+	                                )
+	                            ),
 	                            _react2['default'].createElement(
-	                                'span',
+	                                'tr',
 	                                null,
-	                                ' 5289654'
+	                                _react2['default'].createElement(
+	                                    'td',
+	                                    null,
+	                                    'Test ID : '
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'td',
+	                                    null,
+	                                    '5289654'
+	                                )
 	                            )
 	                        )
 	                    ),
@@ -36927,7 +36946,7 @@
 
 	exports['default'] = (0, _reactRedux.connect)(mapStateToProps, dispatchStateToProps)(Smarttests);
 	module.exports = exports['default'];
-	/*{finished && (*/ /*<p style={{margin: '20px 0', textAlign: 'center'}}>*/ /*<a*/ /*href="#"*/ /*onClick={(event) => {*/ /*event.preventDefault();*/ /*this.setState({stepIndex: 0, finished: false});*/ /*}}*/ /*>*/ /*Click here*/ /*</a> to reset the example.*/ /*</p>*/ /*)}*/
+	/*<ul >*/ /*<li>Disease : <span> Breast Cancer</span></li>*/ /*<li>Test : <span> Treatment </span></li>*/ /*<li>Date : <span> </span></li>*/ /*<li>Test ID: <span> 5289654</span></li>*/ /*</ul>*/ /*{finished && (*/ /*<p style={{margin: '20px 0', textAlign: 'center'}}>*/ /*<a*/ /*href="#"*/ /*onClick={(event) => {*/ /*event.preventDefault();*/ /*this.setState({stepIndex: 0, finished: false});*/ /*}}*/ /*>*/ /*Click here*/ /*</a> to reset the example.*/ /*</p>*/ /*)}*/
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Стільниця/Medical/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Smarttests.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
@@ -39170,7 +39189,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.smarttests {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -ms-flex-pack: justify;\n  -webkit-justify-content: space-between;\n  -moz-justify-content: space-between;\n  justify-content: space-between; }\n  .smarttests .left-part-of-screen {\n    -webkit-box-flex: 0;\n    -webkit-flex-grow: 0;\n    -moz-flex-grow: 0;\n    -ms-flex-positive: 0;\n    flex-grow: 0;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    padding: 30px;\n    text-align: left; }\n    @media (max-width: 600px) {\n      .smarttests .left-part-of-screen {\n        display: none; } }\n    .smarttests .left-part-of-screen h2 {\n      font-family: 'MuseoSans-Light';\n      margin-bottom: 10px; }\n    .smarttests .left-part-of-screen p {\n      font-family: 'MuseoSans-Light'; }\n    .smarttests .left-part-of-screen ul {\n      text-align: left;\n      list-style: none; }\n      .smarttests .left-part-of-screen ul li {\n        margin-bottom: 10px;\n        font-family: 'MuseoSans-Light'; }\n        .smarttests .left-part-of-screen ul li span {\n          font-family: 'MuseoSans-Light';\n          color: #00bcd4; }\n  .smarttests .logic {\n    -webkit-box-flex: 1;\n    -webkit-flex-grow: 1;\n    -moz-flex-grow: 1;\n    -ms-flex-positive: 1;\n    flex-grow: 1; }\n    .smarttests .logic .btn {\n      position: relative;\n      cursor: pointer;\n      overflow: hidden;\n      margin-top: 10px;\n      width: 190px;\n      padding: 4px;\n      text-align: center;\n      border: 1px solid #00bcd4;\n      color: #00bcd4;\n      border-radius: 5px; }\n      .smarttests .logic .btn:after {\n        content: \"\";\n        display: block;\n        position: absolute;\n        height: 0%;\n        left: 50%;\n        top: 50%;\n        width: 150%;\n        z-index: -1;\n        -webkit-transition: all 1s ease 0s;\n        -moz-transition: all 1s ease 0s;\n        -o-transition: all 1s ease 0s;\n        transition: all 1s ease 0s;\n        background: #00bcd4;\n        -moz-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        -ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        -webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        transform: translateX(-50%) translateY(-50%) rotate(-25deg); }\n      .smarttests .logic .btn:hover:after {\n        height: 480%; }\n      .smarttests .logic .btn:hover {\n        color: white; }\n  .smarttests .askQuestion {\n    font-size: 18px;\n    font-family: 'MuseoSans-Light'; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.smarttests {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -ms-flex-pack: justify;\n  -webkit-justify-content: space-between;\n  -moz-justify-content: space-between;\n  justify-content: space-between; }\n  .smarttests .left-part-of-screen {\n    -webkit-box-flex: 0;\n    -webkit-flex-grow: 0;\n    -moz-flex-grow: 0;\n    -ms-flex-positive: 0;\n    flex-grow: 0;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    padding: 30px;\n    text-align: left; }\n    @media (max-width: 600px) {\n      .smarttests .left-part-of-screen {\n        display: none; } }\n    .smarttests .left-part-of-screen h2 {\n      font-family: 'MuseoSans-Light';\n      margin-bottom: 10px; }\n    .smarttests .left-part-of-screen table {\n      margin-bottom: 30px; }\n      .smarttests .left-part-of-screen table tr {\n        font-family: 'MuseoSans-Light'; }\n      .smarttests .left-part-of-screen table td:nth-child(even) {\n        color: #00bcd4; }\n    .smarttests .left-part-of-screen p {\n      font-family: 'MuseoSans-Light'; }\n  .smarttests .logic {\n    -webkit-box-flex: 1;\n    -webkit-flex-grow: 1;\n    -moz-flex-grow: 1;\n    -ms-flex-positive: 1;\n    flex-grow: 1; }\n    .smarttests .logic .btn {\n      position: relative;\n      cursor: pointer;\n      overflow: hidden;\n      margin-top: 10px;\n      width: 190px;\n      padding: 4px;\n      text-align: center;\n      border: 1px solid #00bcd4;\n      color: #00bcd4;\n      border-radius: 5px; }\n      .smarttests .logic .btn:after {\n        content: \"\";\n        display: block;\n        position: absolute;\n        height: 0%;\n        left: 50%;\n        top: 50%;\n        width: 150%;\n        z-index: -1;\n        -webkit-transition: all 1s ease 0s;\n        -moz-transition: all 1s ease 0s;\n        -o-transition: all 1s ease 0s;\n        transition: all 1s ease 0s;\n        background: #00bcd4;\n        -moz-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        -ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        -webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        transform: translateX(-50%) translateY(-50%) rotate(-25deg); }\n      .smarttests .logic .btn:hover:after {\n        height: 480%; }\n      .smarttests .logic .btn:hover {\n        color: white; }\n  .smarttests .askQuestion {\n    font-size: 18px;\n    font-family: 'MuseoSans-Light'; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
 
 	// exports
 
