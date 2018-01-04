@@ -36782,7 +36782,7 @@
 	                                    ),
 	                                    _react2['default'].createElement(
 	                                        _materialUiStepper.StepContent,
-	                                        null,
+	                                        { style: { paddingTop: '20px' } },
 	                                        _react2['default'].createElement(
 	                                            'h2',
 	                                            { className: 'askQuestion' },
@@ -39257,11 +39257,11 @@
 	    answers: [{
 	        next: 10,
 	        text: "Да",
-	        answerForView: 'Не были удалены прилегающие Лимфоузлы.'
+	        answerForView: 'Были удалены прилегающие Лимфоузлы.'
 	    }, {
 	        next: 10,
 	        text: "Нет",
-	        answerForView: 'Были удалены прилегающие Лимфоузлы.'
+	        answerForView: 'Не были удалены прилегающие Лимфоузлы.'
 	    }]
 	}, {
 	    key: 10,
@@ -46496,7 +46496,70 @@
 	                    _react2['default'].createElement(
 	                        'div',
 	                        { className: 'column column1' },
-	                        _react2['default'].createElement('img', { src: 'images/logo/Logobig.png', width: '150', height: '150' })
+	                        _react2['default'].createElement(
+	                            'table',
+	                            { className: 'contacts' },
+	                            _react2['default'].createElement(
+	                                'tbody',
+	                                null,
+	                                _react2['default'].createElement(
+	                                    'tr',
+	                                    null,
+	                                    _react2['default'].createElement(
+	                                        'td',
+	                                        null,
+	                                        'Disease : '
+	                                    ),
+	                                    _react2['default'].createElement(
+	                                        'td',
+	                                        null,
+	                                        'Breast Cancer'
+	                                    )
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'tr',
+	                                    null,
+	                                    _react2['default'].createElement(
+	                                        'td',
+	                                        null,
+	                                        'Test : '
+	                                    ),
+	                                    _react2['default'].createElement(
+	                                        'td',
+	                                        null,
+	                                        'Treatment'
+	                                    )
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'tr',
+	                                    null,
+	                                    _react2['default'].createElement(
+	                                        'td',
+	                                        null,
+	                                        'Date : '
+	                                    ),
+	                                    _react2['default'].createElement(
+	                                        'td',
+	                                        null,
+	                                        this.state.date
+	                                    )
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'tr',
+	                                    null,
+	                                    _react2['default'].createElement(
+	                                        'td',
+	                                        null,
+	                                        'Test ID : '
+	                                    ),
+	                                    _react2['default'].createElement(
+	                                        'td',
+	                                        null,
+	                                        '5289654'
+	                                    )
+	                                )
+	                            )
+	                        )
 	                    ),
 	                    _react2['default'].createElement(
 	                        'div',
@@ -46516,7 +46579,7 @@
 	                        'div',
 	                        { className: 'column column1' },
 	                        _react2['default'].createElement(
-	                            'h1',
+	                            'h2',
 	                            null,
 	                            'Lorem ipsum dolor'
 	                        ),
@@ -46529,16 +46592,6 @@
 	                            'p',
 	                            null,
 	                            'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'
-	                        ),
-	                        _react2['default'].createElement(
-	                            'p',
-	                            null,
-	                            'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
-	                        ),
-	                        _react2['default'].createElement(
-	                            'p',
-	                            null,
-	                            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 	                        )
 	                    ),
 	                    _react2['default'].createElement(
@@ -46648,6 +46701,7 @@
 	*
 	* */
 	module.exports = exports['default'];
+	/*<img src="images/logo/Logobig.png" width="150" height="150"/>*/
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Стільниця/Medical/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "SmartTestResult.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
@@ -46686,7 +46740,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.smarttestresult .smartTestTop {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n  -webkit-justify-content: space-around;\n  -moz-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-flex-wrap: wrap;\n  -moz-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  padding-top: 20px;\n  min-height: 200px; }\n  .smarttestresult .smartTestTop .column1 {\n    -webkit-box-flex: 0;\n    -webkit-flex-grow: 0;\n    -moz-flex-grow: 0;\n    -ms-flex-positive: 0;\n    flex-grow: 0;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    text-align: center; }\n  .smarttestresult .smartTestTop .column2 {\n    -webkit-box-flex: 2;\n    -webkit-flex-grow: 2;\n    -moz-flex-grow: 2;\n    -ms-flex-positive: 2;\n    flex-grow: 2;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    text-align: center; }\n    .smarttestresult .smartTestTop .column2 h1 {\n      font-family: 'MuseoSans-Light';\n      color: #0099ff;\n      font-size: 30px;\n      margin-top: 80px; }\n\n.smarttestresult .smartTestBottom {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n  -webkit-justify-content: space-around;\n  -moz-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-flex-wrap: wrap;\n  -moz-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  width: 100%;\n  min-height: 100%;\n  background-color: white; }\n  .smarttestresult .smartTestBottom .column1 {\n    -webkit-box-flex: 0;\n    -webkit-flex-grow: 0;\n    -moz-flex-grow: 0;\n    -ms-flex-positive: 0;\n    flex-grow: 0;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    text-align: center;\n    padding: 20px; }\n  .smarttestresult .smartTestBottom .column2 {\n    -webkit-box-flex: 2;\n    -webkit-flex-grow: 2;\n    -moz-flex-grow: 2;\n    -ms-flex-positive: 2;\n    flex-grow: 2;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    position: relative;\n    padding-left: 50px; }\n    .smarttestresult .smartTestBottom .column2 ul {\n      list-style: none; }\n      .smarttestresult .smartTestBottom .column2 ul li {\n        position: relative;\n        font-family: 'MuseoSans-Normal';\n        margin-top: 20px;\n        font-size: 20px; }\n        .smarttestresult .smartTestBottom .column2 ul li .blueMarker {\n          position: absolute;\n          z-index: 2;\n          left: -40px;\n          top: 5px;\n          width: 20px;\n          height: 20px;\n          border-radius: 50%;\n          background-color: white;\n          border: 1px solid #0099ff; }\n        .smarttestresult .smartTestBottom .column2 ul li div {\n          font-family: 'MuseoSans-Light';\n          font-size: 16px; }\n    .smarttestresult .smartTestBottom .column2 .line {\n      position: absolute;\n      top: 0;\n      left: 20px;\n      height: 100%;\n      width: 1px;\n      margin-top: 28px;\n      background-color: #0099ff; }\n      .smarttestresult .smartTestBottom .column2 .line .circle {\n        position: sticky;\n        top: 150px;\n        margin-left: -7px;\n        background-color: #0099ff;\n        width: 14px;\n        height: 14px;\n        border-radius: 50%;\n        z-index: 3; }\n      .smarttestresult .smartTestBottom .column2 .line .fill-circle {\n        position: absolute;\n        bottom: -3px;\n        left: -10px;\n        width: 20px;\n        height: 20px;\n        border-radius: 50%;\n        background-color: white;\n        border: 1px solid #0099ff;\n        z-index: 2; }\n\n.smarttestresult .resultText {\n  max-width: 700px;\n  text-align: center;\n  margin: 60px auto; }\n  .smarttestresult .resultText h1 {\n    margin-bottom: 40px;\n    font-family: 'MuseoSans-Light'; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.smarttestresult .smartTestTop {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n  -webkit-justify-content: space-around;\n  -moz-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-flex-wrap: wrap;\n  -moz-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  padding-top: 20px;\n  min-height: 200px; }\n  .smarttestresult .smartTestTop .column1 {\n    -webkit-box-flex: 0;\n    -webkit-flex-grow: 0;\n    -moz-flex-grow: 0;\n    -ms-flex-positive: 0;\n    flex-grow: 0;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    text-align: left; }\n    .smarttestresult .smartTestTop .column1 table {\n      margin-bottom: 30px;\n      margin-left: 30px; }\n      .smarttestresult .smartTestTop .column1 table td:nth-child(even) {\n        color: #00bcd4; }\n  .smarttestresult .smartTestTop .column2 {\n    -webkit-box-flex: 2;\n    -webkit-flex-grow: 2;\n    -moz-flex-grow: 2;\n    -ms-flex-positive: 2;\n    flex-grow: 2;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    text-align: center; }\n    .smarttestresult .smartTestTop .column2 h1 {\n      font-family: 'MuseoSans-Light';\n      color: #0099ff;\n      font-size: 30px;\n      margin-top: 80px; }\n\n.smarttestresult .smartTestBottom {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n  -webkit-justify-content: space-around;\n  -moz-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-flex-wrap: wrap;\n  -moz-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  width: 100%;\n  min-height: 100%;\n  background-color: white; }\n  .smarttestresult .smartTestBottom .column1 {\n    -webkit-box-flex: 0;\n    -webkit-flex-grow: 0;\n    -moz-flex-grow: 0;\n    -ms-flex-positive: 0;\n    flex-grow: 0;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    text-align: left;\n    padding: 20px; }\n    .smarttestresult .smartTestBottom .column1 h2 {\n      text-align: center;\n      margin-bottom: 20px; }\n  .smarttestresult .smartTestBottom .column2 {\n    -webkit-box-flex: 2;\n    -webkit-flex-grow: 2;\n    -moz-flex-grow: 2;\n    -ms-flex-positive: 2;\n    flex-grow: 2;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    position: relative;\n    padding-left: 50px; }\n    .smarttestresult .smartTestBottom .column2 ul {\n      list-style: none; }\n      .smarttestresult .smartTestBottom .column2 ul li {\n        position: relative;\n        font-family: 'MuseoSans-Normal';\n        margin-top: 20px;\n        font-size: 20px; }\n        .smarttestresult .smartTestBottom .column2 ul li .blueMarker {\n          position: absolute;\n          z-index: 2;\n          left: -40px;\n          top: 5px;\n          width: 20px;\n          height: 20px;\n          border-radius: 50%;\n          background-color: white;\n          border: 1px solid #0099ff; }\n        .smarttestresult .smartTestBottom .column2 ul li div {\n          font-family: 'MuseoSans-Light';\n          font-size: 16px; }\n    .smarttestresult .smartTestBottom .column2 .line {\n      position: absolute;\n      top: 0;\n      left: 20px;\n      height: 100%;\n      width: 1px;\n      margin-top: 28px;\n      background-color: #0099ff; }\n      .smarttestresult .smartTestBottom .column2 .line .circle {\n        position: sticky;\n        top: 150px;\n        margin-left: -7px;\n        background-color: #0099ff;\n        width: 14px;\n        height: 14px;\n        border-radius: 50%;\n        z-index: 3; }\n      .smarttestresult .smartTestBottom .column2 .line .fill-circle {\n        position: absolute;\n        bottom: -3px;\n        left: -10px;\n        width: 20px;\n        height: 20px;\n        border-radius: 50%;\n        background-color: white;\n        border: 1px solid #0099ff;\n        z-index: 2; }\n\n.smarttestresult .resultText {\n  max-width: 700px;\n  text-align: left;\n  margin: 60px auto; }\n  .smarttestresult .resultText h1 {\n    background-color: #0099ff;\n    font-family: 'MuseoSans-Light';\n    padding: 30px; }\n  .smarttestresult .resultText h2 {\n    background-color: #009200;\n    color: white;\n    padding: 30px; }\n", ""]);
 
 	// exports
 
