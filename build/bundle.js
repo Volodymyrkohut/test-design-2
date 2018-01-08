@@ -27224,6 +27224,7 @@
 	                sidebar: sidebar,
 	                docked: this.state.docked,
 	                sidebarClassName: 'custom-sidebar-class',
+	                overlayClassName: 'overlayClassName',
 	                open: this.state.open,
 	                onSetOpen: this.onSetOpen
 	            };
@@ -28354,7 +28355,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.custom-sidebar-class {\n  z-index: 8888 !important; }\n  @media (max-width: 768px) {\n    .custom-sidebar-class {\n      width: 100%; } }\n\n.switch {\n  color: black; }\n\n.sidebar-content {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-direction: normal;\n  -webkit-box-orient: vertical;\n  -webkit-flex-direction: column;\n  -moz-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  -webkit-justify-content: center;\n  -moz-justify-content: center;\n  justify-content: center;\n  width: 370px;\n  overflow: hidden; }\n  @media (max-width: 768px) {\n    .sidebar-content {\n      width: 100%; } }\n  .sidebar-content nav {\n    margin-left: 50px; }\n    @media (max-width: 768px) {\n      .sidebar-content nav {\n        text-align: center; } }\n    .sidebar-content nav ul a {\n      text-decoration: none;\n      color: black; }\n      .sidebar-content nav ul a li {\n        cursor: pointer;\n        font-size: calc(20px + 20 * (100vw - 320px) / 1600);\n        list-style: none;\n        margin-bottom: 25px;\n        font-family: 'MuseoSans-Light';\n        transition: transform .5s; }\n        .sidebar-content nav ul a li:hover {\n          transition: transform .5s;\n          -moz-transform: translate(30px, 0px);\n          -o-transform: translate(30px, 0px);\n          -ms-transform: translate(30px, 0px);\n          -webkit-transform: translate(30px, 0px);\n          transform: translate(30px, 0px); }\n  .sidebar-content ul.lang {\n    position: absolute;\n    bottom: 20px;\n    margin-left: 50px; }\n    @media (max-width: 768px) {\n      .sidebar-content ul.lang {\n        position: absolute;\n        left: calc(50% - 60px);\n        bottom: 20px; } }\n    .sidebar-content ul.lang li {\n      list-style: none; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.custom-sidebar-class {\n  z-index: 8888 !important; }\n  @media (max-width: 768px) {\n    .custom-sidebar-class {\n      width: 100%; } }\n\n.overlayClassName {\n  z-index: 999 !important; }\n\n.switch {\n  color: black; }\n\n.sidebar-content {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-direction: normal;\n  -webkit-box-orient: vertical;\n  -webkit-flex-direction: column;\n  -moz-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  -webkit-justify-content: center;\n  -moz-justify-content: center;\n  justify-content: center;\n  width: 370px;\n  overflow: hidden; }\n  @media (max-width: 768px) {\n    .sidebar-content {\n      width: 100%; } }\n  .sidebar-content nav {\n    margin-left: 50px; }\n    @media (max-width: 768px) {\n      .sidebar-content nav {\n        text-align: center; } }\n    .sidebar-content nav ul a {\n      text-decoration: none;\n      color: black; }\n      .sidebar-content nav ul a li {\n        cursor: pointer;\n        font-size: calc(20px + 20 * (100vw - 320px) / 1600);\n        list-style: none;\n        margin-bottom: 25px;\n        font-family: 'MuseoSans-Light';\n        transition: transform .5s; }\n        .sidebar-content nav ul a li:hover {\n          transition: transform .5s;\n          -moz-transform: translate(30px, 0px);\n          -o-transform: translate(30px, 0px);\n          -ms-transform: translate(30px, 0px);\n          -webkit-transform: translate(30px, 0px);\n          transform: translate(30px, 0px); }\n  .sidebar-content ul.lang {\n    position: absolute;\n    bottom: 20px;\n    margin-left: 50px; }\n    @media (max-width: 768px) {\n      .sidebar-content ul.lang {\n        position: absolute;\n        left: calc(50% - 60px);\n        bottom: 20px; } }\n    .sidebar-content ul.lang li {\n      list-style: none; }\n", ""]);
 
 	// exports
 
@@ -36755,7 +36756,6 @@
 	            return _react2['default'].createElement(
 	                'div',
 	                { className: 'smartest-wrapper' },
-	                _react2['default'].createElement('div', { className: 'bg-smartest' }),
 	                _react2['default'].createElement(
 	                    'div',
 	                    { className: 'smarttests' },
@@ -39125,7 +39125,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.smartest-wrapper {\n  position: relative; }\n  .smartest-wrapper .bg-smartest {\n    filter: opacity(25%);\n    position: fixed;\n    top: 0;\n    left: 0;\n    z-index: 40;\n    background-attachment: fixed;\n    transform: rotateY(180deg);\n    width: 100%;\n    height: 100vh;\n    background: url(" + __webpack_require__(400) + ");\n    background-size: cover;\n    background-position: left;\n    z-index: 50; }\n  .smartest-wrapper .smarttests {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n    -ms-flex-pack: justify;\n    -webkit-justify-content: space-between;\n    -moz-justify-content: space-between;\n    justify-content: space-between;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: 60; }\n    .smartest-wrapper .smarttests .logic {\n      -webkit-box-flex: 1;\n      -webkit-flex-grow: 1;\n      -moz-flex-grow: 1;\n      -ms-flex-positive: 1;\n      flex-grow: 1; }\n      .smartest-wrapper .smarttests .logic .btn {\n        position: relative;\n        cursor: pointer;\n        overflow: hidden;\n        margin-top: 10px;\n        width: 190px;\n        padding: 4px;\n        text-align: center;\n        border: 1px solid #00bcd4;\n        color: #00bcd4;\n        border-radius: 5px; }\n        .smartest-wrapper .smarttests .logic .btn:after {\n          content: \"\";\n          display: block;\n          position: absolute;\n          height: 0%;\n          left: 50%;\n          top: 50%;\n          width: 150%;\n          z-index: -1;\n          -webkit-transition: all 1s ease 0s;\n          -moz-transition: all 1s ease 0s;\n          -o-transition: all 1s ease 0s;\n          transition: all 1s ease 0s;\n          background: #00bcd4;\n          -moz-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n          -ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n          -webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n          transform: translateX(-50%) translateY(-50%) rotate(-25deg); }\n        .smartest-wrapper .smarttests .logic .btn:hover:after {\n          height: 480%; }\n        .smartest-wrapper .smarttests .logic .btn:hover {\n          color: #ffffff; }\n    .smartest-wrapper .smarttests .askQuestion {\n      font-size: 18px;\n      font-family: 'MuseoSans-Light'; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0; }\n\n.smarttests {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -ms-flex-pack: justify;\n  -webkit-justify-content: space-between;\n  -moz-justify-content: space-between;\n  justify-content: space-between; }\n  .smarttests .logic {\n    -webkit-box-flex: 1;\n    -webkit-flex-grow: 1;\n    -moz-flex-grow: 1;\n    -ms-flex-positive: 1;\n    flex-grow: 1; }\n    .smarttests .logic .btn {\n      position: relative;\n      cursor: pointer;\n      overflow: hidden;\n      margin-top: 10px;\n      width: 190px;\n      padding: 4px;\n      text-align: center;\n      border: 1px solid #00bcd4;\n      color: #00bcd4;\n      border-radius: 5px; }\n      .smarttests .logic .btn:after {\n        content: \"\";\n        display: block;\n        position: absolute;\n        height: 0%;\n        left: 50%;\n        top: 50%;\n        width: 150%;\n        z-index: -1;\n        -webkit-transition: all 1s ease 0s;\n        -moz-transition: all 1s ease 0s;\n        -o-transition: all 1s ease 0s;\n        transition: all 1s ease 0s;\n        background: #00bcd4;\n        -moz-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        -ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        -webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);\n        transform: translateX(-50%) translateY(-50%) rotate(-25deg); }\n      .smarttests .logic .btn:hover:after {\n        height: 480%; }\n      .smarttests .logic .btn:hover {\n        color: #ffffff; }\n  .smarttests .askQuestion {\n    font-size: 18px;\n    font-family: 'MuseoSans-Light'; }\n\n::-webkit-scrollbar-track {\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  border-radius: 10px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar {\n  width: 8px;\n  background-color: #F5F5F5; }\n\n::-webkit-scrollbar-thumb {\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\n  background-color: #bdbdbd; }\n", ""]);
 
 	// exports
 
@@ -39691,36 +39691,42 @@
 	// START Била Ли операция (НЕТ)
 	{
 	    key: 6,
-	    question: "Заболевание было Выявлено ",
+	    question: "Выявлено",
 	    answers: [{
 	        next: 101,
-	        text: "Врачом гинекологом",
-	        answerForView: 'Заболевание было выявлено врачом гинекологом'
+	        text: "УЗИ",
+	        answerForView: 'Выявлено УЗИ'
 	    }, {
 	        next: 101,
-	        text: "Мамологом",
-	        answerForView: 'Заболевание было выявлено мамологом'
+	        text: "МРТ",
+	        answerForView: 'Выявлено МРТ'
 	    }, {
 	        next: 101,
-	        text: "Узи",
-	        answerForView: 'Заболевание было выявлено узи'
+	        text: "КТ",
+	        answerForView: 'Выявлено КТ'
+	    }, {
+	        next: 101,
+	        text: "Врачом",
+	        answerForView: 'Выявлено Врачом'
 	    }, {
 	        next: 101,
 	        text: "Маммография",
-	        answerForView: 'Заболевание было выявлено маммография'
+	        answerForView: 'Выявлено маммографией'
 	    }]
-
 	},
+
 	/////////////////////////////////////////////////////////////////////////////////////////
 	{
 	    key: 101,
 	    question: "Была Взята биопсия ?",
 	    answers: [{
 	        next: 102,
-	        text: "Да"
+	        text: "Да",
+	        answerForView: 'Была взята биопсия'
 	    }, {
-	        next: 101, //
-	        text: "Нет"
+	        next: null, //
+	        text: "Нет", /////////////// Elsle net
+	        answerForView: 'Не была взята биопсия'
 	    }]
 	}, {
 	    key: 102,
@@ -46448,13 +46454,20 @@
 	        _get(Object.getPrototypeOf(SmartTestsResult.prototype), 'constructor', this).call(this, props);
 	        this.state = {
 	            result: "",
-	            date: new Date().toString().slice(0, 15)
+	            date: new Date().toString().slice(0, 15),
+	            resultText: _react2['default'].createElement(
+	                'h1',
+	                null,
+	                'Скорее всего , Вам должно быть предложено молекулярное исследование тканей для точного определения возможных вариантов новейших линий лечения .'
+	            )
 	        };
 	    }
 
 	    _createClass(SmartTestsResult, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
+	            var _this = this;
+
 	            var result = "";
 
 	            this.props.answer.map(function (item) {
@@ -46490,6 +46503,90 @@
 	            });
 
 	            this.setState({ result: result });
+
+	            this.props.answer.map(function (item) {
+	                if (item.question == "Была Взята биопсия ?") {
+	                    _this.setState({ resultText: _react2['default'].createElement(
+	                            'div',
+	                            null,
+	                            _react2['default'].createElement(
+	                                'ul',
+	                                null,
+	                                _react2['default'].createElement(
+	                                    'li',
+	                                    null,
+	                                    'Биопсия под контролем Маммографии и УЗИ '
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'li',
+	                                    null,
+	                                    'Гормональный анализ взятых тканей '
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'li',
+	                                    null,
+	                                    'Генетический тест BRCA '
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'li',
+	                                    null,
+	                                    'Биопсия пограничных узлов '
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'li',
+	                                    null,
+	                                    'ПЭТ-КТ'
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'li',
+	                                    null,
+	                                    'МРТ'
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'li',
+	                                    null,
+	                                    'Са-125'
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'li',
+	                                    null,
+	                                    'Са 15-3'
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'li',
+	                                    null,
+	                                    'РЭА'
+	                                )
+	                            ),
+	                            _react2['default'].createElement('br', null),
+	                            _react2['default'].createElement(
+	                                'ul',
+	                                null,
+	                                _react2['default'].createElement(
+	                                    'li',
+	                                    null,
+	                                    'Опциональные виды лечения '
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'li',
+	                                    null,
+	                                    'Операция'
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'li',
+	                                    null,
+	                                    'Лучевая  терапия '
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'li',
+	                                    null,
+	                                    '(в зависимости от результатов Гистопатологии)'
+	                                )
+	                            )
+	                        )
+	                    });
+	                }
+	            });
 	        }
 	    }, {
 	        key: 'render',
@@ -46497,7 +46594,6 @@
 	            return _react2['default'].createElement(
 	                'div',
 	                { className: 'wrapperResult' },
-	                _react2['default'].createElement('div', { className: 'background-fixed' }),
 	                _react2['default'].createElement(
 	                    'div',
 	                    { className: 'smarttestresult' },
@@ -46638,11 +46734,7 @@
 	                        _react2['default'].createElement(
 	                            'div',
 	                            { className: 'wraperForH1' },
-	                            _react2['default'].createElement(
-	                                'h1',
-	                                null,
-	                                'Скорее всего , Вам должно быть предложено молекулярное исследование тканей для точного определения возможных вариантов новейших линий лечения .'
-	                            )
+	                            this.state.resultText
 	                        ),
 	                        _react2['default'].createElement(
 	                            'h2',
@@ -46747,7 +46839,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.wrapperResult {\n  position: relative; }\n\n.background-fixed {\n  filter: opacity(30%);\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 40;\n  background-attachment: fixed;\n  width: 100%;\n  height: 100vh;\n  background: url(" + __webpack_require__(399) + ");\n  background-size: cover;\n  background-position: center; }\n\n.smarttestresult {\n  z-index: 50;\n  position: absolute;\n  top: 0;\n  left: 0; }\n  .smarttestresult .smartTestTop {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: distribute;\n    -webkit-justify-content: space-around;\n    -moz-justify-content: space-around;\n    justify-content: space-around;\n    -webkit-flex-wrap: wrap;\n    -moz-flex-wrap: wrap;\n    -ms-flex-wrap: wrap;\n    flex-wrap: wrap;\n    padding-top: 20px;\n    min-height: 200px; }\n    .smarttestresult .smartTestTop .column1 {\n      -webkit-box-flex: 0;\n      -webkit-flex-grow: 0;\n      -moz-flex-grow: 0;\n      -ms-flex-positive: 0;\n      flex-grow: 0;\n      -webkit-flex-basis: 300px;\n      -moz-flex-basis: 300px;\n      -ms-flex-preferred-size: 300px;\n      flex-basis: 300px;\n      text-align: left; }\n      .smarttestresult .smartTestTop .column1 table {\n        margin-bottom: 30px;\n        margin-left: 30px; }\n        @media (max-width: 500px) {\n          .smarttestresult .smartTestTop .column1 table {\n            margin-left: 0; } }\n        .smarttestresult .smartTestTop .column1 table td:nth-child(even) {\n          color: #00bcd4; }\n    .smarttestresult .smartTestTop .column2 {\n      -webkit-box-flex: 2;\n      -webkit-flex-grow: 2;\n      -moz-flex-grow: 2;\n      -ms-flex-positive: 2;\n      flex-grow: 2;\n      -webkit-flex-basis: 300px;\n      -moz-flex-basis: 300px;\n      -ms-flex-preferred-size: 300px;\n      flex-basis: 300px;\n      text-align: center; }\n      .smarttestresult .smartTestTop .column2 h1 {\n        font-family: 'MuseoSans-Light';\n        color: #0099ff;\n        font-size: 30px;\n        margin-top: 80px; }\n        @media (max-width: 500px) {\n          .smarttestresult .smartTestTop .column2 h1 {\n            margin-top: 20px; } }\n  .smarttestresult .smartTestBottom {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: distribute;\n    -webkit-justify-content: space-around;\n    -moz-justify-content: space-around;\n    justify-content: space-around;\n    -webkit-flex-wrap: wrap;\n    -moz-flex-wrap: wrap;\n    -ms-flex-wrap: wrap;\n    flex-wrap: wrap;\n    width: 100%;\n    min-height: 100%; }\n    .smarttestresult .smartTestBottom .column1 {\n      -webkit-box-flex: 0;\n      -webkit-flex-grow: 0;\n      -moz-flex-grow: 0;\n      -ms-flex-positive: 0;\n      flex-grow: 0;\n      -webkit-flex-basis: 300px;\n      -moz-flex-basis: 300px;\n      -ms-flex-preferred-size: 300px;\n      flex-basis: 300px;\n      text-align: left;\n      padding: 20px; }\n      @media (max-width: 500px) {\n        .smarttestresult .smartTestBottom .column1 {\n          padding-left: 0; } }\n      .smarttestresult .smartTestBottom .column1 .wraper-text {\n        background-color: rgba(255, 255, 0, 0.3);\n        padding: 10px;\n        border-radius: 5px; }\n        .smarttestresult .smartTestBottom .column1 .wraper-text h2 {\n          text-align: center;\n          margin-bottom: 20px;\n          font-size: 20px; }\n    .smarttestresult .smartTestBottom .column2 {\n      -webkit-box-flex: 2;\n      -webkit-flex-grow: 2;\n      -moz-flex-grow: 2;\n      -ms-flex-positive: 2;\n      flex-grow: 2;\n      -webkit-flex-basis: 300px;\n      -moz-flex-basis: 300px;\n      -ms-flex-preferred-size: 300px;\n      flex-basis: 300px;\n      position: relative;\n      padding-left: 50px; }\n      .smarttestresult .smartTestBottom .column2 ul {\n        list-style: none; }\n        .smarttestresult .smartTestBottom .column2 ul li {\n          position: relative;\n          font-family: 'MuseoSans-Normal';\n          margin-top: 20px;\n          font-size: 20px; }\n          .smarttestresult .smartTestBottom .column2 ul li .blueMarker {\n            position: absolute;\n            z-index: 2;\n            left: -40px;\n            top: 5px;\n            width: 20px;\n            height: 20px;\n            border-radius: 50%;\n            background-color: white;\n            border: 1px solid #0099ff; }\n          .smarttestresult .smartTestBottom .column2 ul li div {\n            font-family: 'MuseoSans-Light';\n            font-size: 16px; }\n      .smarttestresult .smartTestBottom .column2 .line {\n        position: absolute;\n        top: 0;\n        left: 20px;\n        height: 100%;\n        width: 1px;\n        margin-top: 28px;\n        background-color: #0099ff; }\n        .smarttestresult .smartTestBottom .column2 .line .circle {\n          position: sticky;\n          top: 150px;\n          margin-left: -7px;\n          background-color: #0099ff;\n          width: 14px;\n          height: 14px;\n          border-radius: 50%;\n          z-index: 3; }\n        .smarttestresult .smartTestBottom .column2 .line .fill-circle {\n          position: absolute;\n          bottom: -3px;\n          left: -10px;\n          width: 20px;\n          height: 20px;\n          border-radius: 50%;\n          background-color: white;\n          border: 1px solid #0099ff;\n          z-index: 2; }\n  .smarttestresult .resultText {\n    max-width: 700px;\n    text-align: left;\n    margin: 60px auto; }\n    @media (max-width: 500px) {\n      .smarttestresult .resultText {\n        margin-bottom: 0px; } }\n    .smarttestresult .resultText .wraperForH1 {\n      background-color: rgba(0, 153, 255, 0.3);\n      font-family: 'MuseoSans-Light';\n      padding: 30px; }\n      .smarttestresult .resultText .wraperForH1 h1 {\n        border-bottom: 1px solid black;\n        border-top: 1px solid black;\n        padding: 5px;\n        font-size: 26px;\n        color: black; }\n        @media (max-width: 500px) {\n          .smarttestresult .resultText .wraperForH1 h1 {\n            font-size: 19px; } }\n    .smarttestresult .resultText h2 {\n      background-color: rgba(0, 146, 0, 0.3);\n      padding: 30px;\n      font-family: 'MuseoSans-Light';\n      font-size: 20px;\n      color: black; }\n      @media (max-width: 500px) {\n        .smarttestresult .resultText h2 {\n          font-size: 17px; } }\n      .smarttestresult .resultText h2 a {\n        display: block;\n        font-size: 14px;\n        font-weight: 300; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.smarttestresult .smartTestTop {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n  -webkit-justify-content: space-around;\n  -moz-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-flex-wrap: wrap;\n  -moz-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  padding-top: 20px;\n  min-height: 200px; }\n  .smarttestresult .smartTestTop .column1 {\n    -webkit-box-flex: 0;\n    -webkit-flex-grow: 0;\n    -moz-flex-grow: 0;\n    -ms-flex-positive: 0;\n    flex-grow: 0;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    text-align: left; }\n    .smarttestresult .smartTestTop .column1 table {\n      margin-bottom: 30px;\n      margin-left: 30px; }\n      @media (max-width: 500px) {\n        .smarttestresult .smartTestTop .column1 table {\n          margin-left: 0; } }\n      .smarttestresult .smartTestTop .column1 table td:nth-child(even) {\n        color: #00bcd4; }\n  .smarttestresult .smartTestTop .column2 {\n    -webkit-box-flex: 2;\n    -webkit-flex-grow: 2;\n    -moz-flex-grow: 2;\n    -ms-flex-positive: 2;\n    flex-grow: 2;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    text-align: center; }\n    .smarttestresult .smartTestTop .column2 h1 {\n      font-family: 'MuseoSans-Light';\n      color: #0099ff;\n      font-size: 30px;\n      margin-top: 80px; }\n      @media (max-width: 500px) {\n        .smarttestresult .smartTestTop .column2 h1 {\n          margin-top: 20px; } }\n\n.smarttestresult .smartTestBottom {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n  -webkit-justify-content: space-around;\n  -moz-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-flex-wrap: wrap;\n  -moz-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  width: 100%;\n  min-height: 100%; }\n  .smarttestresult .smartTestBottom .column1 {\n    -webkit-box-flex: 0;\n    -webkit-flex-grow: 0;\n    -moz-flex-grow: 0;\n    -ms-flex-positive: 0;\n    flex-grow: 0;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    text-align: left;\n    padding: 20px; }\n    @media (max-width: 500px) {\n      .smarttestresult .smartTestBottom .column1 {\n        padding-left: 0; } }\n    .smarttestresult .smartTestBottom .column1 .wraper-text {\n      background-color: rgba(255, 255, 0, 0.3);\n      padding: 10px;\n      border-radius: 5px; }\n      .smarttestresult .smartTestBottom .column1 .wraper-text h2 {\n        text-align: center;\n        margin-bottom: 20px;\n        font-size: 20px; }\n  .smarttestresult .smartTestBottom .column2 {\n    -webkit-box-flex: 2;\n    -webkit-flex-grow: 2;\n    -moz-flex-grow: 2;\n    -ms-flex-positive: 2;\n    flex-grow: 2;\n    -webkit-flex-basis: 300px;\n    -moz-flex-basis: 300px;\n    -ms-flex-preferred-size: 300px;\n    flex-basis: 300px;\n    position: relative;\n    padding-left: 50px; }\n    .smarttestresult .smartTestBottom .column2 ul {\n      list-style: none; }\n      .smarttestresult .smartTestBottom .column2 ul li {\n        position: relative;\n        font-family: 'MuseoSans-Normal';\n        margin-top: 20px;\n        font-size: 20px; }\n        .smarttestresult .smartTestBottom .column2 ul li .blueMarker {\n          position: absolute;\n          z-index: 2;\n          left: -40px;\n          top: 5px;\n          width: 20px;\n          height: 20px;\n          border-radius: 50%;\n          background-color: white;\n          border: 1px solid #0099ff; }\n        .smarttestresult .smartTestBottom .column2 ul li div {\n          font-family: 'MuseoSans-Light';\n          font-size: 16px; }\n    .smarttestresult .smartTestBottom .column2 .line {\n      position: absolute;\n      top: 0;\n      left: 20px;\n      height: 100%;\n      width: 1px;\n      margin-top: 28px;\n      background-color: #0099ff; }\n      .smarttestresult .smartTestBottom .column2 .line .circle {\n        position: sticky;\n        top: 150px;\n        margin-left: -7px;\n        background-color: #0099ff;\n        width: 14px;\n        height: 14px;\n        border-radius: 50%;\n        z-index: 3; }\n      .smarttestresult .smartTestBottom .column2 .line .fill-circle {\n        position: absolute;\n        bottom: -3px;\n        left: -10px;\n        width: 20px;\n        height: 20px;\n        border-radius: 50%;\n        background-color: white;\n        border: 1px solid #0099ff;\n        z-index: 2; }\n\n.smarttestresult .resultText {\n  max-width: 700px;\n  text-align: left;\n  margin: 60px auto; }\n  @media (max-width: 500px) {\n    .smarttestresult .resultText {\n      margin-bottom: 0px; } }\n  .smarttestresult .resultText .wraperForH1 {\n    background-color: rgba(0, 153, 255, 0.6);\n    font-family: 'MuseoSans-Light';\n    padding: 30px; }\n    .smarttestresult .resultText .wraperForH1 h1 {\n      border-bottom: 1px solid #ffffff;\n      border-top: 1px solid #ffffff;\n      padding: 5px;\n      font-size: 26px;\n      color: #ffffff; }\n      @media (max-width: 500px) {\n        .smarttestresult .resultText .wraperForH1 h1 {\n          font-size: 19px; } }\n  .smarttestresult .resultText h2 {\n    background-color: rgba(0, 146, 0, 0.6);\n    padding: 30px;\n    font-family: 'MuseoSans-Light';\n    font-size: 20px;\n    color: #ffffff; }\n    @media (max-width: 500px) {\n      .smarttestresult .resultText h2 {\n        font-size: 17px; } }\n    .smarttestresult .resultText h2 a {\n      display: block;\n      font-size: 14px;\n      font-weight: 300; }\n", ""]);
 
 	// exports
 
