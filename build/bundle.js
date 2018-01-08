@@ -46976,7 +46976,7 @@
 	                _react2["default"].createElement(
 	                    "div",
 	                    { className: "button-auth" },
-	                    "Надіслати"
+	                    "Отправить"
 	                )
 	            );
 	        }
